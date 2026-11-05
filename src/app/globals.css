@@ -2,53 +2,137 @@
 @import 'tw-animate-css';
 
 /*
- * Task 1 ships a deliberately minimal palette so the placeholder page is
- * readable and accessible. The full Caseline token set (section 4 of the
- * brief) lands in task 2 and replaces these values.
+ * Caseline design tokens (section 4 of the build brief).
+ *
+ * Light values live on :root. Dark values are applied in three places so a
+ * theme can be forced on any subtree:
+ *   - the OS preference, unless a light theme is pinned
+ *   - [data-theme='dark'] on <html> (the app-wide toggle, task 3)
+ *   - [data-theme='dark'] on any element (the /design page previews both
+ *     themes side by side)
  */
 :root {
   --canvas: #f6f7f9;
   --surface: #ffffff;
+  --surface-muted: #f1f3f5;
   --border: #e4e7ec;
   --text: #0b1b2b;
   --text-muted: #5b6676;
   --brand: #0f6b66;
+  --brand-soft: #e6f2f1;
+  --urgent: #b42318;
+  --warning: #b54708;
+  --info: #175cd3;
+  --success: #067647;
   --focus: #2e90fa;
+
+  /* Radii and shadows from section 4.2: hairlines, no decorative shadows. */
+  --radius-input: 6px;
+  --radius-card: 10px;
+  --radius-dialog: 14px;
+  --shadow-overlay: 0 12px 32px -8px rgb(11 27 43 / 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --canvas: #0e1116;
     --surface: #151a21;
+    --surface-muted: #1b2129;
     --border: #2a313b;
     --text: #e6eaf0;
     --text-muted: #98a2b3;
     --brand: #2db3a9;
+    --brand-soft: #123331;
+    --urgent: #f97066;
+    --warning: #fdb022;
+    --info: #84adff;
+    --success: #47cd89;
     --focus: #53b1fd;
+    --shadow-overlay: 0 12px 32px -8px rgb(0 0 0 / 0.6);
   }
+}
+
+[data-theme='dark'] {
+  --canvas: #0e1116;
+  --surface: #151a21;
+  --surface-muted: #1b2129;
+  --border: #2a313b;
+  --text: #e6eaf0;
+  --text-muted: #98a2b3;
+  --brand: #2db3a9;
+  --brand-soft: #123331;
+  --urgent: #f97066;
+  --warning: #fdb022;
+  --info: #84adff;
+  --success: #47cd89;
+  --focus: #53b1fd;
+  --shadow-overlay: 0 12px 32px -8px rgb(0 0 0 / 0.6);
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
   --color-border: var(--border);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-urgent: var(--urgent);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-success: var(--success);
   --color-focus: var(--focus);
+
   --font-sans: var(--font-inter);
   --font-mono: var(--font-plex-mono);
+
+  /* Type scale: 12 / 13 / 14 / 16 / 20 / 24 / 30 (section 4.2). */
+  --text-2xs: 12px;
+  --text-2xs--line-height: 16px;
+  --text-xs: 13px;
+  --text-xs--line-height: 18px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 20px;
+  --text-lg--line-height: 28px;
+  --text-xl: 24px;
+  --text-xl--line-height: 32px;
+  --text-2xl: 30px;
+  --text-2xl--line-height: 38px;
+
+  --radius-input: var(--radius-input);
+  --radius-card: var(--radius-card);
+  --radius-dialog: var(--radius-dialog);
+  --shadow-overlay: var(--shadow-overlay);
 }
 
-body {
-  background: var(--canvas);
-  color: var(--text);
-  font-family: var(--font-sans), system-ui, sans-serif;
-}
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 
-:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
+  body {
+    background: var(--canvas);
+    color: var(--text);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Numbers in tables, clocks and IDs line up column by column. */
+  table,
+  time,
+  [data-tabular] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
