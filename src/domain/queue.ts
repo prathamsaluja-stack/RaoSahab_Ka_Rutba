@@ -47,7 +47,10 @@ export const reasonChipSchema = z.object({
   /** "ADT, received Fri 6 Nov 17:10" — the feed and when it arrived. */
   sourceLabel: z.string().min(1),
   /** The signal this chip came from, when one fired. */
-  signalId: z.string().regex(/^S(10|[1-9])$/).optional(),
+  signalId: z
+    .string()
+    .regex(/^S(10|[1-9])$/)
+    .optional(),
 });
 export type ReasonChip = z.infer<typeof reasonChipSchema>;
 

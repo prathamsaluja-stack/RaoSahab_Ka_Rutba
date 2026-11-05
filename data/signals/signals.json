@@ -1,0 +1,580 @@
+{
+  "asOf": "2026-11-09T08:00:00-05:00",
+  "catalog": [
+    {
+      "id": "S1",
+      "name": "New discharge drug not picked up",
+      "rule": "A drug on the discharge list with no pharmacy fill within 48 hours of discharge.",
+      "confidenceBasis": "High when the list came from a structured discharge document; medium when it was extracted from text and nobody has confirmed it."
+    },
+    {
+      "id": "S2",
+      "name": "Medication lists disagree",
+      "rule": "The same ingredient appears at different doses on two sources, or on one source and not another.",
+      "confidenceBasis": "Stated per row with the source and the date of each. The disagreement is the finding; the resolution is the clinician's."
+    },
+    {
+      "id": "S3",
+      "name": "Transition clock",
+      "rule": "Business days since discharge measured against the 2-business-day contact, 7-day visit and 30-day reconciliation windows.",
+      "confidenceBasis": "High: the discharge time is a timestamp, not an inference."
+    },
+    {
+      "id": "S4",
+      "name": "Refill gap, chronic program",
+      "rule": "A maintenance drug more than seven days past its expected run-out, measured on the resolved person with coverage-lapse days excluded. Escalates when A1c is 9 or above or BNP is rising.",
+      "confidenceBasis": "Medium, and lower when fills are split across member IDs, because a split can invent a gap or hide one."
+    },
+    {
+      "id": "S5",
+      "name": "Frequent ED and a new reachable number",
+      "rule": "Three or more ED visits in 90 days after duplicate messages are removed, where the registration contact differs from the number on file.",
+      "confidenceBasis": "Medium until the new number answers. A registration number is one source saying one thing once."
+    },
+    {
+      "id": "S6",
+      "name": "Duplicate therapy or high-risk drug",
+      "rule": "The same drug class from two prescribers, or a renally cleared drug at an unchanged dose with a low eGFR.",
+      "confidenceBasis": "High on the fact that both drugs are dispensed. Whether it matters for this member is a clinical judgement."
+    },
+    {
+      "id": "S7",
+      "name": "Authorized service not started",
+      "rule": "Approved home health or DME with no start-of-care confirmation within three days of approval.",
+      "confidenceBasis": "High on the authorization status, medium on the start, because agencies confirm starts late and unevenly."
+    },
+    {
+      "id": "S8",
+      "name": "Behavioral-health deterioration",
+      "rule": "A psychotropic refill gap together with a missed visit or a crisis contact. Housing instability raises the priority; restricted records are shown as restricted.",
+      "confidenceBasis": "Medium. Each input is reliable on its own; the pattern they make is an inference."
+    },
+    {
+      "id": "S9",
+      "name": "Caregiver strain and safety",
+      "rule": "A caregiver is the primary contact, there has been a fall or an ED visit, and the member is on eight or more medications.",
+      "confidenceBasis": "Medium: the medication count is current but the caregiver assessment behind it is months old."
+    },
+    {
+      "id": "S10",
+      "name": "Best number, time and channel",
+      "rule": "Numbers ranked by answer rate, with a two-hour window inferred from when attempts succeeded, respecting consent per channel.",
+      "confidenceBasis": "Grows with outcomes. Few attempts means a weak ranking, never a confident one."
+    }
+  ],
+  "fired": [
+    {
+      "id": "S1",
+      "memberId": "SYN-HF-001",
+      "name": "New discharge drug not picked up",
+      "value": "63 h",
+      "reason": "Sacubitril/valsartan 24/26 mg twice daily is new on Friday's discharge list. Sixty-three hours after discharge the pharmacy feed shows no fill, and the feed is current to Sunday 23:00, so this is an absence of a fill rather than an absence of data.",
+      "inputs": [
+        {
+          "source": "ccd",
+          "sourceRecordId": "CCD-HF-1106",
+          "label": "Discharge medication list, 6 Nov",
+          "eventTime": "2026-11-06T16:45:00-05:00",
+          "receivedTime": "2026-11-06T19:30:00-05:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-HF-1106",
+          "label": "Discharge, Fri 6 Nov 16:45",
+          "eventTime": "2026-11-06T16:45:00-05:00",
+          "receivedTime": "2026-11-06T17:38:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-HF-FUR-1010",
+          "label": "Pharmacy feed for this member, current to Sun 8 Nov 23:00",
+          "eventTime": "2026-10-10T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        }
+      ],
+      "confidence": "high",
+      "confidenceReason": "The discharge list arrived as a structured document, so the drug and the dose are not an extraction guess.",
+      "actions": [
+        {
+          "label": "Ask whether the prescription was collected and what it cost",
+          "channel": "call",
+          "window": "09:00-11:00 today",
+          "rationale": "A new heart-failure drug not collected is usually a cost or a transport problem, and both are fixable on the call."
+        },
+        {
+          "label": "Check the copay and the pharmacy it was sent to",
+          "channel": "portal",
+          "window": "before the call",
+          "rationale": "Knowing the quoted price before dialling turns the question from why into which option."
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "memberId": "SYN-HF-001",
+      "name": "Medication lists disagree",
+      "value": "Furosemide 80 vs 40 mg",
+      "reason": "The discharge list dated 6 Nov says furosemide 80 mg daily and marks it changed. The last pharmacy fill, on 10 Oct, and the claims-derived list from 22 Sep both say 40 mg. Three sources, two answers; nothing is merged.",
+      "inputs": [
+        {
+          "source": "ccd",
+          "sourceRecordId": "CCD-HF-1106",
+          "label": "Discharge list, 80 mg daily, 6 Nov",
+          "eventTime": "2026-11-06T16:45:00-05:00",
+          "receivedTime": "2026-11-06T19:30:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-HF-FUR-1010",
+          "label": "Pharmacy fill, 40 mg, 10 Oct",
+          "eventTime": "2026-10-10T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "claims",
+          "sourceRecordId": "CLM-HF-RX-FUR",
+          "label": "Claims-derived, 40 mg, 22 Sep",
+          "eventTime": "2026-09-22T12:00:00-04:00",
+          "receivedTime": "2026-10-06T03:00:00-04:00"
+        }
+      ],
+      "confidence": "high",
+      "confidenceReason": "Each row is a confirmed source record. What is uncertain is which one the member is actually taking, which is why the question goes to the member.",
+      "actions": [
+        {
+          "label": "Ask the member to read the label on the bottle in the house",
+          "channel": "call",
+          "window": "09:00-11:00 today",
+          "rationale": "The bottle in the kitchen settles what three systems cannot."
+        },
+        {
+          "label": "Send the reconciled dose to the PCP for confirmation",
+          "channel": "coordinate",
+          "window": "after the call",
+          "rationale": "The record changes when a clinician confirms it, not when the software notices the difference."
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "memberId": "SYN-HF-001",
+      "name": "Transition clock",
+      "value": "1 business day elapsed",
+      "reason": "Discharged Friday 6 Nov at 16:45. Monday is the first business day after discharge, so one business day has elapsed and the two-business-day contact window closes Tuesday 10 Nov at 17:00. The seven-day visit is due by Friday 13 Nov and the 30-day reconciliation by Monday 7 Dec.",
+      "inputs": [
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-HF-1106",
+          "label": "Discharge, Fri 6 Nov 16:45",
+          "eventTime": "2026-11-06T16:45:00-05:00",
+          "receivedTime": "2026-11-06T17:38:00-05:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-HF-1101",
+          "label": "Admission, Sun 1 Nov 14:20, no diagnosis on the message",
+          "eventTime": "2026-11-01T14:20:00-04:00",
+          "receivedTime": "2026-11-01T15:05:00-04:00"
+        }
+      ],
+      "confidence": "high",
+      "confidenceReason": "The discharge is a timestamp from the hospital feed. Only the reason for admission is unknown, and that does not move the clock.",
+      "actions": [
+        {
+          "label": "Complete the post-discharge contact today",
+          "channel": "call",
+          "window": "09:00-11:00 today",
+          "rationale": "Tomorrow at 17:00 the window closes, and his best answering hours are in the morning."
+        },
+        {
+          "label": "Chase the discharge summary from the hospital",
+          "channel": "coordinate",
+          "window": "today",
+          "rationale": "It was requested Friday evening and has not arrived, so the reason for admission is still unknown."
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "memberId": "SYN-DM-002",
+      "name": "Refill gap, chronic program",
+      "value": "51 days",
+      "reason": "Insulin glargine and metformin were last dispensed on 20 Aug with a 30-day supply and no refills remaining, so they ran out on 19 Sep. Measured on the resolved person and excluding the coverage-lapse days, she is 51 days past run-out. Her A1c of 9.8% from July escalates this.",
+      "inputs": [
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-DM-002-GLA-0820",
+          "label": "Insulin glargine, 30-day supply, 20 Aug, no refills left",
+          "eventTime": "2026-08-20T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-DM-887-GLA-0601",
+          "label": "Earlier fills under the prior member ID SYN-DM-887",
+          "eventTime": "2026-06-01T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "eligibility",
+          "sourceRecordId": "ELIG-DM-LAPSE",
+          "label": "Coverage lapse, 20 Feb to 31 May, excluded from the count",
+          "eventTime": "2026-02-20T00:00:00-05:00",
+          "receivedTime": "2026-02-21T04:00:00-05:00"
+        },
+        {
+          "source": "labs",
+          "sourceRecordId": "LAB-DM-0714",
+          "label": "A1c 9.8%, 14 Jul",
+          "eventTime": "2026-07-14T09:05:00-04:00",
+          "receivedTime": "2026-07-15T02:30:00-04:00"
+        }
+      ],
+      "confidence": "medium",
+      "confidenceReason": "Her fills were split across two member IDs. The merge looks right, but a split history is exactly the thing that invents gaps, so the number is worth saying out loud and checking.",
+      "actions": [
+        {
+          "label": "Text before her evening shift and ask what she is taking now",
+          "channel": "text",
+          "window": "14:00 today",
+          "rationale": "She works two evening jobs; every morning call attempt has failed. Text consent is recorded under the old ID, so confirm it first."
+        },
+        {
+          "label": "Offer a same-week PCP visit with renewals and a 90-day supply",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "Zero refills remain, so a renewal has to come before any refill can."
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "memberId": "SYN-ED-003",
+      "name": "Frequent ED and a new reachable number",
+      "value": "6 raw / 5 de-duplicated",
+      "reason": "Six ED registration messages arrived in the last 90 days. Two of them describe the same 18 Oct visit, so there are five visits. The mobile number and address on the registrations differ from the ones on file, and only the registrations carry them.",
+      "inputs": [
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-ED-1103",
+          "label": "ED registration, Tue 3 Nov 19:50",
+          "eventTime": "2026-11-03T19:50:00-05:00",
+          "receivedTime": "2026-11-03T20:31:00-05:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-ED-1018",
+          "label": "ED registration, Sun 18 Oct 20:30",
+          "eventTime": "2026-10-18T20:30:00-04:00",
+          "receivedTime": "2026-10-18T21:04:00-04:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-ED-1018-B",
+          "label": "Duplicate of the 18 Oct registration, excluded",
+          "eventTime": "2026-10-18T20:30:00-04:00",
+          "receivedTime": "2026-10-18T21:09:00-04:00"
+        },
+        {
+          "source": "claims",
+          "sourceRecordId": "COMPLETENESS-SYN-ED-003",
+          "label": "Claims show 2 of 5 visits; complete to about 26 Sep",
+          "eventTime": "2026-09-26T00:00:00-04:00",
+          "receivedTime": "2026-11-09T06:00:00-05:00"
+        }
+      ],
+      "confidence": "medium",
+      "confidenceReason": "The visit count is solid once the duplicate is removed. The new number is medium because one source has said it once and nobody has answered it yet.",
+      "actions": [
+        {
+          "label": "Text the ED-registration mobile, then call it",
+          "channel": "text",
+          "window": "after 17:00 today",
+          "rationale": "Daytime attempts to the file number have failed seven times. There is no text consent on record, so ask for it in the first message."
+        },
+        {
+          "label": "Book a same-week visit and a controller refill",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "Four rescue inhalers since July with no controller since 5 Jul is the pattern behind the visits."
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "memberId": "SYN-ED-003",
+      "name": "Best number, time and channel",
+      "value": "7 failed calls",
+      "reason": "Seven consecutive calls to the number on file have failed, across mornings, afternoons and evenings, and a letter to the address on file came back. The number from ED registration has never been tried. Ranking by answer rate puts the file number last, not the member out of reach.",
+      "inputs": [
+        {
+          "source": "contact",
+          "sourceRecordId": "OUT-ED-C7",
+          "label": "Seventh failed attempt, Fri 6 Nov 14:05",
+          "eventTime": "2026-11-06T14:05:00-05:00",
+          "receivedTime": "2026-11-06T14:05:00-05:00"
+        },
+        {
+          "source": "contact",
+          "sourceRecordId": "OUT-ED-LETTER",
+          "label": "Letter returned from the address on file, 9 Oct",
+          "eventTime": "2026-10-09T09:00:00-04:00",
+          "receivedTime": "2026-10-09T09:00:00-04:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-ED-1103",
+          "label": "Mobile given at ED registration, 3 Nov",
+          "eventTime": "2026-11-03T19:50:00-05:00",
+          "receivedTime": "2026-11-03T20:31:00-05:00"
+        }
+      ],
+      "confidence": "medium",
+      "confidenceReason": "Seven failures are enough to call the file number dead. The replacement has no outcomes behind it at all, so the ranking is a starting point rather than a finding.",
+      "actions": [
+        {
+          "label": "Mark the file number dead and promote the ED number",
+          "channel": "review",
+          "window": "now",
+          "rationale": "The change is proposed, not applied: it enters the record when a named clinician confirms it."
+        },
+        {
+          "label": "Try the new number after 17:00",
+          "channel": "call",
+          "window": "after 17:00 today",
+          "rationale": "Every registration has come in the evening, which is the only time anything about him has been observed."
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "memberId": "SYN-DUAL-005",
+      "name": "Duplicate therapy or high-risk drug",
+      "value": "2 CCBs, gabapentin with eGFR 24",
+      "reason": "Amlodipine from the PCP and diltiazem from cardiology are both being dispensed, from two prescribers, overlapping since early October. Separately, gabapentin is at an unchanged dose while the eGFR measured on 27 Oct is 24.",
+      "inputs": [
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-DUAL-AML-1012",
+          "label": "Amlodipine, 12 Oct, prescriber Dr. Vane (fictional)",
+          "eventTime": "2026-10-12T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-DUAL-DIL-1005",
+          "label": "Diltiazem ER, 5 Oct, prescriber Dr. Quill (fictional)",
+          "eventTime": "2026-10-05T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-DUAL-GAB-1012",
+          "label": "Gabapentin, 12 Oct, dose unchanged",
+          "eventTime": "2026-10-12T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "labs",
+          "sourceRecordId": "LAB-DUAL-1027",
+          "label": "eGFR 24, 27 Oct",
+          "eventTime": "2026-10-27T12:10:00-04:00",
+          "receivedTime": "2026-10-27T16:30:00-04:00"
+        }
+      ],
+      "confidence": "high",
+      "confidenceReason": "High on the facts: both drugs are dispensed and the eGFR is a resulted value. Whether either is wrong for her is a clinical judgement this does not make.",
+      "actions": [
+        {
+          "label": "Raise the duplicate pair with the PCP and cardiology together",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "Two prescribers each made a reasonable decision. Only a conversation between them resolves it."
+        },
+        {
+          "label": "Flag the gabapentin dose against the 27 Oct eGFR",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "The dose predates the result, so nobody has yet seen them side by side."
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "memberId": "SYN-DUAL-005",
+      "name": "Authorized service not started",
+      "value": "12 days since the PT request",
+      "reason": "Home-health physical therapy was requested on 28 Oct and approved on 29 Oct. Twelve days after the request, the agency has not confirmed a start of care. Approved is a decision; started is a service, and only one of them helps her.",
+      "inputs": [
+        {
+          "source": "um",
+          "sourceRecordId": "UM-DUAL-1028",
+          "label": "PT requested, 28 Oct",
+          "eventTime": "2026-10-28T10:15:00-04:00",
+          "receivedTime": "2026-10-28T10:20:00-04:00"
+        },
+        {
+          "source": "um",
+          "sourceRecordId": "DOCREQ-DUAL-1029",
+          "label": "Approved 29 Oct; plan of care requested, not received",
+          "eventTime": "2026-10-29T15:00:00-04:00",
+          "receivedTime": "2026-10-29T15:00:00-04:00"
+        }
+      ],
+      "confidence": "high",
+      "confidenceReason": "High on the authorization status, which is a system of record. Medium on the start, because agencies confirm starts late and the silence may be reporting rather than reality.",
+      "actions": [
+        {
+          "label": "Call the agency for a start-of-care date",
+          "channel": "coordinate",
+          "window": "today",
+          "rationale": "Thirteen days after an ED fall, the therapy that was approved for it has not begun."
+        },
+        {
+          "label": "Confirm with the daughter whether anyone has visited",
+          "channel": "call",
+          "window": "after 18:00 today",
+          "rationale": "The household knows whether a therapist came, which the authorization record does not."
+        }
+      ]
+    },
+    {
+      "id": "S9",
+      "memberId": "SYN-DUAL-005",
+      "name": "Caregiver strain and safety",
+      "value": "11 medications",
+      "reason": "Her daughter Linda is the primary contact and the number labelled Home is Linda's work-hours mobile. There was a fall with an ED visit on 27 Oct, and the medication list runs to eleven items, one of which is an over-the-counter product that pharmacy data will never show.",
+      "inputs": [
+        {
+          "source": "contact",
+          "sourceRecordId": "CT-DUAL-0109",
+          "label": "Primary contact is the daughter's mobile, mislabelled Home",
+          "eventTime": "2026-01-02T00:00:00-05:00",
+          "receivedTime": "2026-01-02T04:00:00-05:00"
+        },
+        {
+          "source": "adt",
+          "sourceRecordId": "ADT-DUAL-1027-B",
+          "label": "ED fall, treat and release, 27 Oct",
+          "eventTime": "2026-10-27T15:05:00-04:00",
+          "receivedTime": "2026-10-27T15:48:00-04:00"
+        },
+        {
+          "source": "cm_record",
+          "sourceRecordId": "CM-DUAL-OTC-1030",
+          "label": "Calcium with vitamin D recorded 30 Oct, invisible to the PBM",
+          "eventTime": "2026-10-30T13:10:00-04:00",
+          "receivedTime": "2026-10-30T13:15:00-04:00"
+        },
+        {
+          "source": "hra",
+          "sourceRecordId": "HRA-DUAL-0120",
+          "label": "Caregiver assessment, 20 Jan",
+          "eventTime": "2026-01-20T10:00:00-05:00",
+          "receivedTime": "2026-01-20T18:00:00-05:00"
+        }
+      ],
+      "confidence": "medium",
+      "confidenceReason": "The medication count and the fall are current. The caregiver picture rests on an assessment from January, so how Linda is coping now is genuinely unknown.",
+      "actions": [
+        {
+          "label": "Call Linda after 18:00 and ask how she is managing",
+          "channel": "call",
+          "window": "after 18:00 today",
+          "rationale": "She answers after work. The caregiver question is the one nobody has asked since June."
+        },
+        {
+          "label": "Request respite and personal-care hours",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "The HCBS benefit covers both and neither has been requested."
+        },
+        {
+          "label": "Book a falls-safety review",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "A fall, eleven medications and two blood-pressure drugs belong in one review, not three."
+        }
+      ]
+    },
+    {
+      "id": "S8",
+      "memberId": "SYN-BH-004",
+      "name": "Behavioral-health deterioration",
+      "value": "28-day gap",
+      "reason": "Lithium and quetiapine were last dispensed on 12 Sep with a 30-day supply, so both ran out on 12 Oct: 28 days ago. Two psychiatry appointments, on 6 Oct and 27 Oct, were missed, and there was a crisis-line contact on 30 Oct. Housing recorded as stable in March is no longer true, and a substance-use record exists that is restricted under 42 CFR Part 2.",
+      "inputs": [
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-BH-LIT-0912",
+          "label": "Lithium carbonate, 30-day supply, 12 Sep",
+          "eventTime": "2026-09-12T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "pbm",
+          "sourceRecordId": "FILL-BH-QUE-0912",
+          "label": "Quetiapine, 30-day supply, 12 Sep",
+          "eventTime": "2026-09-12T12:00:00-04:00",
+          "receivedTime": "2026-11-08T23:00:00-05:00"
+        },
+        {
+          "source": "labs",
+          "sourceRecordId": "LAB-BH-0812",
+          "label": "Lithium level 0.4 mmol/L, subtherapeutic, 12 Aug",
+          "eventTime": "2026-08-12T10:15:00-04:00",
+          "receivedTime": "2026-08-13T02:10:00-04:00"
+        },
+        {
+          "source": "appointments",
+          "sourceRecordId": "APT-BH-1027",
+          "label": "Psychiatry appointment missed, 27 Oct",
+          "eventTime": "2026-10-27T13:00:00-04:00",
+          "receivedTime": "2026-10-27T13:00:00-04:00"
+        },
+        {
+          "source": "cm_record",
+          "sourceRecordId": "OUT-BH-CRISIS",
+          "label": "Crisis-line contact, 30 Oct 22:40",
+          "eventTime": "2026-10-30T22:40:00-04:00",
+          "receivedTime": "2026-10-30T22:40:00-04:00"
+        },
+        {
+          "source": "cm_record",
+          "sourceRecordId": "DOCREQ-BH-1012",
+          "label": "Substance-use record exists and is restricted",
+          "eventTime": "2026-10-12T09:00:00-04:00",
+          "receivedTime": "2026-10-12T09:00:00-04:00"
+        }
+      ],
+      "confidence": "medium",
+      "confidenceReason": "Each input is a confirmed record. That they add up to deterioration is an inference, and no crisis is inferred from a diagnosis: any acute concern follows the clinician-led escalation path.",
+      "actions": [
+        {
+          "label": "Call the shelter caseworker",
+          "channel": "call",
+          "window": "10:00-12:00 today",
+          "rationale": "Her own mobile is disconnected and the caseworker has answered both times. This is the only line that reaches her."
+        },
+        {
+          "label": "Coordinate with the behavioral-health case manager today",
+          "channel": "coordinate",
+          "window": "today",
+          "rationale": "The gap, the missed visits and the crisis contact sit in three systems and one person needs all three."
+        },
+        {
+          "label": "Rebook psychiatry and request a lithium level",
+          "channel": "coordinate",
+          "window": "today",
+          "rationale": "The repeat level after the subtherapeutic result was never drawn, and a prescriber visit is needed for the refill anyway."
+        },
+        {
+          "label": "Open a housing referral",
+          "channel": "coordinate",
+          "window": "this week",
+          "rationale": "The shelter on file has closed and mail has come back, so the address is not just stale but wrong."
+        }
+      ]
+    }
+  ]
+}

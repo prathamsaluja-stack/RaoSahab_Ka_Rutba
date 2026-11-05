@@ -17,10 +17,7 @@
       "name": "Dr. Rook (fictional)",
       "specialty": "Internal medicine"
     },
-    "flags": [
-      "Hard of hearing",
-      "Lives with spouse"
-    ],
+    "flags": ["Hard of hearing", "Lives with spouse"],
     "conditions": [
       {
         "label": "Heart failure with reduced ejection fraction",
@@ -87,10 +84,7 @@
       "name": "Dr. Almavine (fictional)",
       "specialty": "Family medicine"
     },
-    "flags": [
-      "Works two evening jobs",
-      "Morning calls fail"
-    ],
+    "flags": ["Works two evening jobs", "Morning calls fail"],
     "conditions": [
       {
         "label": "Type 2 diabetes mellitus with hyperglycemia",
@@ -105,14 +99,9 @@
         }
       }
     ],
-    "priorMemberIds": [
-      "SYN-DM-887"
-    ],
+    "priorMemberIds": ["SYN-DM-887"],
     "mergedFrom": {
-      "memberIds": [
-        "SYN-DM-002",
-        "SYN-DM-887"
-      ],
+      "memberIds": ["SYN-DM-002", "SYN-DM-887"],
       "mergedAt": "2026-11-08T22:15:00-05:00",
       "mergedBy": "Identity resolution (fictional)",
       "basis": "Name, date of birth and address match across a coverage lapse from 20 Feb to 31 May 2026",
@@ -152,10 +141,7 @@
       "name": "Dr. Cindervale (fictional)",
       "specialty": "Family medicine"
     },
-    "flags": [
-      "Attributed PCP never seen",
-      "No text consent on file"
-    ],
+    "flags": ["Attributed PCP never seen", "No text consent on file"],
     "conditions": [
       {
         "label": "Persistent asthma, moderate",
@@ -210,10 +196,7 @@
       "name": "Dr. Lantrell (fictional)",
       "specialty": "Family medicine"
     },
-    "flags": [
-      "Housing instability",
-      "Reachable through shelter caseworker"
-    ],
+    "flags": ["Housing instability", "Reachable through shelter caseworker"],
     "conditions": [
       {
         "label": "Bipolar I disorder",
@@ -269,11 +252,7 @@
       "name": "Dr. Ashgrove (fictional)",
       "specialty": "Internal medicine"
     },
-    "flags": [
-      "Dementia",
-      "Falls risk",
-      "Daughter is primary contact"
-    ],
+    "flags": ["Dementia", "Falls risk", "Daughter is primary contact"],
     "conditions": [
       {
         "label": "Unspecified dementia without behavioral disturbance",

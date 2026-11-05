@@ -44,9 +44,7 @@
     "effectiveFrom": "2026-02-20",
     "effectiveTo": "2026-05-31",
     "dualStatus": "none",
-    "priorMemberIds": [
-      "SYN-DM-887"
-    ],
+    "priorMemberIds": ["SYN-DM-887"],
     "isLapse": true,
     "provenance": {
       "source": "eligibility",
@@ -65,9 +63,7 @@
     "effectiveFrom": "2026-06-01",
     "effectiveTo": null,
     "dualStatus": "none",
-    "priorMemberIds": [
-      "SYN-DM-887"
-    ],
+    "priorMemberIds": ["SYN-DM-887"],
     "provenance": {
       "source": "eligibility",
       "sourceRecordId": "ELIG-DM-002",

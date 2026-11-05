@@ -66,15 +66,15 @@
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "adt",
-          "sourceLabel": "ADT, received Fri 6 Nov 17:10"
+          "sourceLabel": "ADT, received Fri 6 Nov 17:38"
         },
         {
           "label": "Discharge summary not received",
-          "detail": "Requested Fri 6 Nov 19:45 and still outstanding. The discharge medication list arrived; the summary did not.",
+          "detail": "Requested Fri 6 Nov 18:00 and still outstanding. The discharge medication list arrived; the summary did not.",
           "freshness": "open",
           "freshnessLabel": "Requested, not received",
           "source": "ccd",
-          "sourceLabel": "Clinical documents, requested Fri 6 Nov 19:45"
+          "sourceLabel": "Clinical documents, requested Fri 6 Nov 18:00"
         },
         {
           "label": "Sacubitril/valsartan not picked up - 63 h",
@@ -127,7 +127,7 @@
       "reasons": [
         {
           "label": "5 ED visits / 90 d",
-          "detail": "Six ADT messages arrived for five visits; one is a duplicate of the 2 Oct registration and is excluded.",
+          "detail": "Six ADT messages arrived for five visits; one is a duplicate of the 18 Oct registration and is excluded.",
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "adt",
@@ -140,7 +140,7 @@
           "freshness": "half",
           "freshnessLabel": "Single source",
           "source": "adt",
-          "sourceLabel": "ADT registration, received Thu 5 Nov 02:14",
+          "sourceLabel": "ADT registration, received Tue 3 Nov 20:31",
           "signalId": "S10"
         },
         {
@@ -149,7 +149,7 @@
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "contact",
-          "sourceLabel": "Contact history, last attempt Wed 4 Nov",
+          "sourceLabel": "Contact history, last attempt Fri 6 Nov",
           "signalId": "S10"
         },
         {
@@ -162,11 +162,11 @@
         },
         {
           "label": "Claims show 2 of 5 visits",
-          "detail": "Claims are complete to about 29 Sep for this member, so the quiet October is missing data, not a quiet month.",
+          "detail": "Claims are complete to about 26 Sep for this member, so the quiet October is missing data, not a quiet month.",
           "freshness": "open",
           "freshnessLabel": "Claims lag",
           "source": "claims",
-          "sourceLabel": "Claims complete to about Tue 29 Sep"
+          "sourceLabel": "Claims complete to about Sat 26 Sep"
         }
       ],
       "clock": {
@@ -214,7 +214,7 @@
           "freshness": "half",
           "freshnessLabel": "Order open, no result",
           "source": "labs",
-          "sourceLabel": "Labs, last result Fri 2 Oct"
+          "sourceLabel": "Labs, last result Wed 12 Aug"
         },
         {
           "label": "Two missed psychiatry visits",
@@ -222,7 +222,7 @@
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "appointments",
-          "sourceLabel": "Appointments, 15 Oct and 29 Oct"
+          "sourceLabel": "Appointments, 6 Oct and 27 Oct"
         },
         {
           "label": "Crisis-line contact 30 Oct",
@@ -285,7 +285,7 @@
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "adt",
-          "sourceLabel": "ADT, received Tue 27 Oct 23:40"
+          "sourceLabel": "ADT, received Tue 27 Oct 15:48"
         },
         {
           "label": "7-day follow-up overdue 6 days",
@@ -315,37 +315,37 @@
         },
         {
           "label": "Gabapentin not adjusted for eGFR 24",
-          "detail": "The dose has not changed since the eGFR fell to 24 on 20 Oct. The fact is certain; the significance is clinical.",
+          "detail": "The dose has not changed since the eGFR fell to 24 on 27 Oct. The fact is certain; the significance is clinical.",
           "freshness": "filled",
           "freshnessLabel": "Confirmed",
           "source": "labs",
-          "sourceLabel": "Labs, eGFR 24 on Tue 20 Oct",
+          "sourceLabel": "Labs, eGFR 24 on Tue 27 Oct",
           "signalId": "S6"
         },
         {
           "label": "11 medications, one invisible to PBM",
-          "detail": "An OTC item recorded at the last visit never appears in pharmacy data.",
+          "detail": "A calcium and vitamin D item recorded on 30 Oct never appears in pharmacy data.",
           "freshness": "half",
           "freshnessLabel": "Single source",
           "source": "pbm",
-          "sourceLabel": "PBM plus clinical note, 14 Oct",
+          "sourceLabel": "Care management record, 30 Oct",
           "signalId": "S9"
         },
         {
           "label": "ED claim still missing after 13 days",
-          "detail": "Claims are complete to about 25 Sep, so the October visit is missing data, not an absence of care.",
+          "detail": "Claims are complete to about 28 Sep, so the October visit is missing data, not an absence of care.",
           "freshness": "open",
           "freshnessLabel": "Claims lag",
           "source": "claims",
-          "sourceLabel": "Claims complete to about Fri 25 Sep"
+          "sourceLabel": "Claims complete to about Mon 28 Sep"
         },
         {
           "label": "CKD still coded stage 3",
-          "detail": "The coded stage is 3 while the 20 Oct eGFR of 24 sits in stage 4. Both are kept; neither is reconciled here.",
+          "detail": "The coded stage is 3 while the 27 Oct eGFR of 24 sits in stage 4. Both are kept; neither is reconciled here.",
           "freshness": "half",
           "freshnessLabel": "Code and lab disagree",
           "source": "claims",
-          "sourceLabel": "Claims coding 22 Sep vs labs 20 Oct"
+          "sourceLabel": "Claims coding 22 Sep vs labs 27 Oct"
         }
       ],
       "clock": {
@@ -401,7 +401,7 @@
           "freshness": "open",
           "freshnessLabel": "Stale, 4 months",
           "source": "labs",
-          "sourceLabel": "Labs, resulted Wed 15 Jul"
+          "sourceLabel": "Labs, resulted Tue 14 Jul"
         },
         {
           "label": "No-show at PCP on 14 Oct",
@@ -417,7 +417,7 @@
           "freshness": "half",
           "freshnessLabel": "Resolved on merge",
           "source": "eligibility",
-          "sourceLabel": "Coverage lapse 12 Feb to 11 Oct 2025"
+          "sourceLabel": "Coverage lapse 20 Feb to 31 May 2026"
         }
       ],
       "clock": null,
