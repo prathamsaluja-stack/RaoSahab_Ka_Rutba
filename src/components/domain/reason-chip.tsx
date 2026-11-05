@@ -2,8 +2,7 @@
 
 import * as React from 'react';
 import { Chip, type Tone } from '@/components/ui/badge';
-import { FreshnessMark } from '@/components/domain/freshness-mark';
-import type { FreshnessInput } from '@/lib/freshness';
+import { FreshnessMark, type FreshnessSource } from '@/components/domain/freshness-mark';
 import { cn } from '@/lib/utils';
 
 export interface ReasonChipProps {
@@ -11,7 +10,7 @@ export interface ReasonChipProps {
   reason: string;
   tone?: Tone;
   /** Freshness of the fact behind the reason. */
-  freshness?: FreshnessInput;
+  freshness?: FreshnessSource;
   className?: string;
 }
 

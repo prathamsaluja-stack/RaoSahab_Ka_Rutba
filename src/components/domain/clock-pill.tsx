@@ -29,6 +29,14 @@ export interface ClockPillProps {
   label?: string;
   /** Override the pinned AS_OF clock. Tests use this. */
   now?: string;
+  /**
+   * The reading as the record prints it, e.g. "1 business day elapsed".
+   * Business-day and calendar-day readings are stated by the record rather
+   * than counted down in hours; the tooltip still carries the deadline.
+   */
+  reading?: string;
+  /** Force the urgency colour when the record states it. */
+  urgency?: ClockUrgency;
   className?: string;
 }
 
@@ -36,9 +44,14 @@ export interface ClockPillProps {
  * Time remaining against a deadline, with the absolute deadline in the
  * tooltip. Overdue reads as overdue in words, not only in red.
  */
-export function ClockPill({ deadline, label, now, className }: ClockPillProps) {
+export function ClockPill({ deadline, label, now, reading, urgency, className }: ClockPillProps) {
   const clock = describeClock(deadline, { now, label });
-  const Icon = urgencyIcon[clock.urgency];
+  const resolvedUrgency = urgency ?? clock.urgency;
+  const text = reading ?? clock.text;
+  const accessibleLabel = reading
+    ? `${label ? `${label}: ` : ''}${reading}. Due ${clock.absolute}.`
+    : clock.accessibleLabel;
+  const Icon = urgencyIcon[resolvedUrgency];
 
   return (
     <Tooltip
@@ -50,18 +63,18 @@ export function ClockPill({ deadline, label, now, className }: ClockPillProps) {
       }
     >
       <span
-        data-urgency={clock.urgency}
+        data-urgency={resolvedUrgency}
         data-tabular
         tabIndex={0}
-        aria-label={clock.accessibleLabel}
+        aria-label={accessibleLabel}
         className={cn(
-          'inline-flex items-center gap-1.5 rounded-[var(--radius-input)] border px-2 py-0.5 text-2xs font-medium',
-          urgencyStyles[clock.urgency],
+          'inline-flex items-center gap-1.5 rounded-[var(--radius-input)] border px-2 py-0.5 text-2xs font-medium whitespace-nowrap',
+          urgencyStyles[resolvedUrgency],
           className,
         )}
       >
         <Icon className="size-3.5" aria-hidden="true" />
-        <span>{clock.text}</span>
+        <span>{text}</span>
       </span>
     </Tooltip>
   );

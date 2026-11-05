@@ -21,12 +21,37 @@ function MarkGlyph({ level }: { level: FreshnessLevel }) {
   );
 }
 
-export interface FreshnessMarkProps extends FreshnessInput {
+/**
+ * Freshness the record states outright, for screens whose readings are
+ * committed data rather than something derived at render time.
+ */
+export interface StatedFreshness {
+  level: FreshnessLevel;
+  /** Two or three words, e.g. "Sources disagree". */
+  label: string;
+  /** The sentence behind the mark, shown on hover. */
+  description?: string;
+}
+
+export type FreshnessSource = FreshnessInput | StatedFreshness;
+
+export type FreshnessMarkProps = FreshnessSource & {
   /** What the mark is about, e.g. "Discharge medication list". */
   subject?: string;
   /** Show the short label next to the glyph. */
   showLabel?: boolean;
   className?: string;
+};
+
+function resolveFreshness(source: FreshnessSource) {
+  if ('level' in source) {
+    return {
+      level: source.level,
+      label: source.label,
+      description: source.description ?? source.label,
+    };
+  }
+  return describeFreshness(source);
 }
 
 /**
@@ -39,7 +64,7 @@ export function FreshnessMark({
   className,
   ...input
 }: FreshnessMarkProps) {
-  const freshness = describeFreshness(input);
+  const freshness = resolveFreshness(input as FreshnessSource);
   const accessibleLabel = subject
     ? `${subject}. Freshness: ${freshness.label}. ${freshness.description}`
     : `Freshness: ${freshness.label}. ${freshness.description}`;
