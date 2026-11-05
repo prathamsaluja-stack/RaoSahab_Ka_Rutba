@@ -1,0 +1,206 @@
+[
+  {
+    "id": "GAP-HF-TRC",
+    "memberId": "SYN-HF-001",
+    "measure": "Transitions of care: medication reconciliation after discharge",
+    "measureCode": "TRC-MR",
+    "windowOpen": "2026-11-06",
+    "windowClose": "2026-12-06",
+    "state": "open",
+    "note": "Opened by the 6 Nov discharge; no reconciliation recorded yet",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-HF-TRC",
+      "eventTime": "2026-11-06T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-HF-FUP",
+    "memberId": "SYN-HF-001",
+    "measure": "Transitions of care: follow-up visit within 7 days",
+    "measureCode": "TRC-FUP",
+    "windowOpen": "2026-11-06",
+    "windowClose": "2026-11-13",
+    "state": "open",
+    "note": "No visit booked yet",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-HF-FUP",
+      "eventTime": "2026-11-06T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-HF-STATIN",
+    "memberId": "SYN-HF-001",
+    "measure": "Statin therapy for cardiovascular disease",
+    "measureCode": "SPC",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "closed",
+    "note": "Closed by the atorvastatin fill of 12 Sep",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-HF-STATIN",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-DM-A1C",
+    "memberId": "SYN-DM-002",
+    "measure": "Hemoglobin A1c poor control, above 9 percent",
+    "measureCode": "HBD",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "open",
+    "note": "A1c 9.8 percent in July; no repeat drawn",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-DM-A1C",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-DM-EYE",
+    "memberId": "SYN-DM-002",
+    "measure": "Diabetic retinal eye exam",
+    "measureCode": "EED",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "pending_claim",
+    "note": "An optometry visit was reported but no claim has been received; the gap cannot be closed yet",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-DM-EYE",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-ED-AMR",
+    "memberId": "SYN-ED-003",
+    "measure": "Asthma medication ratio",
+    "measureCode": "AMR",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "open",
+    "note": "Four rescue fills and no controller fill since 5 Jul",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-ED-AMR",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-ED-FUA",
+    "memberId": "SYN-ED-003",
+    "measure": "Follow-up after an emergency department visit, 7 days",
+    "measureCode": "FUA",
+    "windowOpen": "2026-11-03",
+    "windowClose": "2026-11-10",
+    "state": "open",
+    "note": "Window from the 3 Nov ED registration",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-ED-FUA",
+      "eventTime": "2026-11-03T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-BH-LITHIUM",
+    "memberId": "SYN-BH-004",
+    "measure": "Annual monitoring for members on lithium",
+    "measureCode": "SMD",
+    "windowOpen": "2026-10-02",
+    "windowClose": "2026-11-01",
+    "state": "open",
+    "note": "Repeat lithium level was due 1 Nov and has not been drawn",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-BH-LITHIUM",
+      "eventTime": "2026-10-02T12:00:00-04:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-BH-ADHERENCE",
+    "memberId": "SYN-BH-004",
+    "measure": "Adherence to antipsychotic medications",
+    "measureCode": "SAA",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "open",
+    "note": "Quetiapine ran out 12 Oct with no refills remaining",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-BH-ADHERENCE",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-DUAL-FALLS",
+    "memberId": "SYN-DUAL-005",
+    "measure": "Fall risk assessment and plan of care",
+    "measureCode": "FRM",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "open",
+    "note": "Falls screen never completed; ED fall on 27 Oct",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-DUAL-FALLS",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-DUAL-POLY",
+    "memberId": "SYN-DUAL-005",
+    "measure": "Medication review for members on 8 or more medications",
+    "measureCode": "MRP",
+    "windowOpen": "2026-01-01",
+    "windowClose": "2026-12-31",
+    "state": "open",
+    "note": "Eleven medications, two of them calcium channel blockers",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-DUAL-POLY",
+      "eventTime": "2026-01-01T12:00:00-05:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "GAP-DUAL-FUA",
+    "memberId": "SYN-DUAL-005",
+    "measure": "Follow-up after an emergency department visit, 7 days",
+    "measureCode": "FUA",
+    "windowOpen": "2026-10-27",
+    "windowClose": "2026-11-03",
+    "state": "open",
+    "note": "Window closed 3 Nov with no follow-up recorded",
+    "provenance": {
+      "source": "measures",
+      "sourceRecordId": "GAP-DUAL-FUA",
+      "eventTime": "2026-10-27T12:00:00-04:00",
+      "receivedTime": "2026-11-08T03:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

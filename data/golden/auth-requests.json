@@ -1,0 +1,85 @@
+[
+  {
+    "id": "AUTH-HF-HH",
+    "memberId": "SYN-HF-001",
+    "service": "Home health nursing, post-discharge",
+    "status": "requested",
+    "requestedAt": "2026-11-06T17:50:00-05:00",
+    "decisionTime": null,
+    "ownerTeam": "Utilization management",
+    "vendor": null,
+    "startOfCareConfirmed": false,
+    "startOfCareAt": null,
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "UM-HF-1106",
+      "eventTime": "2026-11-06T17:50:00-05:00",
+      "receivedTime": "2026-11-06T17:55:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "AUTH-DUAL-PT",
+    "memberId": "SYN-DUAL-005",
+    "service": "Home health physical therapy",
+    "status": "approved",
+    "requestedAt": "2026-10-28T10:15:00-04:00",
+    "decisionTime": "2026-10-29T14:30:00-04:00",
+    "ownerTeam": "Utilization management",
+    "vendor": "Northvale Home Care (fictional)",
+    "startOfCareConfirmed": false,
+    "startOfCareAt": null,
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "UM-DUAL-1028",
+      "eventTime": "2026-10-28T10:15:00-04:00",
+      "receivedTime": "2026-10-28T10:20:00-04:00",
+      "status": "source_confirmed",
+      "history": [
+        {
+          "at": "2026-10-29T14:30:00-04:00",
+          "by": "Utilization management",
+          "change": "Approved; start of care not confirmed by the agency"
+        }
+      ]
+    }
+  },
+  {
+    "id": "AUTH-DUAL-PCA",
+    "memberId": "SYN-DUAL-005",
+    "service": "Personal care attendant hours, HCBS",
+    "status": "requested",
+    "requestedAt": "2026-11-04T09:40:00-05:00",
+    "decisionTime": null,
+    "ownerTeam": "HCBS waiver team",
+    "vendor": "Harbor Elms Personal Care (fictional)",
+    "startOfCareConfirmed": false,
+    "startOfCareAt": null,
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "UM-DUAL-1104",
+      "eventTime": "2026-11-04T09:40:00-05:00",
+      "receivedTime": "2026-11-04T09:45:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "AUTH-BH-IOP",
+    "memberId": "SYN-BH-004",
+    "service": "Behavioral health intensive outpatient program",
+    "status": "approved",
+    "requestedAt": "2026-10-02T11:20:00-04:00",
+    "decisionTime": "2026-10-05T16:00:00-04:00",
+    "ownerTeam": "Behavioral health utilization management",
+    "vendor": "Harborlight Behavioral Clinic (fictional)",
+    "startOfCareConfirmed": false,
+    "startOfCareAt": null,
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "UM-BH-1002",
+      "eventTime": "2026-10-02T11:20:00-04:00",
+      "receivedTime": "2026-10-02T11:25:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

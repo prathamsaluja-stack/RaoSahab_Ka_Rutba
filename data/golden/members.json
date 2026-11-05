@@ -1,0 +1,325 @@
+[
+  {
+    "id": "SYN-HF-001",
+    "name": "Harold Bellweather",
+    "isFictional": true,
+    "dateOfBirth": "1955-03-14",
+    "age": 71,
+    "sex": "M",
+    "preferredLanguage": "English",
+    "address": {
+      "line1": "214 Example Lane",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "pcp": {
+      "name": "Dr. Rook (fictional)",
+      "specialty": "Internal medicine"
+    },
+    "flags": [
+      "Hard of hearing",
+      "Lives with spouse"
+    ],
+    "conditions": [
+      {
+        "label": "Heart failure with reduced ejection fraction",
+        "code": "I50.22",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-HF-0912",
+          "eventTime": "2026-09-22T12:00:00-04:00",
+          "receivedTime": "2026-10-06T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Atrial fibrillation",
+        "code": "I48.91",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-HF-0830",
+          "eventTime": "2026-08-30T12:00:00-04:00",
+          "receivedTime": "2026-09-14T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Chronic kidney disease, stage 3b",
+        "code": "N18.32",
+        "codeSystem": "ICD-10",
+        "conflictsWith": "eGFR 48 on 5 Nov sits in the stage 3a range",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-HF-0912",
+          "eventTime": "2026-09-22T12:00:00-04:00",
+          "receivedTime": "2026-10-06T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      }
+    ],
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-HF-001",
+      "eventTime": "2026-01-01T00:00:00-05:00",
+      "receivedTime": "2026-01-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "SYN-DM-002",
+    "name": "Priya Castellanos",
+    "isFictional": true,
+    "dateOfBirth": "1972-06-18",
+    "age": 54,
+    "sex": "F",
+    "preferredLanguage": "English",
+    "address": {
+      "line1": "47 Example Terrace",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "pcp": {
+      "name": "Dr. Almavine (fictional)",
+      "specialty": "Family medicine"
+    },
+    "flags": [
+      "Works two evening jobs",
+      "Morning calls fail"
+    ],
+    "conditions": [
+      {
+        "label": "Type 2 diabetes mellitus with hyperglycemia",
+        "code": "E11.65",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-DM-0714",
+          "eventTime": "2026-07-14T12:00:00-04:00",
+          "receivedTime": "2026-08-02T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      }
+    ],
+    "priorMemberIds": [
+      "SYN-DM-887"
+    ],
+    "mergedFrom": {
+      "memberIds": [
+        "SYN-DM-002",
+        "SYN-DM-887"
+      ],
+      "mergedAt": "2026-11-08T22:15:00-05:00",
+      "mergedBy": "Identity resolution (fictional)",
+      "basis": "Name, date of birth and address match across a coverage lapse from 20 Feb to 31 May 2026",
+      "undoable": true
+    },
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DM-002",
+      "eventTime": "2026-06-01T00:00:00-04:00",
+      "receivedTime": "2026-06-02T04:00:00-04:00",
+      "status": "source_confirmed",
+      "history": [
+        {
+          "at": "2026-11-08T22:15:00-05:00",
+          "by": "Identity resolution (fictional)",
+          "change": "Merged SYN-DM-887 into SYN-DM-002 on name, date of birth and address"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SYN-ED-003",
+    "name": "Marcus Okonkwo-Lane",
+    "isFictional": true,
+    "dateOfBirth": "1988-04-02",
+    "age": 38,
+    "sex": "M",
+    "preferredLanguage": "English",
+    "address": {
+      "line1": "8 Example Street, Apt 3",
+      "city": "Boston",
+      "state": "MA",
+      "postalCode": "02119",
+      "returnedMail": true
+    },
+    "pcp": {
+      "name": "Dr. Cindervale (fictional)",
+      "specialty": "Family medicine"
+    },
+    "flags": [
+      "Attributed PCP never seen",
+      "No text consent on file"
+    ],
+    "conditions": [
+      {
+        "label": "Persistent asthma, moderate",
+        "code": "J45.40",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-ED-0819",
+          "eventTime": "2026-08-19T12:00:00-04:00",
+          "receivedTime": "2026-09-10T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Major depressive disorder, recurrent",
+        "code": "F33.1",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-ED-0907",
+          "eventTime": "2026-09-07T12:00:00-04:00",
+          "receivedTime": "2026-09-29T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      }
+    ],
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-ED-003",
+      "eventTime": "2024-02-01T00:00:00-05:00",
+      "receivedTime": "2024-02-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "SYN-BH-004",
+    "name": "Jade Wintermoor",
+    "isFictional": true,
+    "dateOfBirth": "1997-05-09",
+    "age": 29,
+    "sex": "F",
+    "preferredLanguage": "English",
+    "address": {
+      "line1": "92 Example Court",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103",
+      "returnedMail": true
+    },
+    "pcp": {
+      "name": "Dr. Lantrell (fictional)",
+      "specialty": "Family medicine"
+    },
+    "flags": [
+      "Housing instability",
+      "Reachable through shelter caseworker"
+    ],
+    "conditions": [
+      {
+        "label": "Bipolar I disorder",
+        "code": "F31.9",
+        "codeSystem": "ICD-10",
+        "conflictsWith": "Major depressive disorder, recurrent (F33.1) from PCP claims",
+        "provenance": {
+          "source": "ccd",
+          "sourceRecordId": "CCD-BH-0917",
+          "eventTime": "2026-09-17T10:00:00-04:00",
+          "receivedTime": "2026-09-18T02:10:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Major depressive disorder, recurrent",
+        "code": "F33.1",
+        "codeSystem": "ICD-10",
+        "conflictsWith": "Bipolar I disorder (F31.9) from the behavioral health clinic record",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-BH-0818",
+          "eventTime": "2026-08-18T12:00:00-04:00",
+          "receivedTime": "2026-09-05T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      }
+    ],
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-BH-004",
+      "eventTime": "2023-09-01T00:00:00-04:00",
+      "receivedTime": "2023-09-02T04:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "SYN-DUAL-005",
+    "name": "Eleanor Fairweather",
+    "isFictional": true,
+    "dateOfBirth": "1943-02-11",
+    "age": 83,
+    "sex": "F",
+    "preferredLanguage": "English",
+    "address": {
+      "line1": "1130 Example Drive",
+      "city": "Quincy",
+      "state": "MA",
+      "postalCode": "02169"
+    },
+    "pcp": {
+      "name": "Dr. Ashgrove (fictional)",
+      "specialty": "Internal medicine"
+    },
+    "flags": [
+      "Dementia",
+      "Falls risk",
+      "Daughter is primary contact"
+    ],
+    "conditions": [
+      {
+        "label": "Unspecified dementia without behavioral disturbance",
+        "code": "F03.90",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-DUAL-0915",
+          "eventTime": "2026-09-15T12:00:00-04:00",
+          "receivedTime": "2026-09-28T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Chronic kidney disease, stage 3 unspecified",
+        "code": "N18.30",
+        "codeSystem": "ICD-10",
+        "conflictsWith": "eGFR 24 on 27 Oct sits in the stage 4 range",
+        "provenance": {
+          "source": "claims",
+          "sourceRecordId": "CLM-DUAL-0915",
+          "eventTime": "2026-09-15T12:00:00-04:00",
+          "receivedTime": "2026-09-28T03:00:00-04:00",
+          "status": "source_confirmed"
+        }
+      },
+      {
+        "label": "Repeated falls",
+        "code": "R29.6",
+        "codeSystem": "ICD-10",
+        "provenance": {
+          "source": "adt",
+          "sourceRecordId": "ADT-DUAL-1027-A",
+          "eventTime": "2026-10-27T11:20:00-04:00",
+          "receivedTime": "2026-10-27T12:02:00-04:00",
+          "status": "source_confirmed"
+        }
+      }
+    ],
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DUAL-005",
+      "eventTime": "2021-01-01T00:00:00-05:00",
+      "receivedTime": "2021-01-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

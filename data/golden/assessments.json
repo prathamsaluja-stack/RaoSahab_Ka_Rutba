@@ -1,0 +1,213 @@
+[
+  {
+    "id": "ASM-HF-LIVING",
+    "memberId": "SYN-HF-001",
+    "instrument": "HRA",
+    "item": "Who do you live with?",
+    "value": "Lives with spouse",
+    "state": "answered",
+    "assessedDate": "2026-04-26",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-HF-0426",
+      "eventTime": "2026-04-26T12:00:00-04:00",
+      "receivedTime": "2026-04-26T16:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-HF-TRANSPORT",
+    "memberId": "SYN-HF-001",
+    "instrument": "HRA",
+    "item": "Do you have a way to get to appointments?",
+    "value": "Yes, spouse drives",
+    "state": "answered",
+    "assessedDate": "2026-04-26",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-HF-0426",
+      "eventTime": "2026-04-26T12:00:00-04:00",
+      "receivedTime": "2026-04-26T16:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-HF-HEARING",
+    "memberId": "SYN-HF-001",
+    "instrument": "HRA",
+    "item": "Do you have trouble hearing on the phone?",
+    "value": "Yes, hard of hearing",
+    "state": "answered",
+    "assessedDate": "2026-04-26",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-HF-0426",
+      "eventTime": "2026-04-26T12:00:00-04:00",
+      "receivedTime": "2026-04-26T16:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-HF-SCALE",
+    "memberId": "SYN-HF-001",
+    "instrument": "HRA",
+    "item": "Do you have a scale at home?",
+    "value": null,
+    "state": "not_asked",
+    "assessedDate": "2026-04-26",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-HF-0426",
+      "eventTime": "2026-04-26T12:00:00-04:00",
+      "receivedTime": "2026-04-26T16:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-DM-WORK",
+    "memberId": "SYN-DM-002",
+    "instrument": "HRA",
+    "item": "What hours do you work?",
+    "value": "Two evening jobs, 16:00 to 23:00",
+    "state": "answered",
+    "assessedDate": "2025-09-10",
+    "recordedUnderMemberId": "SYN-DM-887",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DM-0910",
+      "eventTime": "2025-09-10T12:00:00-05:00",
+      "receivedTime": "2025-09-10T15:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-DM-FOOD",
+    "memberId": "SYN-DM-002",
+    "instrument": "SDOH",
+    "item": "In the last year, did food run out before you had money to buy more?",
+    "value": "Sometimes",
+    "state": "answered",
+    "assessedDate": "2025-09-10",
+    "recordedUnderMemberId": "SYN-DM-887",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DM-0910",
+      "eventTime": "2025-09-10T12:00:00-05:00",
+      "receivedTime": "2025-09-10T15:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-DM-SUPPLIES",
+    "memberId": "SYN-DM-002",
+    "instrument": "HRA",
+    "item": "Do you have enough test strips and needles?",
+    "value": null,
+    "state": "not_asked",
+    "assessedDate": "2025-09-10",
+    "recordedUnderMemberId": "SYN-DM-887",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DM-0910",
+      "eventTime": "2025-09-10T12:00:00-05:00",
+      "receivedTime": "2025-09-10T15:00:00-04:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-BH-HOUSING",
+    "memberId": "SYN-BH-004",
+    "instrument": "SDOH",
+    "item": "What is your housing situation?",
+    "value": "Stable, lives in an apartment",
+    "state": "answered",
+    "assessedDate": "2026-03-05",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-BH-0305",
+      "eventTime": "2026-03-05T12:00:00-05:00",
+      "receivedTime": "2026-03-05T14:00:00-05:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-BH-SUPPORT",
+    "memberId": "SYN-BH-004",
+    "instrument": "HRA",
+    "item": "Who helps you day to day?",
+    "value": "Shelter caseworker",
+    "state": "answered",
+    "assessedDate": "2026-03-05",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-BH-0305",
+      "eventTime": "2026-03-05T12:00:00-05:00",
+      "receivedTime": "2026-03-05T14:00:00-05:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-BH-PHQ",
+    "memberId": "SYN-BH-004",
+    "instrument": "PHQ-9",
+    "item": "PHQ-9 total score",
+    "value": "16",
+    "state": "answered",
+    "assessedDate": "2026-09-17",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-BH-0917",
+      "eventTime": "2026-09-17T10:00:00-04:00",
+      "receivedTime": "2026-09-18T02:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ASM-DUAL-CAREGIVER",
+    "memberId": "SYN-DUAL-005",
+    "instrument": "HRA",
+    "item": "Who is your main caregiver?",
+    "value": "Daughter Linda, works business hours",
+    "state": "answered",
+    "assessedDate": "2026-01-20",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DUAL-0120",
+      "eventTime": "2026-01-20T12:00:00-05:00",
+      "receivedTime": "2026-01-20T15:30:00-05:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-DUAL-GRABBARS",
+    "memberId": "SYN-DUAL-005",
+    "instrument": "falls_risk",
+    "item": "Are there grab bars in the bathroom?",
+    "value": null,
+    "state": "not_asked",
+    "assessedDate": "2026-01-20",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DUAL-0120",
+      "eventTime": "2026-01-20T12:00:00-05:00",
+      "receivedTime": "2026-01-20T15:30:00-05:00",
+      "status": "member_reported"
+    }
+  },
+  {
+    "id": "ASM-DUAL-RESPITE",
+    "memberId": "SYN-DUAL-005",
+    "instrument": "HRA",
+    "item": "Does your caregiver need respite?",
+    "value": null,
+    "state": "not_asked",
+    "assessedDate": "2026-01-20",
+    "provenance": {
+      "source": "hra",
+      "sourceRecordId": "HRA-DUAL-0120",
+      "eventTime": "2026-01-20T12:00:00-05:00",
+      "receivedTime": "2026-01-20T15:30:00-05:00",
+      "status": "member_reported"
+    }
+  }
+]

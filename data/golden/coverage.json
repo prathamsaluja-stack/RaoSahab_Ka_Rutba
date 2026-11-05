@@ -1,0 +1,133 @@
+[
+  {
+    "id": "COV-HF-001",
+    "memberId": "SYN-HF-001",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "program": "Heart failure",
+    "effectiveFrom": "2019-01-01",
+    "effectiveTo": null,
+    "dualStatus": "none",
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-HF-001",
+      "eventTime": "2019-01-01T00:00:00-05:00",
+      "receivedTime": "2019-01-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-DM-002-prior",
+    "memberId": "SYN-DM-887",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Care Expansion (fictional)",
+    "program": "Diabetes",
+    "effectiveFrom": "2021-03-01",
+    "effectiveTo": "2026-02-19",
+    "dualStatus": "none",
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DM-887",
+      "eventTime": "2021-03-01T00:00:00-05:00",
+      "receivedTime": "2021-03-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-DM-002-lapse",
+    "memberId": "SYN-DM-002",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "No coverage on file",
+    "program": "Coverage lapse",
+    "effectiveFrom": "2026-02-20",
+    "effectiveTo": "2026-05-31",
+    "dualStatus": "none",
+    "priorMemberIds": [
+      "SYN-DM-887"
+    ],
+    "isLapse": true,
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DM-LAPSE",
+      "eventTime": "2026-02-20T00:00:00-05:00",
+      "receivedTime": "2026-06-02T04:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-DM-002",
+    "memberId": "SYN-DM-002",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Care Expansion (fictional)",
+    "program": "Diabetes",
+    "effectiveFrom": "2026-06-01",
+    "effectiveTo": null,
+    "dualStatus": "none",
+    "priorMemberIds": [
+      "SYN-DM-887"
+    ],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DM-002",
+      "eventTime": "2026-06-01T00:00:00-04:00",
+      "receivedTime": "2026-06-02T04:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-ED-003",
+    "memberId": "SYN-ED-003",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Care Standard (fictional)",
+    "program": "Respiratory and behavioral health",
+    "effectiveFrom": "2024-02-01",
+    "effectiveTo": null,
+    "dualStatus": "none",
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-ED-003",
+      "eventTime": "2024-02-01T00:00:00-05:00",
+      "receivedTime": "2024-02-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-BH-004",
+    "memberId": "SYN-BH-004",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Care Standard (fictional)",
+    "program": "Behavioral health",
+    "effectiveFrom": "2023-09-01",
+    "effectiveTo": null,
+    "dualStatus": "none",
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-BH-004",
+      "eventTime": "2023-09-01T00:00:00-04:00",
+      "receivedTime": "2023-09-02T04:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "COV-DUAL-005",
+    "memberId": "SYN-DUAL-005",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline D-SNP with Medicaid HCBS (fictional)",
+    "program": "Complex care",
+    "effectiveFrom": "2021-01-01",
+    "effectiveTo": null,
+    "dualStatus": "full",
+    "priorMemberIds": [],
+    "provenance": {
+      "source": "eligibility",
+      "sourceRecordId": "ELIG-DUAL-005",
+      "eventTime": "2021-01-01T00:00:00-05:00",
+      "receivedTime": "2021-01-02T04:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

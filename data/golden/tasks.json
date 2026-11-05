@@ -1,0 +1,287 @@
+[
+  {
+    "id": "TSK-HF-CALL",
+    "memberId": "SYN-HF-001",
+    "title": "Post-discharge outreach call within 2 business days",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-10T17:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-HF-CALL",
+      "eventTime": "2026-11-10T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-HF-AUTH",
+    "memberId": "SYN-HF-001",
+    "title": "Home health nursing authorization decision",
+    "owner": "Utilization management",
+    "ownerTeam": "Utilization management",
+    "waitingOnOthers": true,
+    "due": "2026-11-10T17:00:00-05:00",
+    "nextCheck": "2026-11-09T15:00:00-05:00",
+    "stepperKind": "authorization",
+    "state": "requested",
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "TSK-HF-AUTH",
+      "eventTime": "2026-11-10T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-HF-SUMMARY",
+    "memberId": "SYN-HF-001",
+    "title": "Chase the discharge summary from the hospital",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": true,
+    "due": "2026-11-10T17:00:00-05:00",
+    "nextCheck": "2026-11-09T13:00:00-05:00",
+    "stepperKind": "simple",
+    "state": "waiting_on_others",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-HF-SUMMARY",
+      "eventTime": "2026-11-10T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-HF-VISIT",
+    "memberId": "SYN-HF-001",
+    "title": "Book a follow-up visit by Fri 13 Nov",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-13T17:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "referral",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-HF-VISIT",
+      "eventTime": "2026-11-13T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DM-TEXT",
+    "memberId": "SYN-DM-002",
+    "title": "Text at 14:00 before her shift about insulin and metformin",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-09T14:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-DM-TEXT",
+      "eventTime": "2026-11-09T14:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DM-VISIT",
+    "memberId": "SYN-DM-002",
+    "title": "Offer a same-week PCP visit with renewals and a 90-day supply",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-13T17:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "referral",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-DM-VISIT",
+      "eventTime": "2026-11-13T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-ED-TEXT",
+    "memberId": "SYN-ED-003",
+    "title": "Call or text the ED registration number after 17:00",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-09T19:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-ED-TEXT",
+      "eventTime": "2026-11-09T19:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-ED-VISIT",
+    "memberId": "SYN-ED-003",
+    "title": "Book a same-week visit and a controller refill",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-10T17:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "referral",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-ED-VISIT",
+      "eventTime": "2026-11-10T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-BH-CW",
+    "memberId": "SYN-BH-004",
+    "title": "Call the shelter caseworker between 10:00 and 12:00",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-09T12:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-BH-CW",
+      "eventTime": "2026-11-09T12:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-BH-BHCM",
+    "memberId": "SYN-BH-004",
+    "title": "Coordinate with the behavioral health case manager today",
+    "owner": "Behavioral health team",
+    "ownerTeam": "Behavioral health",
+    "waitingOnOthers": true,
+    "due": "2026-11-09T17:00:00-05:00",
+    "nextCheck": "2026-11-09T15:00:00-05:00",
+    "stepperKind": "simple",
+    "state": "waiting_on_others",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-BH-BHCM",
+      "eventTime": "2026-11-09T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-BH-HOUSING",
+    "memberId": "SYN-BH-004",
+    "title": "Housing referral to the regional housing resource centre",
+    "owner": "Community resources team",
+    "ownerTeam": "Community resources",
+    "waitingOnOthers": true,
+    "due": "2026-11-13T17:00:00-05:00",
+    "nextCheck": "2026-11-10T11:00:00-05:00",
+    "stepperKind": "referral",
+    "state": "referral_sent",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-BH-HOUSING",
+      "eventTime": "2026-11-13T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DUAL-CALL",
+    "memberId": "SYN-DUAL-005",
+    "title": "Call daughter Linda after 18:00",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-09T20:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-DUAL-CALL",
+      "eventTime": "2026-11-09T20:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DUAL-PT",
+    "memberId": "SYN-DUAL-005",
+    "title": "Confirm the physical therapy start of care with the agency",
+    "owner": "Northvale Home Care (fictional)",
+    "ownerTeam": "Home health vendor",
+    "waitingOnOthers": true,
+    "due": "2026-11-09T17:00:00-05:00",
+    "nextCheck": "2026-11-09T14:00:00-05:00",
+    "stepperKind": "authorization",
+    "state": "approved",
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "TSK-DUAL-PT",
+      "eventTime": "2026-11-09T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DUAL-PCA",
+    "memberId": "SYN-DUAL-005",
+    "title": "Request respite and personal care attendant hours",
+    "owner": "HCBS waiver team",
+    "ownerTeam": "HCBS waiver team",
+    "waitingOnOthers": true,
+    "due": "2026-11-12T17:00:00-05:00",
+    "nextCheck": "2026-11-10T10:00:00-05:00",
+    "stepperKind": "authorization",
+    "state": "requested",
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "TSK-DUAL-PCA",
+      "eventTime": "2026-11-12T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "TSK-DUAL-CCB",
+    "memberId": "SYN-DUAL-005",
+    "title": "Raise the duplicate calcium channel blocker pair with PCP and cardiology",
+    "owner": "Maria R., RN",
+    "ownerTeam": "Case management",
+    "waitingOnOthers": false,
+    "due": "2026-11-10T17:00:00-05:00",
+    "nextCheck": null,
+    "stepperKind": "simple",
+    "state": "open",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "TSK-DUAL-CCB",
+      "eventTime": "2026-11-10T17:00:00-05:00",
+      "receivedTime": "2026-11-09T06:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

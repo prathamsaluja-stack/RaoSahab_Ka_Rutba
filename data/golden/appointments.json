@@ -1,0 +1,153 @@
+[
+  {
+    "id": "APT-HF-0715",
+    "memberId": "SYN-HF-001",
+    "provider": "Riverbend Cardiology (fictional)",
+    "specialty": "Echocardiogram",
+    "scheduledFor": "2026-07-15T10:30:00-04:00",
+    "state": "completed",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-HF-0715",
+      "eventTime": "2026-07-15T10:30:00-04:00",
+      "receivedTime": "2026-07-15T10:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-HF-0830",
+    "memberId": "SYN-HF-001",
+    "provider": "Dr. Pell (fictional)",
+    "specialty": "Cardiology",
+    "scheduledFor": "2026-08-30T14:00:00-04:00",
+    "state": "completed",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-HF-0830",
+      "eventTime": "2026-08-30T14:00:00-04:00",
+      "receivedTime": "2026-08-30T14:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-HF-0922",
+    "memberId": "SYN-HF-001",
+    "provider": "Dr. Rook (fictional)",
+    "specialty": "Primary care",
+    "scheduledFor": "2026-09-22T11:15:00-04:00",
+    "state": "completed",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-HF-0922",
+      "eventTime": "2026-09-22T11:15:00-04:00",
+      "receivedTime": "2026-09-22T11:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-DM-1014",
+    "memberId": "SYN-DM-002",
+    "provider": "Dr. Almavine (fictional)",
+    "specialty": "Primary care",
+    "scheduledFor": "2026-10-14T10:00:00-04:00",
+    "state": "no_show",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-DM-1014",
+      "eventTime": "2026-10-14T10:00:00-04:00",
+      "receivedTime": "2026-10-14T10:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-DM-0714",
+    "memberId": "SYN-DM-002",
+    "provider": "Dr. Almavine (fictional)",
+    "specialty": "Primary care",
+    "scheduledFor": "2026-07-14T09:00:00-04:00",
+    "state": "completed",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-DM-0714",
+      "eventTime": "2026-07-14T09:00:00-04:00",
+      "receivedTime": "2026-07-14T09:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-ED-0825",
+    "memberId": "SYN-ED-003",
+    "provider": "Dr. Cindervale (fictional)",
+    "specialty": "Primary care",
+    "scheduledFor": "2026-08-25T09:30:00-04:00",
+    "state": "unknown",
+    "outcomeUnconfirmed": true,
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-ED-0825",
+      "eventTime": "2026-08-25T09:30:00-04:00",
+      "receivedTime": "2026-08-25T09:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-BH-1006",
+    "memberId": "SYN-BH-004",
+    "provider": "Dr. Veyland (fictional)",
+    "specialty": "Psychiatry",
+    "scheduledFor": "2026-10-06T13:00:00-04:00",
+    "state": "no_show",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-BH-1006",
+      "eventTime": "2026-10-06T13:00:00-04:00",
+      "receivedTime": "2026-10-06T13:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-BH-1027",
+    "memberId": "SYN-BH-004",
+    "provider": "Dr. Veyland (fictional)",
+    "specialty": "Psychiatry",
+    "scheduledFor": "2026-10-27T13:00:00-04:00",
+    "state": "no_show",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-BH-1027",
+      "eventTime": "2026-10-27T13:00:00-04:00",
+      "receivedTime": "2026-10-27T13:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-DUAL-0915",
+    "memberId": "SYN-DUAL-005",
+    "provider": "Dr. Ashgrove (fictional)",
+    "specialty": "Primary care",
+    "scheduledFor": "2026-09-15T10:00:00-04:00",
+    "state": "completed",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-DUAL-0915",
+      "eventTime": "2026-09-15T10:00:00-04:00",
+      "receivedTime": "2026-09-15T10:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "APT-DUAL-1202",
+    "memberId": "SYN-DUAL-005",
+    "provider": "Dr. Quillon (fictional)",
+    "specialty": "Nephrology",
+    "scheduledFor": "2026-12-02T14:30:00-05:00",
+    "state": "booked",
+    "provenance": {
+      "source": "appointments",
+      "sourceRecordId": "APT-DUAL-1202",
+      "eventTime": "2026-12-02T14:30:00-05:00",
+      "receivedTime": "2026-12-02T14:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

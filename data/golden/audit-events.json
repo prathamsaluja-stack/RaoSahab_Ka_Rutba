@@ -1,0 +1,88 @@
+[
+  {
+    "id": "AUD-0001",
+    "at": "2026-11-06T17:40:00-05:00",
+    "actor": "Caseline",
+    "actorRole": "System",
+    "action": "suggestion_shown",
+    "subject": "S3 transition clock opened for Harold Bellweather",
+    "memberId": "SYN-HF-001",
+    "reason": null,
+    "detail": "Two business day contact window ends Tue 10 Nov at 17:00"
+  },
+  {
+    "id": "AUD-0002",
+    "at": "2026-11-06T18:05:00-05:00",
+    "actor": "Maria R., RN",
+    "actorRole": "RN case manager",
+    "action": "requested",
+    "subject": "Discharge summary requested from Riverbend General Hospital (fictional)",
+    "memberId": "SYN-HF-001",
+    "reason": null
+  },
+  {
+    "id": "AUD-0003",
+    "at": "2026-11-08T22:15:00-05:00",
+    "actor": "Identity resolution (fictional)",
+    "actorRole": "System",
+    "action": "merged",
+    "subject": "SYN-DM-887 merged into SYN-DM-002",
+    "memberId": "SYN-DM-002",
+    "reason": null,
+    "detail": "Name, date of birth and address match across the coverage lapse; the merge can be undone"
+  },
+  {
+    "id": "AUD-0004",
+    "at": "2026-11-08T23:05:00-05:00",
+    "actor": "Caseline",
+    "actorRole": "System",
+    "action": "suggestion_shown",
+    "subject": "S4 refill gap of 51 days recomputed on the resolved person",
+    "memberId": "SYN-DM-002",
+    "reason": null,
+    "detail": "Lapse days from 20 Feb to 31 May are excluded from the gap"
+  },
+  {
+    "id": "AUD-0005",
+    "at": "2026-11-03T20:35:00-05:00",
+    "actor": "Caseline",
+    "actorRole": "System",
+    "action": "suggestion_shown",
+    "subject": "S5 frequent ED use with a new reachable number for Marcus Okonkwo-Lane",
+    "memberId": "SYN-ED-003",
+    "reason": null,
+    "detail": "Six ADT messages de-duplicated to five emergency department visits in 90 days"
+  },
+  {
+    "id": "AUD-0006",
+    "at": "2026-10-30T23:05:00-04:00",
+    "actor": "Crisis line clinician (fictional)",
+    "actorRole": "LICSW",
+    "action": "confirmed",
+    "subject": "Crisis line contact recorded for Jade Wintermoor",
+    "memberId": "SYN-BH-004",
+    "reason": null
+  },
+  {
+    "id": "AUD-0007",
+    "at": "2026-10-29T14:35:00-04:00",
+    "actor": "Utilization management",
+    "actorRole": "UM nurse",
+    "action": "confirmed",
+    "subject": "Home health physical therapy approved for Eleanor Fairweather",
+    "memberId": "SYN-DUAL-005",
+    "reason": null,
+    "detail": "Approved is not started: the agency has not confirmed a start of care date"
+  },
+  {
+    "id": "AUD-0008",
+    "at": "2026-11-09T08:00:00-05:00",
+    "actor": "Caseline",
+    "actorRole": "System",
+    "action": "suggestion_shown",
+    "subject": "Today queue built for 9 Nov 2026",
+    "memberId": null,
+    "reason": null,
+    "detail": "Order: event tier, then nearest clock, then confidence, then risk score as a tie-break"
+  }
+]

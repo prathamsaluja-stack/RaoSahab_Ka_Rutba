@@ -1,0 +1,110 @@
+[
+  {
+    "id": "NOTE-HF-1020",
+    "memberId": "SYN-HF-001",
+    "type": "call",
+    "authorName": "Maria R., RN",
+    "authorRole": "RN case manager",
+    "createdAt": "2026-10-20T09:45:00-04:00",
+    "text": "Routine check-in. Member reports no weight change and takes medications as prescribed. Confirmed he prefers morning calls and does not want text messages.",
+    "signed": true,
+    "signedAt": "2026-10-20T09:45:00-04:00",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "NOTE-HF-1020",
+      "eventTime": "2026-10-20T09:45:00-04:00",
+      "receivedTime": "2026-10-20T09:45:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "NOTE-HF-1106",
+    "memberId": "SYN-HF-001",
+    "type": "coordination",
+    "authorName": "Maria R., RN",
+    "authorRole": "RN case manager",
+    "createdAt": "2026-11-06T18:05:00-05:00",
+    "text": "Discharge alert received at 17:38 with no diagnosis. Requested the discharge summary from Riverbend General Hospital (fictional) and opened a home health nursing authorization.",
+    "signed": true,
+    "signedAt": "2026-11-06T18:05:00-05:00",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "NOTE-HF-1106",
+      "eventTime": "2026-11-06T18:05:00-05:00",
+      "receivedTime": "2026-11-06T18:05:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "NOTE-DM-0908",
+    "memberId": "SYN-DM-002",
+    "type": "call",
+    "authorName": "Maria R., RN",
+    "authorRole": "RN case manager",
+    "createdAt": "2026-09-08T14:25:00-04:00",
+    "text": "Reached the member at 14:10 between shifts. She asked for text messages instead of calls. Consent for text was recorded under the member ID in use at the time.",
+    "signed": true,
+    "signedAt": "2026-09-08T14:25:00-04:00",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "NOTE-DM-0908",
+      "eventTime": "2026-09-08T14:25:00-04:00",
+      "receivedTime": "2026-09-08T14:25:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "NOTE-ED-1103",
+    "memberId": "SYN-ED-003",
+    "type": "clinical",
+    "authorName": "Dockside Community Hospital ED (fictional)",
+    "authorRole": "Emergency physician",
+    "createdAt": "2026-11-03T22:15:00-05:00",
+    "text": "Fifth presentation for wheezing since August. Patient states he is between apartments and is staying with a cousin; he has no inhaler at the place he sleeps and no working phone number on file with his plan. New mobile and address taken at registration.",
+    "signed": true,
+    "signedAt": "2026-11-03T22:15:00-05:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "NOTE-ED-1103",
+      "eventTime": "2026-11-03T22:15:00-05:00",
+      "receivedTime": "2026-11-03T22:15:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "NOTE-BH-1030",
+    "memberId": "SYN-BH-004",
+    "type": "call",
+    "authorName": "Crisis line clinician (fictional)",
+    "authorRole": "LICSW",
+    "createdAt": "2026-10-30T22:55:00-04:00",
+    "text": "Member called the plan crisis line reporting poor sleep and low mood. De-escalated on the call, no emergency services dispatched. Member asked that the shelter caseworker be the contact point.",
+    "signed": true,
+    "signedAt": "2026-10-30T22:55:00-04:00",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "NOTE-BH-1030",
+      "eventTime": "2026-10-30T22:55:00-04:00",
+      "receivedTime": "2026-10-30T22:55:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "NOTE-DUAL-1029",
+    "memberId": "SYN-DUAL-005",
+    "type": "coordination",
+    "authorName": "Maria R., RN",
+    "authorRole": "RN case manager",
+    "createdAt": "2026-10-29T16:10:00-04:00",
+    "text": "Physical therapy approved the same day it was reviewed. The agency has not confirmed a start of care date. Daughter Linda is reachable only after 18:00.",
+    "signed": true,
+    "signedAt": "2026-10-29T16:10:00-04:00",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "NOTE-DUAL-1029",
+      "eventTime": "2026-10-29T16:10:00-04:00",
+      "receivedTime": "2026-10-29T16:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "memberId": "SYN-HF-001",
+    "completeThrough": "2026-09-25",
+    "assessedAt": "2026-11-09T06:00:00-05:00",
+    "basis": "Institutional claims run about six weeks behind; the 1 Nov admission has not been billed"
+  },
+  {
+    "memberId": "SYN-DM-002",
+    "completeThrough": "2026-09-24",
+    "assessedAt": "2026-11-09T06:00:00-05:00",
+    "basis": "Professional claims run about three weeks behind on this Medicaid plan"
+  },
+  {
+    "memberId": "SYN-ED-003",
+    "completeThrough": "2026-09-26",
+    "assessedAt": "2026-11-09T06:00:00-05:00",
+    "basis": "Only two of the five ED registrations have matching claims"
+  },
+  {
+    "memberId": "SYN-BH-004",
+    "completeThrough": "2026-09-20",
+    "assessedAt": "2026-11-09T06:00:00-05:00",
+    "basis": "Behavioral health claims run about seven weeks behind"
+  },
+  {
+    "memberId": "SYN-DUAL-005",
+    "completeThrough": "2026-09-28",
+    "assessedAt": "2026-11-09T06:00:00-05:00",
+    "basis": "The 27 Oct ED claim is still outstanding 13 days later"
+  }
+]

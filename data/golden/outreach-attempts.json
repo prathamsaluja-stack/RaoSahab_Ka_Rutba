@@ -1,0 +1,548 @@
+[
+  {
+    "id": "OUT-HF-0915",
+    "memberId": "SYN-HF-001",
+    "contactPointId": "CP-HF-001-mobile",
+    "number": "(508) 555-0142",
+    "at": "2026-09-15T09:10:00-04:00",
+    "channel": "call",
+    "outcome": "answered",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-HF-0915",
+      "eventTime": "2026-09-15T09:10:00-04:00",
+      "receivedTime": "2026-09-15T09:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-HF-1006",
+    "memberId": "SYN-HF-001",
+    "contactPointId": "CP-HF-001-spouse",
+    "number": "(508) 555-0177",
+    "at": "2026-10-06T09:20:00-04:00",
+    "channel": "call",
+    "outcome": "reached_other_person",
+    "note": "Spouse Doris answered and passed the phone over",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-HF-1006",
+      "eventTime": "2026-10-06T09:20:00-04:00",
+      "receivedTime": "2026-10-06T09:20:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-HF-1020",
+    "memberId": "SYN-HF-001",
+    "contactPointId": "CP-HF-001-mobile",
+    "number": "(508) 555-0142",
+    "at": "2026-10-20T09:35:00-04:00",
+    "channel": "call",
+    "outcome": "answered",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-HF-1020",
+      "eventTime": "2026-10-20T09:35:00-04:00",
+      "receivedTime": "2026-10-20T09:35:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-M1",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-09-24T09:05:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "note": "Morning call; member works evenings and sleeps late",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-M1",
+      "eventTime": "2026-09-24T09:05:00-04:00",
+      "receivedTime": "2026-09-24T09:05:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-M2",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-10-13T09:10:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "note": "Morning call; member works evenings and sleeps late",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-M2",
+      "eventTime": "2026-10-13T09:10:00-04:00",
+      "receivedTime": "2026-10-13T09:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-M3",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-10-27T09:05:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "note": "Morning call; member works evenings and sleeps late",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-M3",
+      "eventTime": "2026-10-27T09:05:00-04:00",
+      "receivedTime": "2026-10-27T09:05:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-M4",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-11-02T09:15:00-05:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "note": "Morning call; member works evenings and sleeps late",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-M4",
+      "eventTime": "2026-11-02T09:15:00-05:00",
+      "receivedTime": "2026-11-02T09:15:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-M5",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-11-05T09:20:00-05:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "note": "Morning call; member works evenings and sleeps late",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-M5",
+      "eventTime": "2026-11-05T09:20:00-05:00",
+      "receivedTime": "2026-11-05T09:20:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DM-PM1",
+    "memberId": "SYN-DM-002",
+    "contactPointId": "CP-DM-002-mobile",
+    "number": "(978) 555-0118",
+    "at": "2026-09-08T14:10:00-04:00",
+    "channel": "call",
+    "outcome": "answered",
+    "note": "Only answered call; reached at 14:10 before her shift",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DM-PM1",
+      "eventTime": "2026-09-08T14:10:00-04:00",
+      "receivedTime": "2026-09-08T14:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C1",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-09-02T10:05:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C1",
+      "eventTime": "2026-09-02T10:05:00-04:00",
+      "receivedTime": "2026-09-02T10:05:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C2",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-09-11T14:20:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C2",
+      "eventTime": "2026-09-11T14:20:00-04:00",
+      "receivedTime": "2026-09-11T14:20:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C3",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-09-23T11:40:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C3",
+      "eventTime": "2026-09-23T11:40:00-04:00",
+      "receivedTime": "2026-09-23T11:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C4",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-10-05T15:05:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C4",
+      "eventTime": "2026-10-05T15:05:00-04:00",
+      "receivedTime": "2026-10-05T15:05:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C5",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-10-16T10:30:00-04:00",
+    "channel": "call",
+    "outcome": "disconnected",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C5",
+      "eventTime": "2026-10-16T10:30:00-04:00",
+      "receivedTime": "2026-10-16T10:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C6",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-10-28T13:45:00-04:00",
+    "channel": "call",
+    "outcome": "disconnected",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C6",
+      "eventTime": "2026-10-28T13:45:00-04:00",
+      "receivedTime": "2026-10-28T13:45:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-C7",
+    "memberId": "SYN-ED-003",
+    "contactPointId": "CP-ED-003-file",
+    "number": "(617) 555-0133",
+    "at": "2026-11-06T14:05:00-05:00",
+    "channel": "call",
+    "outcome": "disconnected",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-C7",
+      "eventTime": "2026-11-06T14:05:00-05:00",
+      "receivedTime": "2026-11-06T14:05:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-ED-LETTER",
+    "memberId": "SYN-ED-003",
+    "contactPointId": null,
+    "number": null,
+    "at": "2026-10-09T09:00:00-04:00",
+    "channel": "letter",
+    "outcome": "returned_mail",
+    "note": "Outreach letter returned; the address on file is no longer current",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-ED-LETTER",
+      "eventTime": "2026-10-09T09:00:00-04:00",
+      "receivedTime": "2026-10-09T09:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-M1",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-mobile",
+    "number": "(413) 555-0151",
+    "at": "2026-10-12T11:00:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-M1",
+      "eventTime": "2026-10-12T11:00:00-04:00",
+      "receivedTime": "2026-10-12T11:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-M2",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-mobile",
+    "number": "(413) 555-0151",
+    "at": "2026-10-21T10:40:00-04:00",
+    "channel": "call",
+    "outcome": "no_answer",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-M2",
+      "eventTime": "2026-10-21T10:40:00-04:00",
+      "receivedTime": "2026-10-21T10:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-M3",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-mobile",
+    "number": "(413) 555-0151",
+    "at": "2026-10-29T11:15:00-04:00",
+    "channel": "call",
+    "outcome": "disconnected",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-M3",
+      "eventTime": "2026-10-29T11:15:00-04:00",
+      "receivedTime": "2026-10-29T11:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-M4",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-mobile",
+    "number": "(413) 555-0151",
+    "at": "2026-11-04T10:30:00-05:00",
+    "channel": "call",
+    "outcome": "disconnected",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-M4",
+      "eventTime": "2026-11-04T10:30:00-05:00",
+      "receivedTime": "2026-11-04T10:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-CRISIS",
+    "memberId": "SYN-BH-004",
+    "contactPointId": null,
+    "number": null,
+    "at": "2026-10-30T22:40:00-04:00",
+    "channel": "call",
+    "outcome": "answered",
+    "note": "Member called the plan crisis line; de-escalated, no emergency services dispatched",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-CRISIS",
+      "eventTime": "2026-10-30T22:40:00-04:00",
+      "receivedTime": "2026-10-30T22:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-CW1",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-caseworker",
+    "number": "(413) 555-0164",
+    "at": "2026-10-31T10:20:00-04:00",
+    "channel": "call",
+    "outcome": "answered",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-CW1",
+      "eventTime": "2026-10-31T10:20:00-04:00",
+      "receivedTime": "2026-10-31T10:20:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-BH-CW2",
+    "memberId": "SYN-BH-004",
+    "contactPointId": "CP-BH-004-caseworker",
+    "number": "(413) 555-0164",
+    "at": "2026-11-05T10:40:00-05:00",
+    "channel": "call",
+    "outcome": "answered",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-BH-CW2",
+      "eventTime": "2026-11-05T10:40:00-05:00",
+      "receivedTime": "2026-11-05T10:40:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-D1",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-07T11:00:00-04:00",
+    "channel": "call",
+    "outcome": "voicemail",
+    "note": "Daytime call to the number labelled Home; it is the daughter’s work mobile",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-D1",
+      "eventTime": "2026-10-07T11:00:00-04:00",
+      "receivedTime": "2026-10-07T11:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-D2",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-14T13:30:00-04:00",
+    "channel": "call",
+    "outcome": "voicemail",
+    "note": "Daytime call to the number labelled Home; it is the daughter’s work mobile",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-D2",
+      "eventTime": "2026-10-14T13:30:00-04:00",
+      "receivedTime": "2026-10-14T13:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-D3",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-20T10:15:00-04:00",
+    "channel": "call",
+    "outcome": "voicemail",
+    "note": "Daytime call to the number labelled Home; it is the daughter’s work mobile",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-D3",
+      "eventTime": "2026-10-20T10:15:00-04:00",
+      "receivedTime": "2026-10-20T10:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-D4",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-28T14:00:00-04:00",
+    "channel": "call",
+    "outcome": "voicemail",
+    "note": "Daytime call to the number labelled Home; it is the daughter’s work mobile",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-D4",
+      "eventTime": "2026-10-28T14:00:00-04:00",
+      "receivedTime": "2026-10-28T14:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-D5",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-11-04T11:10:00-05:00",
+    "channel": "call",
+    "outcome": "voicemail",
+    "note": "Daytime call to the number labelled Home; it is the daughter’s work mobile",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-D5",
+      "eventTime": "2026-11-04T11:10:00-05:00",
+      "receivedTime": "2026-11-04T11:10:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-E1",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-08T18:15:00-04:00",
+    "channel": "call",
+    "outcome": "reached_other_person",
+    "note": "Daughter Linda answered after work",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-E1",
+      "eventTime": "2026-10-08T18:15:00-04:00",
+      "receivedTime": "2026-10-08T18:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-E2",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-21T18:40:00-04:00",
+    "channel": "call",
+    "outcome": "reached_other_person",
+    "note": "Daughter Linda answered after work",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-E2",
+      "eventTime": "2026-10-21T18:40:00-04:00",
+      "receivedTime": "2026-10-21T18:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-E3",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-10-29T18:05:00-04:00",
+    "channel": "call",
+    "outcome": "reached_other_person",
+    "note": "Daughter Linda answered after work",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-E3",
+      "eventTime": "2026-10-29T18:05:00-04:00",
+      "receivedTime": "2026-10-29T18:05:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "OUT-DUAL-E4",
+    "memberId": "SYN-DUAL-005",
+    "contactPointId": "CP-DUAL-005-home",
+    "number": "(781) 555-0109",
+    "at": "2026-11-02T18:20:00-05:00",
+    "channel": "call",
+    "outcome": "reached_other_person",
+    "note": "Daughter Linda answered after work",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "OUT-DUAL-E4",
+      "eventTime": "2026-11-02T18:20:00-05:00",
+      "receivedTime": "2026-11-02T18:20:00-05:00",
+      "status": "source_confirmed"
+    }
+  }
+]

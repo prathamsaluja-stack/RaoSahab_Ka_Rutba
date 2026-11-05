@@ -1,0 +1,372 @@
+[
+  {
+    "id": "CP-HF-001-mobile",
+    "memberId": "SYN-HF-001",
+    "number": "(508) 555-0142",
+    "label": "Mobile",
+    "owner": "member",
+    "ownerName": "Harold Bellweather (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": true,
+    "lastOutcome": {
+      "at": "2026-10-20T09:35:00-04:00",
+      "outcome": "answered"
+    },
+    "answerStats": {
+      "attempts": 3,
+      "answered": 3,
+      "note": "Answered 3 of 3 morning calls"
+    },
+    "bestWindow": {
+      "start": "09:00",
+      "end": "11:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "All three answered calls fell between 09:10 and 10:45"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "no",
+      "voicemail": "yes",
+      "recordedOn": "SYN-HF-001",
+      "recordedAt": "2026-04-26T10:00:00-04:00"
+    },
+    "language": "English",
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-HF-0142",
+      "eventTime": "2026-10-20T09:35:00-04:00",
+      "receivedTime": "2026-10-20T09:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CP-HF-001-spouse",
+    "memberId": "SYN-HF-001",
+    "number": "(508) 555-0177",
+    "label": "Home",
+    "owner": "spouse",
+    "ownerName": "Doris Bellweather (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": false,
+    "lastOutcome": {
+      "at": "2026-10-06T09:20:00-04:00",
+      "outcome": "answered"
+    },
+    "answerStats": {
+      "attempts": 2,
+      "answered": 2,
+      "note": "Spouse answers during the day"
+    },
+    "bestWindow": {
+      "start": "09:00",
+      "end": "16:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "Spouse is at home on weekdays"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "unknown",
+      "voicemail": "yes",
+      "recordedOn": "SYN-HF-001",
+      "recordedAt": "2026-04-26T10:00:00-04:00"
+    },
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-HF-0177",
+      "eventTime": "2026-10-06T09:20:00-04:00",
+      "receivedTime": "2026-10-06T09:25:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CP-DM-002-mobile",
+    "memberId": "SYN-DM-002",
+    "number": "(978) 555-0118",
+    "label": "Mobile",
+    "owner": "member",
+    "ownerName": "Priya Castellanos (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": true,
+    "lastOutcome": {
+      "at": "2026-11-02T09:15:00-05:00",
+      "outcome": "no_answer"
+    },
+    "answerStats": {
+      "attempts": 6,
+      "answered": 1,
+      "note": "Only the 14:10 call was answered; all morning calls failed"
+    },
+    "bestWindow": {
+      "start": "14:00",
+      "end": "16:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "Two evening jobs; the one answered call was at 14:10"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "yes",
+      "voicemail": "yes",
+      "recordedOn": "SYN-DM-887",
+      "recordedAt": "2025-09-10T11:00:00-04:00"
+    },
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-DM-0118",
+      "eventTime": "2026-11-02T09:15:00-05:00",
+      "receivedTime": "2026-11-02T09:20:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CP-ED-003-file",
+    "memberId": "SYN-ED-003",
+    "number": "(617) 555-0133",
+    "label": "Home",
+    "owner": "unknown",
+    "validity": "disconnected",
+    "isPrimaryOnFile": true,
+    "lastOutcome": {
+      "at": "2026-11-06T14:05:00-05:00",
+      "outcome": "disconnected"
+    },
+    "answerStats": {
+      "attempts": 7,
+      "answered": 0,
+      "note": "Seven calls, no answer; last three reported disconnected"
+    },
+    "bestWindow": null,
+    "consent": {
+      "calls": "yes",
+      "texts": "unknown",
+      "voicemail": "unknown",
+      "recordedOn": "SYN-ED-003",
+      "recordedAt": "2024-02-05T09:00:00-05:00"
+    },
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-ED-0133",
+      "eventTime": "2026-11-06T14:05:00-05:00",
+      "receivedTime": "2026-11-06T14:10:00-05:00",
+      "status": "unresolved"
+    }
+  },
+  {
+    "id": "CP-ED-003-ed",
+    "memberId": "SYN-ED-003",
+    "number": "(617) 555-0196",
+    "label": "Mobile given at ED registration",
+    "owner": "member",
+    "validity": "unverified",
+    "isPrimaryOnFile": false,
+    "lastOutcome": null,
+    "answerStats": {
+      "attempts": 0,
+      "answered": 0,
+      "note": "Never called from the plan"
+    },
+    "bestWindow": {
+      "start": "17:00",
+      "end": "19:00",
+      "days": [],
+      "basis": "All five ED registrations happened after 18:00"
+    },
+    "consent": {
+      "calls": "unknown",
+      "texts": "unknown",
+      "voicemail": "unknown"
+    },
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-1103",
+      "eventTime": "2026-11-03T19:50:00-05:00",
+      "receivedTime": "2026-11-03T20:31:00-05:00",
+      "status": "inferred"
+    }
+  },
+  {
+    "id": "CP-BH-004-mobile",
+    "memberId": "SYN-BH-004",
+    "number": "(413) 555-0151",
+    "label": "Mobile",
+    "owner": "member",
+    "validity": "disconnected",
+    "isPrimaryOnFile": true,
+    "lastOutcome": {
+      "at": "2026-11-04T10:30:00-05:00",
+      "outcome": "disconnected"
+    },
+    "answerStats": {
+      "attempts": 4,
+      "answered": 0,
+      "note": "Four calls since 12 Oct, all failed"
+    },
+    "bestWindow": null,
+    "consent": {
+      "calls": "yes",
+      "texts": "unknown",
+      "voicemail": "no",
+      "recordedOn": "SYN-BH-004",
+      "recordedAt": "2026-03-05T13:00:00-05:00"
+    },
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-BH-0151",
+      "eventTime": "2026-11-04T10:30:00-05:00",
+      "receivedTime": "2026-11-04T10:35:00-05:00",
+      "status": "unresolved"
+    }
+  },
+  {
+    "id": "CP-BH-004-caseworker",
+    "memberId": "SYN-BH-004",
+    "number": "(413) 555-0164",
+    "label": "Shelter caseworker",
+    "owner": "caseworker",
+    "ownerName": "T. Marsh (fictional), Harborlight Shelter (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": false,
+    "lastOutcome": {
+      "at": "2026-11-05T10:40:00-05:00",
+      "outcome": "answered"
+    },
+    "answerStats": {
+      "attempts": 2,
+      "answered": 2,
+      "note": "Answered 2 of 2 late-morning calls"
+    },
+    "bestWindow": {
+      "start": "10:00",
+      "end": "12:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "Caseworker is on shift from 10:00 to 12:00"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "no",
+      "voicemail": "no",
+      "recordedOn": "SYN-BH-004",
+      "recordedAt": "2026-10-30T22:55:00-04:00"
+    },
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "CM-BH-0164",
+      "eventTime": "2026-11-05T10:40:00-05:00",
+      "receivedTime": "2026-11-05T10:45:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CP-DUAL-005-home",
+    "memberId": "SYN-DUAL-005",
+    "number": "(781) 555-0109",
+    "label": "Home",
+    "owner": "daughter",
+    "ownerName": "Linda Fairweather (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": true,
+    "lastOutcome": {
+      "at": "2026-11-02T18:20:00-05:00",
+      "outcome": "answered"
+    },
+    "answerStats": {
+      "attempts": 9,
+      "answered": 4,
+      "note": "Labelled Home, but it is the daughter’s mobile; all four answers were after 18:00"
+    },
+    "bestWindow": {
+      "start": "18:00",
+      "end": "20:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "Daughter works business hours; daytime calls reach voicemail"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "yes",
+      "voicemail": "yes",
+      "recordedOn": "SYN-DUAL-005",
+      "recordedAt": "2026-01-20T14:00:00-05:00"
+    },
+    "provenance": {
+      "source": "contact",
+      "sourceRecordId": "CT-DUAL-0109",
+      "eventTime": "2026-11-02T18:20:00-05:00",
+      "receivedTime": "2026-11-02T18:25:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CP-DUAL-005-pca",
+    "memberId": "SYN-DUAL-005",
+    "number": "(781) 555-0188",
+    "label": "Personal care attendant agency",
+    "owner": "caregiver",
+    "ownerName": "Harbor Elms Personal Care (fictional)",
+    "validity": "verified",
+    "isPrimaryOnFile": false,
+    "lastOutcome": {
+      "at": "2026-10-30T13:10:00-04:00",
+      "outcome": "answered"
+    },
+    "answerStats": {
+      "attempts": 3,
+      "answered": 3,
+      "note": "Agency line, business hours"
+    },
+    "bestWindow": {
+      "start": "09:00",
+      "end": "17:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "basis": "Agency business hours"
+    },
+    "consent": {
+      "calls": "yes",
+      "texts": "no",
+      "voicemail": "yes",
+      "recordedOn": "SYN-DUAL-005",
+      "recordedAt": "2026-01-20T14:00:00-05:00"
+    },
+    "provenance": {
+      "source": "directory",
+      "sourceRecordId": "DIR-DUAL-0188",
+      "eventTime": "2026-10-30T13:10:00-04:00",
+      "receivedTime": "2026-10-30T13:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

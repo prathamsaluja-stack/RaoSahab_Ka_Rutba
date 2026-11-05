@@ -1,0 +1,242 @@
+[
+  {
+    "id": "IMP-01",
+    "memberId": "SYN-HF-001",
+    "dataset": "adt-events",
+    "description": "Both ADT alerts for the 1 Nov admission and the 6 Nov discharge arrive with no diagnosis at all.",
+    "exposedBy": "Timeline ADT marker and the Sources drawer both read \"No diagnosis sent\" rather than leaving the field blank.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-02",
+    "memberId": "SYN-HF-001",
+    "dataset": "clinical-documents",
+    "description": "The discharge summary was requested on 6 Nov at 18:00 and has not been received.",
+    "exposedBy": "Documents tab shows a \"Requested, not received\" row with the request time and a re-request action.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-03",
+    "memberId": "SYN-HF-001",
+    "dataset": "claims",
+    "description": "The 1 Nov admission is absent from claims; the claims feed is complete only to about 25 Sep.",
+    "exposedBy": "Timeline claims-completeness band plus the \"claims complete to about 25 Sep\" stamp on every claims panel.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-04",
+    "memberId": "SYN-HF-001",
+    "dataset": "medication-statements",
+    "description": "Furosemide reads 80 mg daily on the discharge list and 40 mg on both the PBM and claims-derived lists.",
+    "exposedBy": "Medications matrix marks the furosemide row as a conflict with a ConflictBadge; the row is never merged.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-05",
+    "memberId": "SYN-HF-001",
+    "dataset": "pharmacy-fills",
+    "description": "Sacubitril/valsartan is new on the discharge list and has no PBM fill 63 hours after discharge.",
+    "exposedBy": "Medications matrix PBM cell reads \"No fill seen\" and signal S1 fires on the Today queue.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-06",
+    "memberId": "SYN-HF-001",
+    "dataset": "lab-results",
+    "description": "eGFR 48 on 5 Nov sits in the stage 3a range while the problem list codes CKD stage 3b.",
+    "exposedBy": "Clinical snapshot shows the lab and the coded stage side by side, each with its source and date.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-07",
+    "memberId": "SYN-HF-001",
+    "dataset": "risk-scores",
+    "description": "The readmission risk of 0.31 was scored on 31 Oct, before the 1 Nov admission.",
+    "exposedBy": "Risk card shows the scored date with a warning that it predates the latest admission.",
+    "route": "/members/SYN-HF-001"
+  },
+  {
+    "id": "IMP-08",
+    "memberId": "SYN-HF-001",
+    "dataset": "assessments",
+    "description": "The HRA of 26 Apr never asked whether there is a scale at home.",
+    "exposedBy": "HRA list shows a \"Not asked\" state, and the call guide inserts the question.",
+    "route": "/members/SYN-HF-001/call"
+  },
+  {
+    "id": "IMP-09",
+    "memberId": "SYN-DM-002",
+    "dataset": "members",
+    "description": "The member has two IDs after a coverage lapse; SYN-DM-887 was merged into SYN-DM-002.",
+    "exposedBy": "MergedFromBadge in the Member Story header, with an undo that restores the single-ID view.",
+    "route": "/members/SYN-DM-002"
+  },
+  {
+    "id": "IMP-10",
+    "memberId": "SYN-DM-002",
+    "dataset": "pharmacy-fills",
+    "description": "Fills are split across both IDs, so a single-ID view reports a false 242-day spring gap.",
+    "exposedBy": "Medications panel shows the gap computed on the resolved person and names the false single-ID figure.",
+    "route": "/members/SYN-DM-002"
+  },
+  {
+    "id": "IMP-11",
+    "memberId": "SYN-DM-002",
+    "dataset": "pharmacy-fills",
+    "description": "The real gap is 51 days since 19 Sep on insulin glargine and metformin, with zero refills left.",
+    "exposedBy": "Signal S4 reason chip on Today reads \"51-day refill gap\", computed with the lapse days excluded.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-12",
+    "memberId": "SYN-DM-002",
+    "dataset": "lab-results",
+    "description": "The prior A1c of 8.4 percent from January sits under the old member ID.",
+    "exposedBy": "Labs trend shows both results and names the ID each one was recorded under.",
+    "route": "/members/SYN-DM-002"
+  },
+  {
+    "id": "IMP-13",
+    "memberId": "SYN-DM-002",
+    "dataset": "appointments",
+    "description": "The PCP no-show on 14 Oct never appears in claims.",
+    "exposedBy": "Timeline shows a no-show marker sourced to the appointments feed, not to claims.",
+    "route": "/members/SYN-DM-002"
+  },
+  {
+    "id": "IMP-14",
+    "memberId": "SYN-DM-002",
+    "dataset": "contact-points",
+    "description": "Text consent and the HRA were both recorded only under the old member ID.",
+    "exposedBy": "Reach line and HRA card each name the member ID the record came from.",
+    "route": "/members/SYN-DM-002"
+  },
+  {
+    "id": "IMP-15",
+    "memberId": "SYN-ED-003",
+    "dataset": "contact-points",
+    "description": "The number on file has failed seven calls and the last three reported it disconnected.",
+    "exposedBy": "Contacts tab marks the file number dead with its attempt count; the Member Story demotes it.",
+    "route": "/members/SYN-ED-003"
+  },
+  {
+    "id": "IMP-16",
+    "memberId": "SYN-ED-003",
+    "dataset": "adt-events",
+    "description": "Six ADT messages describe five emergency department visits; the 18 Oct message is duplicated.",
+    "exposedBy": "Queue reason chip reads \"5 ED visits / 90 d\" and the timeline folds the duplicate with a note.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-17",
+    "memberId": "SYN-ED-003",
+    "dataset": "adt-events",
+    "description": "The current mobile and address exist only in ED registration messages.",
+    "exposedBy": "Promoted ED number carries a single-source FreshnessMark and a SourceChip naming the ADT feed.",
+    "route": "/members/SYN-ED-003"
+  },
+  {
+    "id": "IMP-18",
+    "memberId": "SYN-ED-003",
+    "dataset": "claims",
+    "description": "Claims show only two of the five emergency department visits.",
+    "exposedBy": "Claims-completeness stamp on the utilization panel states the feed is complete to about 26 Sep.",
+    "route": "/members/SYN-ED-003"
+  },
+  {
+    "id": "IMP-19",
+    "memberId": "SYN-ED-003",
+    "dataset": "pharmacy-fills",
+    "description": "Four rescue inhaler fills since August and no controller fill since 5 Jul.",
+    "exposedBy": "Medications matrix shows the controller row as lapsed and signal S5 fires on Today.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-20",
+    "memberId": "SYN-ED-003",
+    "dataset": "notes",
+    "description": "The only record of housing instability is a free-text ED clinical note.",
+    "exposedBy": "Sources drawer shows the note as the single source for the social context shown on the Overview tab.",
+    "route": "/members/SYN-ED-003"
+  },
+  {
+    "id": "IMP-21",
+    "memberId": "SYN-BH-004",
+    "dataset": "members",
+    "description": "Bipolar I from the behavioral health clinic conflicts with major depression from PCP claims.",
+    "exposedBy": "Diagnoses card lists both rows with their sources and dates and picks neither.",
+    "route": "/members/SYN-BH-004"
+  },
+  {
+    "id": "IMP-22",
+    "memberId": "SYN-BH-004",
+    "dataset": "clinical-documents",
+    "description": "A substance use treatment record exists but is restricted under 42 CFR Part 2.",
+    "exposedBy": "Documents tab renders a RestrictedBadge with the basis, never a blank row.",
+    "route": "/members/SYN-BH-004"
+  },
+  {
+    "id": "IMP-23",
+    "memberId": "SYN-BH-004",
+    "dataset": "assessments",
+    "description": "Housing was recorded as stable eight months ago; the shelter address has closed and mail was returned.",
+    "exposedBy": "Address card carries a stale FreshnessMark and a returned-mail note next to the HRA answer.",
+    "route": "/members/SYN-BH-004"
+  },
+  {
+    "id": "IMP-24",
+    "memberId": "SYN-BH-004",
+    "dataset": "lab-results",
+    "description": "The repeat lithium level after a subtherapeutic result was due 1 Nov and is 8 days overdue.",
+    "exposedBy": "Care gaps tab shows the monitoring gap and signal S8 fires on Today.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-25",
+    "memberId": "SYN-BH-004",
+    "dataset": "contact-points",
+    "description": "The member’s own mobile is disconnected; she is reachable only through the shelter caseworker.",
+    "exposedBy": "Reach line names the caseworker, the 10:00 to 12:00 window and the 2 of 2 answer rate.",
+    "route": "/members/SYN-BH-004"
+  },
+  {
+    "id": "IMP-26",
+    "memberId": "SYN-DUAL-005",
+    "dataset": "adt-events",
+    "description": "The treat-and-release ED fall on 27 Oct never entered the transition queue, and the ED claim is still missing 13 days later.",
+    "exposedBy": "Today reason chip names the fall and the timeline marks the missing claim inside the completeness band.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-27",
+    "memberId": "SYN-DUAL-005",
+    "dataset": "auth-requests",
+    "description": "Physical therapy was approved on 29 Oct with no start of care confirmed, 12 days after the request.",
+    "exposedBy": "StatusStepper stops at Approved and reads \"Approved, start not confirmed\".",
+    "route": "/members/SYN-DUAL-005"
+  },
+  {
+    "id": "IMP-28",
+    "memberId": "SYN-DUAL-005",
+    "dataset": "medication-statements",
+    "description": "Two calcium channel blockers come from two prescribers, and gabapentin 600 mg three times daily is not adjusted for eGFR 24.",
+    "exposedBy": "Medications matrix flags the duplicate pair with both prescribers; signal S6 fires on Today.",
+    "route": "/today"
+  },
+  {
+    "id": "IMP-29",
+    "memberId": "SYN-DUAL-005",
+    "dataset": "medication-statements",
+    "description": "An over-the-counter calcium with vitamin D is invisible to the PBM feed and is only member reported.",
+    "exposedBy": "Medications matrix shows a member-reported column, and the 11-medication count on the S9 chip includes it.",
+    "route": "/members/SYN-DUAL-005"
+  },
+  {
+    "id": "IMP-30",
+    "memberId": "SYN-DUAL-005",
+    "dataset": "members",
+    "description": "CKD is still coded stage 3 while the eGFR is 24, and a cost-based model ranks her only medium.",
+    "exposedBy": "Clinical snapshot shows the coded stage beside the lab, and the risk card names the cost basis and its known bias.",
+    "route": "/members/SYN-DUAL-005"
+  }
+]

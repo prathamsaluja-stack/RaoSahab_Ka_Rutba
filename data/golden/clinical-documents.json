@@ -1,0 +1,147 @@
+[
+  {
+    "id": "DOC-HF-CCD",
+    "memberId": "SYN-HF-001",
+    "type": "Discharge medication list",
+    "title": "Discharge medication list (CCD), 6 Nov",
+    "state": "received",
+    "requestedAt": null,
+    "receivedAt": "2026-11-06T19:30:00-05:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "DOC-HF-SUMMARY",
+    "memberId": "SYN-HF-001",
+    "type": "Discharge summary",
+    "title": "Discharge summary, admission of 1 Nov",
+    "state": "requested_not_received",
+    "requestedAt": "2026-11-06T18:00:00-05:00",
+    "receivedAt": null,
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "DOCREQ-HF-1106",
+      "eventTime": "2026-11-06T18:00:00-05:00",
+      "receivedTime": "2026-11-06T18:00:00-05:00",
+      "status": "unresolved"
+    }
+  },
+  {
+    "id": "DOC-HF-ECHO",
+    "memberId": "SYN-HF-001",
+    "type": "Diagnostic report",
+    "title": "Echocardiogram report, 15 Jul",
+    "state": "received",
+    "requestedAt": null,
+    "receivedAt": "2026-07-16T09:15:00-04:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-0715",
+      "eventTime": "2026-07-15T10:30:00-04:00",
+      "receivedTime": "2026-07-16T09:15:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "DOC-DM-ENDO",
+    "memberId": "SYN-DM-002",
+    "type": "Consult note",
+    "title": "Endocrinology consult note",
+    "state": "requested_not_received",
+    "requestedAt": "2026-10-28T11:00:00-04:00",
+    "receivedAt": null,
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "DOCREQ-DM-1028",
+      "eventTime": "2026-10-28T11:00:00-04:00",
+      "receivedTime": "2026-10-28T11:00:00-04:00",
+      "status": "unresolved"
+    }
+  },
+  {
+    "id": "DOC-ED-NOTE",
+    "memberId": "SYN-ED-003",
+    "type": "ED clinical note",
+    "title": "ED clinical note, 3 Nov",
+    "state": "received",
+    "requestedAt": null,
+    "receivedAt": "2026-11-04T02:40:00-05:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-ED-1103",
+      "eventTime": "2026-11-03T22:15:00-05:00",
+      "receivedTime": "2026-11-04T02:40:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "DOC-BH-CLINIC",
+    "memberId": "SYN-BH-004",
+    "type": "Behavioral health note",
+    "title": "Behavioral health clinic note, 17 Sep",
+    "state": "received",
+    "requestedAt": null,
+    "receivedAt": "2026-09-18T02:10:00-04:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-BH-0917",
+      "eventTime": "2026-09-17T10:00:00-04:00",
+      "receivedTime": "2026-09-18T02:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "DOC-BH-SUD",
+    "memberId": "SYN-BH-004",
+    "type": "Substance use treatment record",
+    "title": "Substance use treatment record",
+    "state": "restricted",
+    "requestedAt": "2026-10-12T09:00:00-04:00",
+    "receivedAt": null,
+    "restrictionBasis": "42 CFR Part 2 substance use disorder record; a signed release is not on file",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "DOCREQ-BH-1012",
+      "eventTime": "2026-10-12T09:00:00-04:00",
+      "receivedTime": "2026-10-12T09:00:00-04:00",
+      "status": "unresolved"
+    }
+  },
+  {
+    "id": "DOC-DUAL-ED",
+    "memberId": "SYN-DUAL-005",
+    "type": "ED visit summary",
+    "title": "ED visit summary, 27 Oct, treat and release",
+    "state": "received",
+    "requestedAt": null,
+    "receivedAt": "2026-10-28T04:20:00-04:00",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-DUAL-1027",
+      "eventTime": "2026-10-27T15:05:00-04:00",
+      "receivedTime": "2026-10-28T04:20:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "DOC-DUAL-POC",
+    "memberId": "SYN-DUAL-005",
+    "type": "Home health plan of care",
+    "title": "Home health plan of care, physical therapy",
+    "state": "requested_not_received",
+    "requestedAt": "2026-10-29T15:00:00-04:00",
+    "receivedAt": null,
+    "provenance": {
+      "source": "um",
+      "sourceRecordId": "DOCREQ-DUAL-1029",
+      "eventTime": "2026-10-29T15:00:00-04:00",
+      "receivedTime": "2026-10-29T15:00:00-04:00",
+      "status": "unresolved"
+    }
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "id": "LAB-HF-BNP-1101",
+    "memberId": "SYN-HF-001",
+    "loinc": "30934-4",
+    "name": "B-type natriuretic peptide",
+    "value": 1850,
+    "unit": "pg/mL",
+    "specimenTime": "2026-11-01T15:40:00-05:00",
+    "referenceRange": "< 100 pg/mL",
+    "abnormalFlag": "critical",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-HF-1101",
+      "eventTime": "2026-11-01T15:40:00-05:00",
+      "receivedTime": "2026-11-01T18:05:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-HF-BNP-1105",
+    "memberId": "SYN-HF-001",
+    "loinc": "30934-4",
+    "name": "B-type natriuretic peptide",
+    "value": 620,
+    "unit": "pg/mL",
+    "specimenTime": "2026-11-05T06:10:00-05:00",
+    "referenceRange": "< 100 pg/mL",
+    "abnormalFlag": "high",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-HF-1105",
+      "eventTime": "2026-11-05T06:10:00-05:00",
+      "receivedTime": "2026-11-05T08:25:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-HF-K-1105",
+    "memberId": "SYN-HF-001",
+    "loinc": "2823-3",
+    "name": "Potassium",
+    "value": 4.9,
+    "unit": "mmol/L",
+    "specimenTime": "2026-11-05T06:10:00-05:00",
+    "referenceRange": "3.5 to 5.1 mmol/L",
+    "abnormalFlag": "normal",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-HF-1105",
+      "eventTime": "2026-11-05T06:10:00-05:00",
+      "receivedTime": "2026-11-05T08:25:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-HF-EGFR-1105",
+    "memberId": "SYN-HF-001",
+    "loinc": "48642-3",
+    "name": "eGFR",
+    "value": 48,
+    "unit": "mL/min/1.73m2",
+    "specimenTime": "2026-11-05T06:10:00-05:00",
+    "referenceRange": "> 60 mL/min/1.73m2",
+    "abnormalFlag": "low",
+    "discrepancyNote": "eGFR 48 sits in the stage 3a range while the problem list codes CKD stage 3b. Both are shown; neither is reconciled by software.",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-HF-1105",
+      "eventTime": "2026-11-05T06:10:00-05:00",
+      "receivedTime": "2026-11-05T08:25:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-HF-EGFR-0715",
+    "memberId": "SYN-HF-001",
+    "loinc": "48642-3",
+    "name": "eGFR",
+    "value": 52,
+    "unit": "mL/min/1.73m2",
+    "specimenTime": "2026-07-15T09:20:00-04:00",
+    "abnormalFlag": "low",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-HF-0715",
+      "eventTime": "2026-07-15T09:20:00-04:00",
+      "receivedTime": "2026-07-15T13:40:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-DM-A1C-0714",
+    "memberId": "SYN-DM-002",
+    "loinc": "4548-4",
+    "name": "Hemoglobin A1c",
+    "value": 9.8,
+    "unit": "%",
+    "specimenTime": "2026-07-14T09:05:00-04:00",
+    "referenceRange": "< 7.0 %",
+    "abnormalFlag": "critical",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-DM-0714",
+      "eventTime": "2026-07-14T09:05:00-04:00",
+      "receivedTime": "2026-07-15T02:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-DM-A1C-0115",
+    "memberId": "SYN-DM-887",
+    "loinc": "4548-4",
+    "name": "Hemoglobin A1c",
+    "value": 8.4,
+    "unit": "%",
+    "specimenTime": "2026-01-15T09:30:00-05:00",
+    "referenceRange": "< 7.0 %",
+    "abnormalFlag": "high",
+    "discrepancyNote": "Recorded under the prior member ID SYN-DM-887; only visible once the two IDs are resolved.",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-DM-0115",
+      "eventTime": "2026-01-15T09:30:00-05:00",
+      "receivedTime": "2026-01-16T02:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-BH-LI-0812",
+    "memberId": "SYN-BH-004",
+    "loinc": "14334-7",
+    "name": "Lithium level",
+    "value": 0.4,
+    "unit": "mmol/L",
+    "specimenTime": "2026-08-12T10:15:00-04:00",
+    "referenceRange": "0.6 to 1.2 mmol/L",
+    "abnormalFlag": "low",
+    "discrepancyNote": "Subtherapeutic. The repeat level was due 1 Nov and has not been drawn.",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-BH-0812",
+      "eventTime": "2026-08-12T10:15:00-04:00",
+      "receivedTime": "2026-08-13T02:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-DUAL-EGFR-1027",
+    "memberId": "SYN-DUAL-005",
+    "loinc": "48642-3",
+    "name": "eGFR",
+    "value": 24,
+    "unit": "mL/min/1.73m2",
+    "specimenTime": "2026-10-27T12:10:00-04:00",
+    "referenceRange": "> 60 mL/min/1.73m2",
+    "abnormalFlag": "low",
+    "discrepancyNote": "eGFR 24 sits in the stage 4 range while the problem list still codes CKD stage 3.",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-DUAL-1027",
+      "eventTime": "2026-10-27T12:10:00-04:00",
+      "receivedTime": "2026-10-27T16:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "LAB-DUAL-CR-1027",
+    "memberId": "SYN-DUAL-005",
+    "loinc": "2160-0",
+    "name": "Creatinine",
+    "value": 2.1,
+    "unit": "mg/dL",
+    "specimenTime": "2026-10-27T12:10:00-04:00",
+    "referenceRange": "0.6 to 1.1 mg/dL",
+    "abnormalFlag": "high",
+    "provenance": {
+      "source": "labs",
+      "sourceRecordId": "LAB-DUAL-1027",
+      "eventTime": "2026-10-27T12:10:00-04:00",
+      "receivedTime": "2026-10-27T16:30:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

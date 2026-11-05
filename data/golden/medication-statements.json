@@ -1,0 +1,677 @@
+[
+  {
+    "id": "MS-HF-FUR-CCD",
+    "memberId": "SYN-HF-001",
+    "drug": "Furosemide",
+    "ingredient": "furosemide",
+    "rxNorm": "4603",
+    "dose": "80 mg",
+    "frequency": "Once daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-11-06",
+    "change": "changed",
+    "isHighRisk": true,
+    "prescriber": "Riverbend General Hospital (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-FUR-PBM",
+    "memberId": "SYN-HF-001",
+    "drug": "Furosemide",
+    "ingredient": "furosemide",
+    "rxNorm": "4603",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-HF-FUR-1010",
+      "eventTime": "2026-10-10T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-FUR-CLM",
+    "memberId": "SYN-HF-001",
+    "drug": "Furosemide",
+    "ingredient": "furosemide",
+    "rxNorm": "4603",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-09-22",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-FUR",
+      "eventTime": "2026-09-22T12:00:00-04:00",
+      "receivedTime": "2026-10-06T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-ARNI-CCD",
+    "memberId": "SYN-HF-001",
+    "drug": "Sacubitril/valsartan",
+    "ingredient": "sacubitril-valsartan",
+    "rxNorm": "1656340",
+    "dose": "24/26 mg",
+    "frequency": "Twice daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-11-06",
+    "change": "new",
+    "isHighRisk": true,
+    "prescriber": "Riverbend General Hospital (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-APX-CCD",
+    "memberId": "SYN-HF-001",
+    "drug": "Apixaban",
+    "ingredient": "apixaban",
+    "rxNorm": "1364430",
+    "dose": "5 mg",
+    "frequency": "Twice daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-11-06",
+    "change": "unchanged",
+    "isHighRisk": true,
+    "prescriber": "Riverbend General Hospital (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-APX-PBM",
+    "memberId": "SYN-HF-001",
+    "drug": "Apixaban",
+    "ingredient": "apixaban",
+    "rxNorm": "1364430",
+    "dose": "5 mg",
+    "frequency": "Twice daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-HF-APX-1025",
+      "eventTime": "2026-10-25T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-APX-CLM",
+    "memberId": "SYN-HF-001",
+    "drug": "Apixaban",
+    "ingredient": "apixaban",
+    "rxNorm": "1364430",
+    "dose": "5 mg",
+    "frequency": "Twice daily",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-09-22",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-APX",
+      "eventTime": "2026-09-22T12:00:00-04:00",
+      "receivedTime": "2026-10-06T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-MET-CCD",
+    "memberId": "SYN-HF-001",
+    "drug": "Metoprolol succinate",
+    "ingredient": "metoprolol-succinate",
+    "rxNorm": "866924",
+    "dose": "50 mg",
+    "frequency": "Once daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-11-06",
+    "change": "unchanged",
+    "isHighRisk": false,
+    "prescriber": "Riverbend General Hospital (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-MET-PBM",
+    "memberId": "SYN-HF-001",
+    "drug": "Metoprolol succinate",
+    "ingredient": "metoprolol-succinate",
+    "rxNorm": "866924",
+    "dose": "50 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-HF-MET-1025",
+      "eventTime": "2026-10-25T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-MET-CLM",
+    "memberId": "SYN-HF-001",
+    "drug": "Metoprolol succinate",
+    "ingredient": "metoprolol-succinate",
+    "rxNorm": "866924",
+    "dose": "50 mg",
+    "frequency": "Once daily",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-09-22",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-MET",
+      "eventTime": "2026-09-22T12:00:00-04:00",
+      "receivedTime": "2026-10-06T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-ATV-CCD",
+    "memberId": "SYN-HF-001",
+    "drug": "Atorvastatin",
+    "ingredient": "atorvastatin",
+    "rxNorm": "83367",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-11-06",
+    "change": "unchanged",
+    "isHighRisk": false,
+    "prescriber": "Riverbend General Hospital (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T19:30:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-ATV-PBM",
+    "memberId": "SYN-HF-001",
+    "drug": "Atorvastatin",
+    "ingredient": "atorvastatin",
+    "rxNorm": "83367",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-HF-ATV-0912",
+      "eventTime": "2026-09-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-HF-ATV-CLM",
+    "memberId": "SYN-HF-001",
+    "drug": "Atorvastatin",
+    "ingredient": "atorvastatin",
+    "rxNorm": "83367",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-09-22",
+    "prescriber": "Dr. Rook (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-ATV",
+      "eventTime": "2026-09-22T12:00:00-04:00",
+      "receivedTime": "2026-10-06T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DM-GLA-PBM",
+    "memberId": "SYN-DM-002",
+    "drug": "Insulin glargine",
+    "ingredient": "insulin-glargine",
+    "rxNorm": "274783",
+    "dose": "100 units/mL",
+    "frequency": "Nightly",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "prescriber": "Dr. Almavine (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DM-002-GLA-0820",
+      "eventTime": "2026-08-20T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DM-MET-PBM",
+    "memberId": "SYN-DM-002",
+    "drug": "Metformin",
+    "ingredient": "metformin",
+    "rxNorm": "6809",
+    "dose": "1000 mg",
+    "frequency": "Twice daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Almavine (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DM-002-MET-0820",
+      "eventTime": "2026-08-20T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DM-GLA-CLM",
+    "memberId": "SYN-DM-002",
+    "drug": "Insulin glargine",
+    "ingredient": "insulin-glargine",
+    "rxNorm": "274783",
+    "dose": "100 units/mL",
+    "frequency": "Nightly",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-07-14",
+    "prescriber": "Dr. Almavine (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DM-RX-GLA",
+      "eventTime": "2026-07-14T12:00:00-04:00",
+      "receivedTime": "2026-08-02T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-ED-ALB-PBM",
+    "memberId": "SYN-ED-003",
+    "drug": "Albuterol sulfate HFA",
+    "ingredient": "albuterol",
+    "rxNorm": "745679",
+    "dose": "90 mcg",
+    "frequency": "As needed",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dockside Community Hospital ED (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-ED-ALB-1019",
+      "eventTime": "2026-10-19T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-ED-FLU-PBM",
+    "memberId": "SYN-ED-003",
+    "drug": "Fluticasone-salmeterol",
+    "ingredient": "fluticasone-salmeterol",
+    "rxNorm": "896188",
+    "dose": "250/50 mcg",
+    "frequency": "Twice daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "drugClass": "Inhaled controller",
+    "prescriber": "Dr. Cindervale (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-ED-FLU-0705",
+      "eventTime": "2026-07-05T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-ED-SER-PBM",
+    "memberId": "SYN-ED-003",
+    "drug": "Sertraline",
+    "ingredient": "sertraline",
+    "rxNorm": "36437",
+    "dose": "50 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "prescriber": "Dr. Cindervale (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-ED-SER-0705",
+      "eventTime": "2026-07-05T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-ED-ALB-CLM",
+    "memberId": "SYN-ED-003",
+    "drug": "Albuterol sulfate HFA",
+    "ingredient": "albuterol",
+    "rxNorm": "745679",
+    "dose": "90 mcg",
+    "frequency": "As needed",
+    "sourceList": "claims_derived",
+    "asOfDate": "2026-09-07",
+    "prescriber": "Dockside Community Hospital ED (fictional)",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-ED-RX-ALB",
+      "eventTime": "2026-09-07T12:00:00-04:00",
+      "receivedTime": "2026-09-29T03:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-BH-LIT-PBM",
+    "memberId": "SYN-BH-004",
+    "drug": "Lithium carbonate",
+    "ingredient": "lithium",
+    "rxNorm": "6448",
+    "dose": "300 mg",
+    "frequency": "Twice daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "prescriber": "Dr. Veyland (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-BH-LIT-0912",
+      "eventTime": "2026-09-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-BH-QUE-PBM",
+    "memberId": "SYN-BH-004",
+    "drug": "Quetiapine",
+    "ingredient": "quetiapine",
+    "rxNorm": "51272",
+    "dose": "100 mg",
+    "frequency": "Nightly",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "prescriber": "Dr. Veyland (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-BH-QUE-0912",
+      "eventTime": "2026-09-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-BH-LIT-CCD",
+    "memberId": "SYN-BH-004",
+    "drug": "Lithium carbonate",
+    "ingredient": "lithium",
+    "rxNorm": "6448",
+    "dose": "300 mg",
+    "frequency": "Twice daily",
+    "sourceList": "discharge_list",
+    "asOfDate": "2026-09-17",
+    "change": "unchanged",
+    "prescriber": "Dr. Veyland (fictional)",
+    "provenance": {
+      "source": "ccd",
+      "sourceRecordId": "CCD-BH-0917",
+      "eventTime": "2026-09-17T10:00:00-04:00",
+      "receivedTime": "2026-09-18T02:10:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-AML-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Amlodipine",
+    "ingredient": "amlodipine",
+    "rxNorm": "17767",
+    "dose": "10 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "drugClass": "Calcium channel blocker",
+    "prescriber": "Dr. Pell (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-AML-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-DIL-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Diltiazem ER",
+    "ingredient": "diltiazem",
+    "rxNorm": "343047",
+    "dose": "180 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "drugClass": "Calcium channel blocker",
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-DIL-1005",
+      "eventTime": "2026-10-05T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-GAB-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Gabapentin",
+    "ingredient": "gabapentin",
+    "rxNorm": "25480",
+    "dose": "600 mg",
+    "frequency": "Three times daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": true,
+    "drugClass": "Anticonvulsant, renally cleared",
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-GAB-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-DON-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Donepezil",
+    "ingredient": "donepezil",
+    "rxNorm": "135447",
+    "dose": "10 mg",
+    "frequency": "Nightly",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-DON-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-MEM-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Memantine",
+    "ingredient": "memantine",
+    "rxNorm": "6719",
+    "dose": "10 mg",
+    "frequency": "Twice daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-MEM-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-FUR-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Furosemide",
+    "ingredient": "furosemide",
+    "rxNorm": "4603",
+    "dose": "20 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-FUR-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-ATV-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Atorvastatin",
+    "ingredient": "atorvastatin",
+    "rxNorm": "83367",
+    "dose": "20 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-ATV-0920",
+      "eventTime": "2026-09-20T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-LEV-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Levothyroxine",
+    "ingredient": "levothyroxine",
+    "rxNorm": "10582",
+    "dose": "75 mcg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-LEV-0920",
+      "eventTime": "2026-09-20T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-PAN-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Pantoprazole",
+    "ingredient": "pantoprazole",
+    "rxNorm": "40790",
+    "dose": "40 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-PAN-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-SER-PBM",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Sertraline",
+    "ingredient": "sertraline",
+    "rxNorm": "36437",
+    "dose": "25 mg",
+    "frequency": "Once daily",
+    "sourceList": "pbm",
+    "asOfDate": "2026-11-08",
+    "isHighRisk": false,
+    "prescriber": "Dr. Ashgrove (fictional)",
+    "provenance": {
+      "source": "pbm",
+      "sourceRecordId": "FILL-DUAL-SER-1012",
+      "eventTime": "2026-10-12T12:00:00-05:00",
+      "receivedTime": "2026-11-08T23:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "MS-DUAL-CAL-MR",
+    "memberId": "SYN-DUAL-005",
+    "drug": "Calcium with vitamin D (over the counter)",
+    "ingredient": "calcium-vitamin-d",
+    "rxNorm": "1160061",
+    "dose": "600 mg / 400 IU",
+    "frequency": "Twice daily",
+    "sourceList": "member_reported",
+    "asOfDate": "2026-10-30",
+    "prescriber": "Bought over the counter; no prescriber",
+    "provenance": {
+      "source": "cm_record",
+      "sourceRecordId": "CM-DUAL-OTC-1030",
+      "eventTime": "2026-10-30T13:10:00-04:00",
+      "receivedTime": "2026-10-30T13:15:00-04:00",
+      "status": "member_reported",
+      "reviewer": "Maria R., RN"
+    }
+  }
+]

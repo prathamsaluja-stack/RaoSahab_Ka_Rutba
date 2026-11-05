@@ -1,0 +1,385 @@
+[
+  {
+    "id": "CLM-HF-0715",
+    "memberId": "SYN-HF-001",
+    "type": "professional",
+    "serviceDate": "2026-07-15",
+    "receivedDate": "2026-07-30",
+    "codes": {
+      "icd10": [
+        "I50.22"
+      ],
+      "cpt": "93306"
+    },
+    "status": "paid",
+    "provider": "Riverbend Cardiology (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-0715",
+      "eventTime": "2026-07-15T12:00:00-04:00",
+      "receivedTime": "2026-07-30T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-0830",
+    "memberId": "SYN-HF-001",
+    "type": "professional",
+    "serviceDate": "2026-08-30",
+    "receivedDate": "2026-09-14",
+    "codes": {
+      "icd10": [
+        "I48.91",
+        "I50.22"
+      ],
+      "cpt": "99214"
+    },
+    "status": "paid",
+    "provider": "Riverbend Cardiology (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-0830",
+      "eventTime": "2026-08-30T12:00:00-04:00",
+      "receivedTime": "2026-09-14T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-0912",
+    "memberId": "SYN-HF-001",
+    "type": "professional",
+    "serviceDate": "2026-09-22",
+    "receivedDate": "2026-10-06",
+    "codes": {
+      "icd10": [
+        "I50.22",
+        "N18.32"
+      ],
+      "cpt": "99214"
+    },
+    "status": "paid",
+    "provider": "Dr. Rook (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-0912",
+      "eventTime": "2026-09-22T12:00:00-04:00",
+      "receivedTime": "2026-10-06T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-RX-FUR",
+    "memberId": "SYN-HF-001",
+    "type": "pharmacy",
+    "serviceDate": "2026-09-12",
+    "receivedDate": "2026-09-24",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0001-01"
+    },
+    "status": "paid",
+    "provider": "Larchmere Pharmacy (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-FUR",
+      "eventTime": "2026-09-12T12:00:00-04:00",
+      "receivedTime": "2026-09-24T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-RX-APX",
+    "memberId": "SYN-HF-001",
+    "type": "pharmacy",
+    "serviceDate": "2026-09-12",
+    "receivedDate": "2026-09-24",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0002-01"
+    },
+    "status": "paid",
+    "provider": "Larchmere Pharmacy (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-APX",
+      "eventTime": "2026-09-12T12:00:00-04:00",
+      "receivedTime": "2026-09-24T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-RX-MET",
+    "memberId": "SYN-HF-001",
+    "type": "pharmacy",
+    "serviceDate": "2026-09-12",
+    "receivedDate": "2026-09-24",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0003-01"
+    },
+    "status": "paid",
+    "provider": "Larchmere Pharmacy (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-MET",
+      "eventTime": "2026-09-12T12:00:00-04:00",
+      "receivedTime": "2026-09-24T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-HF-RX-ATV",
+    "memberId": "SYN-HF-001",
+    "type": "pharmacy",
+    "serviceDate": "2026-09-12",
+    "receivedDate": "2026-09-24",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0004-01"
+    },
+    "status": "paid",
+    "provider": "Larchmere Pharmacy (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-HF-RX-ATV",
+      "eventTime": "2026-09-12T12:00:00-04:00",
+      "receivedTime": "2026-09-24T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-DM-0115",
+    "memberId": "SYN-DM-887",
+    "type": "professional",
+    "serviceDate": "2026-01-15",
+    "receivedDate": "2026-02-02",
+    "codes": {
+      "icd10": [
+        "E11.65"
+      ],
+      "cpt": "99213"
+    },
+    "status": "paid",
+    "provider": "Dr. Almavine (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DM-0115",
+      "eventTime": "2026-01-15T12:00:00-05:00",
+      "receivedTime": "2026-02-02T12:00:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-DM-0714",
+    "memberId": "SYN-DM-002",
+    "type": "professional",
+    "serviceDate": "2026-07-14",
+    "receivedDate": "2026-08-02",
+    "codes": {
+      "icd10": [
+        "E11.65"
+      ],
+      "cpt": "99214"
+    },
+    "status": "paid",
+    "provider": "Dr. Almavine (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DM-0714",
+      "eventTime": "2026-07-14T12:00:00-04:00",
+      "receivedTime": "2026-08-02T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-DM-RX-GLA",
+    "memberId": "SYN-DM-002",
+    "type": "pharmacy",
+    "serviceDate": "2026-06-01",
+    "receivedDate": "2026-06-16",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0005-01"
+    },
+    "status": "paid",
+    "provider": "Merrimack Corner Drug (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DM-RX-GLA",
+      "eventTime": "2026-06-01T12:00:00-04:00",
+      "receivedTime": "2026-06-16T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-ED-0819",
+    "memberId": "SYN-ED-003",
+    "type": "institutional",
+    "serviceDate": "2026-08-19",
+    "receivedDate": "2026-09-10",
+    "codes": {
+      "icd10": [
+        "J45.40"
+      ],
+      "revenue": "0450"
+    },
+    "status": "paid",
+    "provider": "Dockside Community Hospital (fictional)",
+    "placeOfService": "Emergency room",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-ED-0819",
+      "eventTime": "2026-08-19T12:00:00-04:00",
+      "receivedTime": "2026-09-10T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-ED-0907",
+    "memberId": "SYN-ED-003",
+    "type": "institutional",
+    "serviceDate": "2026-09-07",
+    "receivedDate": "2026-09-29",
+    "codes": {
+      "icd10": [
+        "J45.41",
+        "F33.1"
+      ],
+      "revenue": "0450"
+    },
+    "status": "paid",
+    "provider": "Dockside Community Hospital (fictional)",
+    "placeOfService": "Emergency room",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-ED-0907",
+      "eventTime": "2026-09-07T12:00:00-04:00",
+      "receivedTime": "2026-09-29T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-ED-RX-ALB",
+    "memberId": "SYN-ED-003",
+    "type": "pharmacy",
+    "serviceDate": "2026-09-08",
+    "receivedDate": "2026-09-22",
+    "codes": {
+      "icd10": [],
+      "ndc": "00000-0006-01"
+    },
+    "status": "paid",
+    "provider": "Dockside Neighborhood Pharmacy (fictional)",
+    "placeOfService": "Pharmacy",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-ED-RX-ALB",
+      "eventTime": "2026-09-08T12:00:00-04:00",
+      "receivedTime": "2026-09-22T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-BH-0818",
+    "memberId": "SYN-BH-004",
+    "type": "professional",
+    "serviceDate": "2026-08-18",
+    "receivedDate": "2026-09-05",
+    "codes": {
+      "icd10": [
+        "F33.1"
+      ],
+      "cpt": "99213"
+    },
+    "status": "paid",
+    "provider": "Dr. Lantrell (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-BH-0818",
+      "eventTime": "2026-08-18T12:00:00-04:00",
+      "receivedTime": "2026-09-05T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-BH-0901",
+    "memberId": "SYN-BH-004",
+    "type": "professional",
+    "serviceDate": "2026-09-01",
+    "receivedDate": "2026-09-18",
+    "codes": {
+      "icd10": [
+        "F31.9"
+      ],
+      "cpt": "90834"
+    },
+    "status": "paid",
+    "provider": "Harborlight Behavioral Clinic (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-BH-0901",
+      "eventTime": "2026-09-01T12:00:00-04:00",
+      "receivedTime": "2026-09-18T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-DUAL-0915",
+    "memberId": "SYN-DUAL-005",
+    "type": "professional",
+    "serviceDate": "2026-09-15",
+    "receivedDate": "2026-09-28",
+    "codes": {
+      "icd10": [
+        "F03.90",
+        "N18.30"
+      ],
+      "cpt": "99215"
+    },
+    "status": "paid",
+    "provider": "Dr. Ashgrove (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DUAL-0915",
+      "eventTime": "2026-09-15T12:00:00-04:00",
+      "receivedTime": "2026-09-28T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "CLM-DUAL-0820",
+    "memberId": "SYN-DUAL-005",
+    "type": "professional",
+    "serviceDate": "2026-08-20",
+    "receivedDate": "2026-09-04",
+    "codes": {
+      "icd10": [
+        "I10"
+      ],
+      "cpt": "99214"
+    },
+    "status": "paid",
+    "provider": "Dr. Pell (fictional)",
+    "placeOfService": "Office",
+    "provenance": {
+      "source": "claims",
+      "sourceRecordId": "CLM-DUAL-0820",
+      "eventTime": "2026-08-20T12:00:00-04:00",
+      "receivedTime": "2026-09-04T12:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

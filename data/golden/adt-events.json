@@ -1,0 +1,175 @@
+[
+  {
+    "id": "ADT-HF-1101",
+    "memberId": "SYN-HF-001",
+    "type": "admit",
+    "facility": "Riverbend General Hospital (fictional)",
+    "eventTime": "2026-11-01T14:20:00-05:00",
+    "diagnosis": null,
+    "disposition": null,
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-HF-1101",
+      "eventTime": "2026-11-01T14:20:00-05:00",
+      "receivedTime": "2026-11-01T15:05:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-HF-1106",
+    "memberId": "SYN-HF-001",
+    "type": "discharge",
+    "facility": "Riverbend General Hospital (fictional)",
+    "eventTime": "2026-11-06T16:45:00-05:00",
+    "diagnosis": null,
+    "disposition": "Home with a home health referral",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-HF-1106",
+      "eventTime": "2026-11-06T16:45:00-05:00",
+      "receivedTime": "2026-11-06T17:38:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-0819",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-08-19T21:40:00-04:00",
+    "diagnosis": null,
+    "disposition": "Treated and released",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-0819",
+      "eventTime": "2026-08-19T21:40:00-04:00",
+      "receivedTime": "2026-08-19T22:12:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-0907",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-09-07T18:05:00-04:00",
+    "diagnosis": "Asthma exacerbation",
+    "disposition": "Treated and released",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-0907",
+      "eventTime": "2026-09-07T18:05:00-04:00",
+      "receivedTime": "2026-09-07T18:44:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-0928",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-09-28T23:15:00-04:00",
+    "diagnosis": null,
+    "disposition": "Treated and released",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-0928",
+      "eventTime": "2026-09-28T23:15:00-04:00",
+      "receivedTime": "2026-09-28T23:51:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-1018",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-10-18T20:30:00-04:00",
+    "diagnosis": "Asthma exacerbation",
+    "disposition": "Treated and released",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-1018",
+      "eventTime": "2026-10-18T20:30:00-04:00",
+      "receivedTime": "2026-10-18T21:04:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-1103",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-11-03T19:50:00-05:00",
+    "diagnosis": "Wheezing",
+    "disposition": "Treated and released",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-1103",
+      "eventTime": "2026-11-03T19:50:00-05:00",
+      "receivedTime": "2026-11-03T20:31:00-05:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-ED-1018-B",
+    "memberId": "SYN-ED-003",
+    "type": "ed_registration",
+    "facility": "Dockside Community Hospital (fictional)",
+    "eventTime": "2026-10-18T20:30:00-04:00",
+    "diagnosis": "Asthma exacerbation",
+    "disposition": "Treated and released",
+    "duplicateOf": "ADT-ED-1018",
+    "registrationPhone": "(617) 555-0196",
+    "registrationAddress": "41 Example Row, Apt 2B, Boston, MA 02121",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-ED-1018-B",
+      "eventTime": "2026-10-18T20:30:00-04:00",
+      "receivedTime": "2026-10-18T21:09:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-DUAL-1027-A",
+    "memberId": "SYN-DUAL-005",
+    "type": "ed_registration",
+    "facility": "Quincy Shoreline Hospital (fictional)",
+    "eventTime": "2026-10-27T11:20:00-04:00",
+    "diagnosis": "Fall, initial encounter",
+    "disposition": null,
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-DUAL-1027-A",
+      "eventTime": "2026-10-27T11:20:00-04:00",
+      "receivedTime": "2026-10-27T12:02:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "ADT-DUAL-1027-B",
+    "memberId": "SYN-DUAL-005",
+    "type": "ed_discharge",
+    "facility": "Quincy Shoreline Hospital (fictional)",
+    "eventTime": "2026-10-27T15:05:00-04:00",
+    "diagnosis": null,
+    "disposition": "Treated and released to home",
+    "provenance": {
+      "source": "adt",
+      "sourceRecordId": "ADT-DUAL-1027-B",
+      "eventTime": "2026-10-27T15:05:00-04:00",
+      "receivedTime": "2026-10-27T15:48:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]

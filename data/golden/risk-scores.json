@@ -1,0 +1,82 @@
+[
+  {
+    "id": "RISK-HF-1031",
+    "memberId": "SYN-HF-001",
+    "value": 0.31,
+    "model": "Readmission risk v4 (fictional)",
+    "basis": "utilization",
+    "band": "medium",
+    "scoredDate": "2026-10-31",
+    "provenance": {
+      "source": "risk",
+      "sourceRecordId": "RISK-HF-1031",
+      "eventTime": "2026-10-31T12:00:00-04:00",
+      "receivedTime": "2026-10-31T23:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "RISK-DM-1031",
+    "memberId": "SYN-DM-002",
+    "value": 0.18,
+    "model": "Total cost of care v2 (fictional)",
+    "basis": "cost",
+    "band": "low",
+    "scoredDate": "2026-10-31",
+    "provenance": {
+      "source": "risk",
+      "sourceRecordId": "RISK-DM-1031",
+      "eventTime": "2026-10-31T12:00:00-04:00",
+      "receivedTime": "2026-10-31T23:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "RISK-ED-1031",
+    "memberId": "SYN-ED-003",
+    "value": 0.22,
+    "model": "Total cost of care v2 (fictional)",
+    "basis": "cost",
+    "band": "low",
+    "scoredDate": "2026-10-31",
+    "provenance": {
+      "source": "risk",
+      "sourceRecordId": "RISK-ED-1031",
+      "eventTime": "2026-10-31T12:00:00-04:00",
+      "receivedTime": "2026-10-31T23:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "RISK-BH-1031",
+    "memberId": "SYN-BH-004",
+    "value": 0.27,
+    "model": "Total cost of care v2 (fictional)",
+    "basis": "cost",
+    "band": "medium",
+    "scoredDate": "2026-10-31",
+    "provenance": {
+      "source": "risk",
+      "sourceRecordId": "RISK-BH-1031",
+      "eventTime": "2026-10-31T12:00:00-04:00",
+      "receivedTime": "2026-10-31T23:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  },
+  {
+    "id": "RISK-DUAL-1031",
+    "memberId": "SYN-DUAL-005",
+    "value": 0.42,
+    "model": "Total cost of care v2 (fictional)",
+    "basis": "cost",
+    "band": "medium",
+    "scoredDate": "2026-10-31",
+    "provenance": {
+      "source": "risk",
+      "sourceRecordId": "RISK-DUAL-1031",
+      "eventTime": "2026-10-31T12:00:00-04:00",
+      "receivedTime": "2026-10-31T23:00:00-04:00",
+      "status": "source_confirmed"
+    }
+  }
+]
