@@ -4,3 +4,4 @@ export * from '@/domain/member';
 export * from '@/domain/clinical';
 export * from '@/domain/operations';
 export * from '@/domain/caseload';
+export * from '@/domain/queue';

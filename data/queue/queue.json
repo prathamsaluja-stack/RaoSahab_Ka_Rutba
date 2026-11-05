@@ -1,0 +1,2151 @@
+{
+  "asOf": "2026-11-09T08:00:00-05:00",
+  "tabs": [
+    {
+      "id": "due_today",
+      "label": "Due today",
+      "count": 4,
+      "description": "A hard clock lands today or tomorrow, or a safety signal fired."
+    },
+    {
+      "id": "at_risk",
+      "label": "At risk",
+      "count": 3,
+      "description": "A signal fired with no hard clock attached to it."
+    },
+    {
+      "id": "follow_ups_due",
+      "label": "Follow-ups due",
+      "count": 5,
+      "description": "A scheduled step in a care pathway is open."
+    },
+    {
+      "id": "waiting_on_others",
+      "label": "Waiting on others",
+      "count": 6,
+      "description": "Owned by another team. Shows the owner and the next check."
+    },
+    {
+      "id": "all",
+      "label": "All",
+      "count": 48,
+      "description": "The whole caseload, ordered the same way."
+    }
+  ],
+  "dischargeAlerts": {
+    "count": 6,
+    "label": "6 new discharge alerts since Friday",
+    "since": "2026-11-06",
+    "memberIds": [
+      "SYN-HF-001",
+      "SYN-BG-006",
+      "SYN-BG-012",
+      "SYN-BG-018",
+      "SYN-BG-005",
+      "SYN-BG-011"
+    ]
+  },
+  "orderingNote": "Ordered by tier - safety escalation, transition with an expiring window, time-sensitive access barrier, overdue follow-up, routine - then by nearest clock, then by confidence. The plan's risk score breaks ties and nothing else.",
+  "rows": [
+    {
+      "rank": 1,
+      "memberId": "SYN-HF-001",
+      "memberName": "Harold Bellweather",
+      "age": 71,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "due_today",
+      "tier": "transition",
+      "tierLabel": "Transition with an expiring window",
+      "headline": "Discharged Friday 16:45; no contact yet and a new drug unfilled",
+      "reasons": [
+        {
+          "label": "Discharged Fri 6 Nov 16:45",
+          "detail": "Inpatient discharge. The ADT alert carries no diagnosis, so the reason for admission is still unknown.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov 17:10"
+        },
+        {
+          "label": "Discharge summary not received",
+          "detail": "Requested Fri 6 Nov 19:45 and still outstanding. The discharge medication list arrived; the summary did not.",
+          "freshness": "open",
+          "freshnessLabel": "Requested, not received",
+          "source": "ccd",
+          "sourceLabel": "Clinical documents, requested Fri 6 Nov 19:45"
+        },
+        {
+          "label": "Sacubitril/valsartan not picked up - 63 h",
+          "detail": "New on the discharge list. No fill in the PBM feed 63 hours after discharge.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+          "signalId": "S1"
+        },
+        {
+          "label": "Furosemide 80 mg vs 40 mg",
+          "detail": "The discharge list says 80 mg daily; the last fill and the claims history say 40 mg. Both are shown; neither is merged.",
+          "freshness": "half",
+          "freshnessLabel": "Sources disagree",
+          "source": "ccd",
+          "sourceLabel": "CCD 6 Nov vs PBM 10 Oct",
+          "signalId": "S2"
+        }
+      ],
+      "clock": {
+        "label": "2-business-day contact window after discharge",
+        "reading": "1 business day elapsed",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Call mobile (508) 555-0142",
+        "channel": "call",
+        "window": "09:00-11:00 today",
+        "rationale": "Answered 3 of 3 morning attempts. Calls consented, texts not. Hard of hearing, so allow extra time."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan readmission risk 0.31, scored 31 Oct - before this admission.",
+      "isGolden": true
+    },
+    {
+      "rank": 2,
+      "memberId": "SYN-ED-003",
+      "memberName": "Marcus Okonkwo-Lane",
+      "age": 38,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "due_today",
+      "tier": "access_barrier",
+      "tierLabel": "Time-sensitive access barrier",
+      "headline": "Fifth ED visit in 90 days; the number on file has been dead for seven calls",
+      "reasons": [
+        {
+          "label": "5 ED visits / 90 d",
+          "detail": "Six ADT messages arrived for five visits; one is a duplicate of the 2 Oct registration and is excluded.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, 6 messages de-duplicated to 5",
+          "signalId": "S5"
+        },
+        {
+          "label": "New mobile from ED registration",
+          "detail": "The current mobile and address appear only in ED registration messages. Nothing has confirmed them yet.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "adt",
+          "sourceLabel": "ADT registration, received Thu 5 Nov 02:14",
+          "signalId": "S10"
+        },
+        {
+          "label": "7 failed calls to the file number",
+          "detail": "Seven consecutive attempts to the number on file failed, plus a letter to an old address returned.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "contact",
+          "sourceLabel": "Contact history, last attempt Wed 4 Nov",
+          "signalId": "S10"
+        },
+        {
+          "label": "No controller inhaler since July",
+          "detail": "Four rescue-inhaler fills since July and no controller fill in the same period.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00"
+        },
+        {
+          "label": "Claims show 2 of 5 visits",
+          "detail": "Claims are complete to about 29 Sep for this member, so the quiet October is missing data, not a quiet month.",
+          "freshness": "open",
+          "freshnessLabel": "Claims lag",
+          "source": "claims",
+          "sourceLabel": "Claims complete to about Tue 29 Sep"
+        }
+      ],
+      "clock": {
+        "label": "7-day follow-up after ED discharge",
+        "reading": "Closes tomorrow",
+        "deadline": "2026-11-10T23:59:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 23:59",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Text, then call the ED-registration mobile",
+        "channel": "text",
+        "window": "after 17:00 today",
+        "rationale": "No text consent is on record, so ask for it verbally first. Daytime attempts to the file number have all failed."
+      },
+      "waitingOn": null,
+      "riskNote": "No current plan risk score; the attributed PCP has never seen him.",
+      "isGolden": true
+    },
+    {
+      "rank": 3,
+      "memberId": "SYN-BH-004",
+      "memberName": "Jade Wintermoor",
+      "age": 29,
+      "sex": "F",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "due_today",
+      "tier": "access_barrier",
+      "tierLabel": "Time-sensitive access barrier",
+      "headline": "Psychotropic gap of 28 days, two missed psychiatry visits and a crisis-line contact",
+      "reasons": [
+        {
+          "label": "Lithium and quetiapine 28 days past run-out",
+          "detail": "Both ran out 28 days ago on the last dispensed supply, after a subtherapeutic lithium level.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+          "signalId": "S8"
+        },
+        {
+          "label": "Lithium level overdue 8 days",
+          "detail": "The repeat level ordered after the subtherapeutic result has not been drawn.",
+          "freshness": "half",
+          "freshnessLabel": "Order open, no result",
+          "source": "labs",
+          "sourceLabel": "Labs, last result Fri 2 Oct"
+        },
+        {
+          "label": "Two missed psychiatry visits",
+          "detail": "Both appointments were booked and not attended; neither was rebooked.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "appointments",
+          "sourceLabel": "Appointments, 15 Oct and 29 Oct"
+        },
+        {
+          "label": "Crisis-line contact 30 Oct",
+          "detail": "Logged by the behavioral-health vendor. No clinical conclusion is drawn from it here.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, 30 Oct"
+        },
+        {
+          "label": "Substance-use record restricted",
+          "detail": "A record exists and is withheld under 42 CFR Part 2. Shown as restricted rather than left blank.",
+          "freshness": "open",
+          "freshnessLabel": "Restricted",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, access controlled"
+        },
+        {
+          "label": "Shelter address closed, mail returned",
+          "detail": "Housing was recorded stable eight months ago; the shelter has since closed and mail came back.",
+          "freshness": "open",
+          "freshnessLabel": "Stale, 8 months",
+          "source": "hra",
+          "sourceLabel": "HRA, assessed Thu 5 Mar"
+        }
+      ],
+      "clock": {
+        "label": "Psychiatry rebooking after two missed visits",
+        "reading": "Closes Wed 11 Nov",
+        "deadline": "2026-11-11T17:00:00-05:00",
+        "deadlineLabel": "Wed 11 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Call the shelter caseworker",
+        "channel": "call",
+        "window": "10:00-12:00 today",
+        "rationale": "Answered 2 of 2. Her own mobile is disconnected, so this is the only line that reaches her."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct - it does not see the gap or the missed visits.",
+      "isGolden": true
+    },
+    {
+      "rank": 4,
+      "memberId": "SYN-DUAL-005",
+      "memberName": "Eleanor Fairweather",
+      "age": 83,
+      "sex": "F",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "due_today",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Overdue follow-up",
+      "headline": "ED fall 13 days ago that never entered the transition queue; approved PT has not started",
+      "reasons": [
+        {
+          "label": "ED fall 27 Oct, treat and release",
+          "detail": "A treat-and-release ED visit never raised a transition task in the legacy view, so nothing was opened.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Tue 27 Oct 23:40"
+        },
+        {
+          "label": "7-day follow-up overdue 6 days",
+          "detail": "The post-ED follow-up window closed on Mon 2 Nov with no contact recorded.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, window closed Mon 2 Nov"
+        },
+        {
+          "label": "PT approved 29 Oct, start of care not confirmed",
+          "detail": "Requested 28 Oct and approved the next day. Twelve days on, the agency has not confirmed a start.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Utilization management, approved Thu 29 Oct",
+          "signalId": "S7"
+        },
+        {
+          "label": "2 calcium-channel blockers, 2 prescribers",
+          "detail": "Amlodipine from the PCP and diltiazem from cardiology, overlapping since September.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+          "signalId": "S6"
+        },
+        {
+          "label": "Gabapentin not adjusted for eGFR 24",
+          "detail": "The dose has not changed since the eGFR fell to 24 on 20 Oct. The fact is certain; the significance is clinical.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "labs",
+          "sourceLabel": "Labs, eGFR 24 on Tue 20 Oct",
+          "signalId": "S6"
+        },
+        {
+          "label": "11 medications, one invisible to PBM",
+          "detail": "An OTC item recorded at the last visit never appears in pharmacy data.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "pbm",
+          "sourceLabel": "PBM plus clinical note, 14 Oct",
+          "signalId": "S9"
+        },
+        {
+          "label": "ED claim still missing after 13 days",
+          "detail": "Claims are complete to about 25 Sep, so the October visit is missing data, not an absence of care.",
+          "freshness": "open",
+          "freshnessLabel": "Claims lag",
+          "source": "claims",
+          "sourceLabel": "Claims complete to about Fri 25 Sep"
+        },
+        {
+          "label": "CKD still coded stage 3",
+          "detail": "The coded stage is 3 while the 20 Oct eGFR of 24 sits in stage 4. Both are kept; neither is reconciled here.",
+          "freshness": "half",
+          "freshnessLabel": "Code and lab disagree",
+          "source": "claims",
+          "sourceLabel": "Claims coding 22 Sep vs labs 20 Oct"
+        }
+      ],
+      "clock": {
+        "label": "7-day follow-up after ED discharge",
+        "reading": "Overdue 6 days",
+        "deadline": "2026-11-02T23:59:00-05:00",
+        "deadlineLabel": "Mon 2 Nov 23:59",
+        "state": "overdue"
+      },
+      "nextAction": {
+        "label": "Call daughter Linda (781) 555-0188",
+        "channel": "call",
+        "window": "after 18:00 today",
+        "rationale": "The number labelled Home is the daughter's work-hours mobile. She is the caregiver and answers after 18:00."
+      },
+      "waitingOn": null,
+      "riskNote": "Cost-based model ranks her medium, scored 1 Oct - a tie-break only, and it missed the fall.",
+      "isGolden": true
+    },
+    {
+      "rank": 5,
+      "memberId": "SYN-DM-002",
+      "memberName": "Priya Castellanos",
+      "age": 54,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "at_risk",
+      "tier": "access_barrier",
+      "tierLabel": "Time-sensitive access barrier",
+      "headline": "Insulin 51 days past run-out on the resolved person, with no refills left",
+      "reasons": [
+        {
+          "label": "Insulin and metformin 51 days past run-out",
+          "detail": "Measured on the resolved person with the coverage-lapse days excluded. Zero refills remain on both.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM across both member IDs, to Sun 8 Nov 23:00",
+          "signalId": "S4"
+        },
+        {
+          "label": "Merged from two member IDs",
+          "detail": "Fills were split across an old and a new ID after a coverage lapse. The merge is shown and can be undone.",
+          "freshness": "half",
+          "freshnessLabel": "Merged, undoable",
+          "source": "eligibility",
+          "sourceLabel": "Identity resolution, merged Mon 9 Nov 06:00"
+        },
+        {
+          "label": "A1c 9.8% in July",
+          "detail": "About four months old. The prior A1c sits under the old member ID.",
+          "freshness": "open",
+          "freshnessLabel": "Stale, 4 months",
+          "source": "labs",
+          "sourceLabel": "Labs, resulted Wed 15 Jul"
+        },
+        {
+          "label": "No-show at PCP on 14 Oct",
+          "detail": "Recorded by the practice. It will never appear in claims, because a no-show is not billed.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "appointments",
+          "sourceLabel": "Appointments, 14 Oct"
+        },
+        {
+          "label": "Single-ID view shows a false 242-day spring gap",
+          "detail": "Looking at one ID invents a spring gap that did not happen and hides the autumn one that did.",
+          "freshness": "half",
+          "freshnessLabel": "Resolved on merge",
+          "source": "eligibility",
+          "sourceLabel": "Coverage lapse 12 Feb to 11 Oct 2025"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Text (978) 555-0118 before her evening shift",
+        "channel": "text",
+        "window": "14:00 today",
+        "rationale": "She works two evening jobs and morning calls have all failed. Text consent is recorded on the old ID; re-confirm it."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct - it does not see the split fills.",
+      "isGolden": true
+    },
+    {
+      "rank": 6,
+      "memberId": "SYN-BG-004",
+      "memberName": "Jebediah Ravenscroft",
+      "age": 61,
+      "sex": "M",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "at_risk",
+      "tier": "access_barrier",
+      "tierLabel": "Time-sensitive access barrier",
+      "headline": "Phosphate binder 19 days past run-out with no clinic contact since September",
+      "reasons": [
+        {
+          "label": "Phosphate binder 19 days past run-out",
+          "detail": "Last 30-day supply dispensed 2 Oct; nothing since.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+          "signalId": "S4"
+        },
+        {
+          "label": "Nephrology visit not booked",
+          "detail": "The referral was accepted on 22 Sep; no appointment has been scheduled.",
+          "freshness": "half",
+          "freshnessLabel": "Accepted, not scheduled",
+          "source": "appointments",
+          "sourceLabel": "Appointments, referral 22 Sep"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Call (978) 555-0187",
+        "channel": "call",
+        "window": "09:00-11:00 this week",
+        "rationale": "Number verified in September. Confirm the binder supply and book nephrology in the same call."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band high, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 7,
+      "memberId": "SYN-BG-007",
+      "memberName": "Imogen Greenhalgh",
+      "age": 59,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "at_risk",
+      "tier": "access_barrier",
+      "tierLabel": "Time-sensitive access barrier",
+      "headline": "Number on file reaches someone else; test strips unfilled for 24 days",
+      "reasons": [
+        {
+          "label": "Number on file is a wrong number",
+          "detail": "The last two attempts reached an unrelated person. No alternative number is on record.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "contact",
+          "sourceLabel": "Contact history, last attempt Fri 23 Oct",
+          "signalId": "S10"
+        },
+        {
+          "label": "Test strips 24 days past run-out",
+          "detail": "Insulin is current; the strips are not, so there is no way to act on a reading.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "pbm",
+          "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+          "signalId": "S4"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Request an alternative number through the PCP practice",
+        "channel": "coordinate",
+        "window": "this week",
+        "rationale": "Low reachability is a reason to find another route, never a reason to drop her from the queue."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band high, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 8,
+      "memberId": "SYN-BG-006",
+      "memberName": "Nikodem Carrowmore",
+      "age": 79,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "follow_ups_due",
+      "tier": "transition",
+      "tierLabel": "Scheduled cadence",
+      "headline": "Discharged Fri 6 Nov; contacted Saturday, 7-day visit still to book",
+      "reasons": [
+        {
+          "label": "New discharge alert since Friday",
+          "detail": "One of the six discharge alerts that arrived over the weekend.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov"
+        },
+        {
+          "label": "Follow-up cadence open",
+          "detail": "The scheduled step in the transition pathway has not been completed.",
+          "freshness": "half",
+          "freshnessLabel": "Open step",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, Sat 7 Nov"
+        }
+      ],
+      "clock": {
+        "label": "7-day post-discharge visit",
+        "reading": "Due Fri 13 Nov",
+        "deadline": "2026-11-13T17:00:00-05:00",
+        "deadlineLabel": "Fri 13 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Book the 7-day visit with cardiology",
+        "channel": "coordinate",
+        "window": "today",
+        "rationale": "Contact was made on Saturday; the visit is the open half of the window."
+      },
+      "waitingOn": null,
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 9,
+      "memberId": "SYN-BG-012",
+      "memberName": "Nikodem Loveridge",
+      "age": 80,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "follow_ups_due",
+      "tier": "transition",
+      "tierLabel": "Scheduled cadence",
+      "headline": "Discharged Fri 6 Nov; contact made, medication reconciliation outstanding",
+      "reasons": [
+        {
+          "label": "New discharge alert since Friday",
+          "detail": "One of the six discharge alerts that arrived over the weekend.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov"
+        },
+        {
+          "label": "Follow-up cadence open",
+          "detail": "The scheduled step in the transition pathway has not been completed.",
+          "freshness": "half",
+          "freshnessLabel": "Open step",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, Sat 7 Nov"
+        }
+      ],
+      "clock": {
+        "label": "30-day medication reconciliation",
+        "reading": "Due Mon 7 Dec",
+        "deadline": "2026-12-07T17:00:00-05:00",
+        "deadlineLabel": "Mon 7 Dec 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Reconcile the discharge list against the PBM feed",
+        "channel": "review",
+        "window": "this week",
+        "rationale": "The discharge list arrived Saturday; no fills have landed against it yet."
+      },
+      "waitingOn": null,
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 10,
+      "memberId": "SYN-BG-018",
+      "memberName": "Ulysses Ashdown",
+      "age": 85,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "follow_ups_due",
+      "tier": "transition",
+      "tierLabel": "Scheduled cadence",
+      "headline": "Discharged Fri 6 Nov; number on file is wrong, no contact yet",
+      "reasons": [
+        {
+          "label": "New discharge alert since Friday",
+          "detail": "One of the six discharge alerts that arrived over the weekend.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov"
+        },
+        {
+          "label": "Follow-up cadence open",
+          "detail": "The scheduled step in the transition pathway has not been completed.",
+          "freshness": "half",
+          "freshnessLabel": "Open step",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, Sat 7 Nov"
+        }
+      ],
+      "clock": {
+        "label": "2-business-day contact window after discharge",
+        "reading": "1 business day elapsed",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Try the listed daughter's number",
+        "channel": "call",
+        "window": "this afternoon",
+        "rationale": "The number on file reached an unrelated person on Saturday."
+      },
+      "waitingOn": null,
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 11,
+      "memberId": "SYN-BG-005",
+      "memberName": "Obadiah Pennywhistle",
+      "age": 83,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "follow_ups_due",
+      "tier": "transition",
+      "tierLabel": "Scheduled cadence",
+      "headline": "Discharged Fri 6 Nov to a facility; never reached since enrolment",
+      "reasons": [
+        {
+          "label": "New discharge alert since Friday",
+          "detail": "One of the six discharge alerts that arrived over the weekend.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov"
+        },
+        {
+          "label": "Follow-up cadence open",
+          "detail": "The scheduled step in the transition pathway has not been completed.",
+          "freshness": "half",
+          "freshnessLabel": "Open step",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, Sat 7 Nov"
+        }
+      ],
+      "clock": {
+        "label": "2-business-day contact window after discharge",
+        "reading": "1 business day elapsed",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Call the facility nursing station",
+        "channel": "call",
+        "window": "10:00-12:00 today",
+        "rationale": "No member contact has ever succeeded; the facility is the working route."
+      },
+      "waitingOn": null,
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 12,
+      "memberId": "SYN-BG-011",
+      "memberName": "Rosalind Quarrier",
+      "age": 90,
+      "sex": "F",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "follow_ups_due",
+      "tier": "transition",
+      "tierLabel": "Scheduled cadence",
+      "headline": "Discharged Fri 6 Nov; home-care hours need re-confirming",
+      "reasons": [
+        {
+          "label": "New discharge alert since Friday",
+          "detail": "One of the six discharge alerts that arrived over the weekend.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "adt",
+          "sourceLabel": "ADT, received Fri 6 Nov"
+        },
+        {
+          "label": "Follow-up cadence open",
+          "detail": "The scheduled step in the transition pathway has not been completed.",
+          "freshness": "half",
+          "freshnessLabel": "Open step",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, Sat 7 Nov"
+        }
+      ],
+      "clock": {
+        "label": "7-day post-discharge visit",
+        "reading": "Due Fri 13 Nov",
+        "deadline": "2026-11-13T17:00:00-05:00",
+        "deadlineLabel": "Fri 13 Nov 17:00",
+        "state": "due_soon"
+      },
+      "nextAction": {
+        "label": "Confirm personal-care hours with the agency",
+        "channel": "coordinate",
+        "window": "this week",
+        "rationale": "Hours were approved in September; nobody has confirmed they are being delivered."
+      },
+      "waitingOn": null,
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 13,
+      "memberId": "SYN-BG-017",
+      "memberName": "Cassius Larkspur",
+      "age": 84,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Home-health PT approved, agency has not confirmed a start",
+      "reasons": [
+        {
+          "label": "Approved, not started",
+          "detail": "Sitting with Utilization management since Fri 30 Oct. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Utilization management, updated Fri 30 Oct",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Wed 11 Nov",
+        "deadline": "2026-11-11T17:00:00-05:00",
+        "deadlineLabel": "Wed 11 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Chase the agency for a start-of-care date",
+        "channel": "coordinate",
+        "window": "Wed 11 Nov",
+        "rationale": "Approved is not started. The next check is Wednesday."
+      },
+      "waitingOn": {
+        "team": "Utilization management",
+        "since": "2026-10-30",
+        "nextCheck": "2026-11-11",
+        "state": "Approved, not started"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 14,
+      "memberId": "SYN-BG-002",
+      "memberName": "Nikodem Kettleborough",
+      "age": 72,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Pulmonary rehab referral sent, no acceptance yet",
+      "reasons": [
+        {
+          "label": "Referral sent",
+          "detail": "Sitting with Referral management since Wed 21 Oct. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Referral management, updated Wed 21 Oct",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Thu 12 Nov",
+        "deadline": "2026-11-12T17:00:00-05:00",
+        "deadlineLabel": "Thu 12 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Confirm the referral was received",
+        "channel": "coordinate",
+        "window": "Thu 12 Nov",
+        "rationale": "Sent 19 days ago with no acknowledgement from the clinic."
+      },
+      "waitingOn": {
+        "team": "Referral management",
+        "since": "2026-10-21",
+        "nextCheck": "2026-11-12",
+        "state": "Referral sent"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 15,
+      "memberId": "SYN-BG-016",
+      "memberName": "Hyacinth Sowerby",
+      "age": 61,
+      "sex": "F",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Transport benefit request sitting with member services",
+      "reasons": [
+        {
+          "label": "Requested",
+          "detail": "Sitting with Member services since Tue 3 Nov. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Member services, updated Tue 3 Nov",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Tue 10 Nov",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Check the transport authorisation",
+        "channel": "portal",
+        "window": "Tue 10 Nov",
+        "rationale": "She has missed two dialysis-education sessions for want of a ride."
+      },
+      "waitingOn": {
+        "team": "Member services",
+        "since": "2026-11-03",
+        "nextCheck": "2026-11-10",
+        "state": "Requested"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 16,
+      "memberId": "SYN-BG-020",
+      "memberName": "Quillon Ironside",
+      "age": 44,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Spacer and controller prior authorisation pending with pharmacy",
+      "reasons": [
+        {
+          "label": "Pending decision",
+          "detail": "Sitting with Pharmacy prior authorisation since Wed 4 Nov. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Pharmacy prior authorisation, updated Wed 4 Nov",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Tue 10 Nov",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "deadlineLabel": "Tue 10 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Check the prior-authorisation decision",
+        "channel": "portal",
+        "window": "Tue 10 Nov",
+        "rationale": "He has been on rescue inhalers alone since the request went in."
+      },
+      "waitingOn": {
+        "team": "Pharmacy prior authorisation",
+        "since": "2026-11-04",
+        "nextCheck": "2026-11-10",
+        "state": "Pending decision"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 17,
+      "memberId": "SYN-BG-015",
+      "memberName": "Solomon Carrowmore",
+      "age": 52,
+      "sex": "M",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Therapy intake booked by the vendor, date not returned",
+      "reasons": [
+        {
+          "label": "Scheduled, date unknown",
+          "detail": "Sitting with Behavioral health vendor since Tue 27 Oct. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Behavioral health vendor, updated Tue 27 Oct",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Fri 13 Nov",
+        "deadline": "2026-11-13T17:00:00-05:00",
+        "deadlineLabel": "Fri 13 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Ask the vendor for the intake date",
+        "channel": "coordinate",
+        "window": "Fri 13 Nov",
+        "rationale": "Scheduled is not delivered; no date has come back in 13 days."
+      },
+      "waitingOn": {
+        "team": "Behavioral health vendor",
+        "since": "2026-10-27",
+        "nextCheck": "2026-11-13",
+        "state": "Scheduled, date unknown"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 18,
+      "memberId": "SYN-BG-010",
+      "memberName": "Ulysses Jarndyce",
+      "age": 58,
+      "sex": "M",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "waiting_on_others",
+      "tier": "overdue_follow_up",
+      "tierLabel": "Owned by another team",
+      "headline": "Vascular access consult accepted, appointment not scheduled",
+      "reasons": [
+        {
+          "label": "Referral accepted",
+          "detail": "Sitting with Specialty scheduling since Thu 15 Oct. The state is tracked separately from completion.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "um",
+          "sourceLabel": "Specialty scheduling, updated Thu 15 Oct",
+          "signalId": "S7"
+        }
+      ],
+      "clock": {
+        "label": "Next check",
+        "reading": "Due Wed 11 Nov",
+        "deadline": "2026-11-11T17:00:00-05:00",
+        "deadlineLabel": "Wed 11 Nov 17:00",
+        "state": "ok"
+      },
+      "nextAction": {
+        "label": "Push for a scheduled date",
+        "channel": "coordinate",
+        "window": "Wed 11 Nov",
+        "rationale": "Accepted 25 days ago. Acceptance without a date is not progress."
+      },
+      "waitingOn": {
+        "team": "Specialty scheduling",
+        "since": "2026-10-15",
+        "nextCheck": "2026-11-11",
+        "state": "Referral accepted"
+      },
+      "riskNote": null,
+      "isGolden": false
+    },
+    {
+      "rank": 19,
+      "memberId": "SYN-BG-001",
+      "memberName": "Delphine Harkaway",
+      "age": 56,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 26 Aug",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 26 Aug"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 20,
+      "memberId": "SYN-BG-003",
+      "memberName": "Horatio Pennywhistle",
+      "age": 28,
+      "sex": "M",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sat 10 Oct",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sat 10 Oct"
+        },
+        {
+          "label": "Number on file is a wrong number",
+          "detail": "The last attempt reached an unrelated person. Reachability work is queued, not the member dropped.",
+          "freshness": "half",
+          "freshnessLabel": "Needs a new number",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 21,
+      "memberId": "SYN-BG-008",
+      "memberName": "Delphine Barrowcliffe",
+      "age": 56,
+      "sex": "F",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 28 Oct",
+      "reasons": [
+        {
+          "label": "Respiratory program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 28 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 22,
+      "memberId": "SYN-BG-009",
+      "memberName": "Carlota Ironside",
+      "age": 36,
+      "sex": "F",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Mon 2 Nov",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 2 Nov"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 23,
+      "memberId": "SYN-BG-013",
+      "memberName": "Thandiwe Edgerton",
+      "age": 61,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sat 26 Sep",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sat 26 Sep"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 24,
+      "memberId": "SYN-BG-014",
+      "memberName": "Lazarus Carrowmore",
+      "age": 57,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 14 Oct",
+      "reasons": [
+        {
+          "label": "Respiratory program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 14 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 25,
+      "memberId": "SYN-BG-019",
+      "memberName": "Ulysses Dunmore",
+      "age": 45,
+      "sex": "M",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sun 1 Nov",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sun 1 Nov"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 26,
+      "memberId": "SYN-BG-021",
+      "memberName": "Ephraim Mossgrove",
+      "age": 42,
+      "sex": "M",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "No successful contact on record",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 2 Nov"
+        },
+        {
+          "label": "Never reached",
+          "detail": "No successful contact since enrolment. Low data completeness is a reason to verify, never to read as low risk.",
+          "freshness": "open",
+          "freshnessLabel": "No contact on record",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 27,
+      "memberId": "SYN-BG-022",
+      "memberName": "Ephraim Ashdown",
+      "age": 61,
+      "sex": "M",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "No successful contact on record",
+      "reasons": [
+        {
+          "label": "Kidney care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 2 Nov"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        },
+        {
+          "label": "Never reached",
+          "detail": "No successful contact since enrolment. Low data completeness is a reason to verify, never to read as low risk.",
+          "freshness": "open",
+          "freshnessLabel": "No contact on record",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 28,
+      "memberId": "SYN-BG-023",
+      "memberName": "Solomon Thornbury",
+      "age": 85,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Mon 24 Aug",
+      "reasons": [
+        {
+          "label": "Complex care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 24 Aug"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band high, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 29,
+      "memberId": "SYN-BG-024",
+      "memberName": "Saoirse Vexley",
+      "age": 62,
+      "sex": "F",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Mon 24 Aug",
+      "reasons": [
+        {
+          "label": "Heart failure program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 24 Aug"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 30,
+      "memberId": "SYN-BG-025",
+      "memberName": "Marisol Harkaway",
+      "age": 47,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Mon 5 Oct",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 5 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 31,
+      "memberId": "SYN-BG-026",
+      "memberName": "Thaddeus Zendell",
+      "age": 71,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Fri 25 Sep",
+      "reasons": [
+        {
+          "label": "Respiratory program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Fri 25 Sep"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 32,
+      "memberId": "SYN-BG-027",
+      "memberName": "Delphine Vexley",
+      "age": 25,
+      "sex": "F",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 19 Aug",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 19 Aug"
+        },
+        {
+          "label": "Number on file is a wrong number",
+          "detail": "The last attempt reached an unrelated person. Reachability work is queued, not the member dropped.",
+          "freshness": "half",
+          "freshnessLabel": "Needs a new number",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 33,
+      "memberId": "SYN-BG-028",
+      "memberName": "Kehinde Fairbrother",
+      "age": 81,
+      "sex": "F",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "No successful contact on record",
+      "reasons": [
+        {
+          "label": "Kidney care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 2 Nov"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        },
+        {
+          "label": "Never reached",
+          "detail": "No successful contact since enrolment. Low data completeness is a reason to verify, never to read as low risk.",
+          "freshness": "open",
+          "freshnessLabel": "No contact on record",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 34,
+      "memberId": "SYN-BG-029",
+      "memberName": "Cassius Dellacroix",
+      "age": 84,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Mon 5 Oct",
+      "reasons": [
+        {
+          "label": "Complex care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 5 Oct"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 35,
+      "memberId": "SYN-BG-030",
+      "memberName": "Gideon Fairbrother",
+      "age": 85,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Tue 6 Oct",
+      "reasons": [
+        {
+          "label": "Heart failure program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Tue 6 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 36,
+      "memberId": "SYN-BG-031",
+      "memberName": "Ulysses Quarrier",
+      "age": 46,
+      "sex": "M",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Tue 13 Oct",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Tue 13 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 37,
+      "memberId": "SYN-BG-032",
+      "memberName": "Thaddeus Ravenscroft",
+      "age": 64,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sat 17 Oct",
+      "reasons": [
+        {
+          "label": "Respiratory program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sat 17 Oct"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 38,
+      "memberId": "SYN-BG-033",
+      "memberName": "Delphine Calloway-Pike",
+      "age": 34,
+      "sex": "F",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "No successful contact on record",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Mon 2 Nov"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        },
+        {
+          "label": "Never reached",
+          "detail": "No successful contact since enrolment. Low data completeness is a reason to verify, never to read as low risk.",
+          "freshness": "open",
+          "freshnessLabel": "No contact on record",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 39,
+      "memberId": "SYN-BG-034",
+      "memberName": "Hyacinth Greenhalgh",
+      "age": 70,
+      "sex": "F",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sun 20 Sep",
+      "reasons": [
+        {
+          "label": "Kidney care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sun 20 Sep"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band high, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 40,
+      "memberId": "SYN-BG-035",
+      "memberName": "Montgomery Harkaway",
+      "age": 75,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 4 Nov",
+      "reasons": [
+        {
+          "label": "Complex care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 4 Nov"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 41,
+      "memberId": "SYN-BG-036",
+      "memberName": "Solomon Inglewood",
+      "age": 64,
+      "sex": "M",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sat 29 Aug",
+      "reasons": [
+        {
+          "label": "Heart failure program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sat 29 Aug"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 42,
+      "memberId": "SYN-BG-037",
+      "memberName": "Gideon Oglethorpe",
+      "age": 59,
+      "sex": "M",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sun 4 Oct",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sun 4 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 43,
+      "memberId": "SYN-BG-038",
+      "memberName": "Bartholomew Zendell",
+      "age": 39,
+      "sex": "M",
+      "program": "Respiratory",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Thu 5 Nov",
+      "reasons": [
+        {
+          "label": "Respiratory program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Thu 5 Nov"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 44,
+      "memberId": "SYN-BG-039",
+      "memberName": "Lioba Thornbury",
+      "age": 52,
+      "sex": "F",
+      "program": "Behavioral health",
+      "lineOfBusiness": "medicaid",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 30 Sep",
+      "reasons": [
+        {
+          "label": "Behavioral health program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 30 Sep"
+        },
+        {
+          "label": "Number on file is a wrong number",
+          "detail": "The last attempt reached an unrelated person. Reachability work is queued, not the member dropped.",
+          "freshness": "half",
+          "freshnessLabel": "Needs a new number",
+          "source": "contact",
+          "sourceLabel": "Contact history"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 45,
+      "memberId": "SYN-BG-040",
+      "memberName": "Marisol Sowerby",
+      "age": 78,
+      "sex": "F",
+      "program": "Kidney care",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Fri 23 Oct",
+      "reasons": [
+        {
+          "label": "Kidney care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Fri 23 Oct"
+        },
+        {
+          "label": "Number never verified",
+          "detail": "Nobody has confirmed who answers this line.",
+          "freshness": "half",
+          "freshnessLabel": "Single source",
+          "source": "contact",
+          "sourceLabel": "Eligibility file"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 46,
+      "memberId": "SYN-BG-041",
+      "memberName": "Kwabena Zendell",
+      "age": 72,
+      "sex": "M",
+      "program": "Complex care",
+      "lineOfBusiness": "dsnp",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Thu 13 Aug",
+      "reasons": [
+        {
+          "label": "Complex care program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Thu 13 Aug"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band medium, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 47,
+      "memberId": "SYN-BG-042",
+      "memberName": "Fenella Jessup",
+      "age": 82,
+      "sex": "F",
+      "program": "Heart failure",
+      "lineOfBusiness": "medicare_advantage",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Sun 27 Sep",
+      "reasons": [
+        {
+          "label": "Heart failure program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Sun 27 Sep"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band high, scored 1 Oct.",
+      "isGolden": false
+    },
+    {
+      "rank": 48,
+      "memberId": "SYN-BG-043",
+      "memberName": "Winnifred Dellacroix",
+      "age": 45,
+      "sex": "F",
+      "program": "Diabetes",
+      "lineOfBusiness": "medicaid_expansion",
+      "tab": "routine",
+      "tier": "routine",
+      "tierLabel": "Routine",
+      "headline": "Last contact Wed 28 Oct",
+      "reasons": [
+        {
+          "label": "Diabetes program, routine cadence",
+          "detail": "No signal fired for this member at 08:00 today.",
+          "freshness": "filled",
+          "freshnessLabel": "Confirmed",
+          "source": "cm_record",
+          "sourceLabel": "Care management record, reviewed Wed 28 Oct"
+        }
+      ],
+      "clock": null,
+      "nextAction": {
+        "label": "Review at the next scheduled cadence",
+        "channel": "review",
+        "window": "this month",
+        "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
+      },
+      "waitingOn": null,
+      "riskNote": "Plan risk band low, scored 1 Oct.",
+      "isGolden": false
+    }
+  ]
+}
