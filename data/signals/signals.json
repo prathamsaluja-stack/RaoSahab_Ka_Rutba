@@ -97,12 +97,14 @@
       "actions": [
         {
           "label": "Ask whether the prescription was collected and what it cost",
+          "shortLabel": "Call 09:00",
           "channel": "call",
           "window": "09:00-11:00 today",
           "rationale": "A new heart-failure drug not collected is usually a cost or a transport problem, and both are fixable on the call."
         },
         {
           "label": "Check the copay and the pharmacy it was sent to",
+          "shortLabel": "Check copay",
           "channel": "portal",
           "window": "before the call",
           "rationale": "Knowing the quoted price before dialling turns the question from why into which option."
@@ -143,12 +145,14 @@
       "actions": [
         {
           "label": "Ask the member to read the label on the bottle in the house",
+          "shortLabel": "Call 09:00",
           "channel": "call",
           "window": "09:00-11:00 today",
           "rationale": "The bottle in the kitchen settles what three systems cannot."
         },
         {
           "label": "Send the reconciled dose to the PCP for confirmation",
+          "shortLabel": "Send to PCP",
           "channel": "coordinate",
           "window": "after the call",
           "rationale": "The record changes when a clinician confirms it, not when the software notices the difference."
@@ -182,12 +186,14 @@
       "actions": [
         {
           "label": "Complete the post-discharge contact today",
+          "shortLabel": "Call 09:00",
           "channel": "call",
           "window": "09:00-11:00 today",
           "rationale": "Tomorrow at 17:00 the window closes, and his best answering hours are in the morning."
         },
         {
           "label": "Chase the discharge summary from the hospital",
+          "shortLabel": "Chase summary",
           "channel": "coordinate",
           "window": "today",
           "rationale": "It was requested Friday evening and has not arrived, so the reason for admission is still unknown."
@@ -235,12 +241,14 @@
       "actions": [
         {
           "label": "Text before her evening shift and ask what she is taking now",
+          "shortLabel": "Text 14:00",
           "channel": "text",
           "window": "14:00 today",
           "rationale": "She works two evening jobs; every morning call attempt has failed. Text consent is recorded under the old ID, so confirm it first."
         },
         {
           "label": "Offer a same-week PCP visit with renewals and a 90-day supply",
+          "shortLabel": "Book PCP visit",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "Zero refills remain, so a renewal has to come before any refill can."
@@ -288,12 +296,14 @@
       "actions": [
         {
           "label": "Text the ED-registration mobile, then call it",
+          "shortLabel": "Text after 17:00",
           "channel": "text",
           "window": "after 17:00 today",
           "rationale": "Daytime attempts to the file number have failed seven times. There is no text consent on record, so ask for it in the first message."
         },
         {
           "label": "Book a same-week visit and a controller refill",
+          "shortLabel": "Book visit",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "Four rescue inhalers since July with no controller since 5 Jul is the pattern behind the visits."
@@ -334,12 +344,14 @@
       "actions": [
         {
           "label": "Mark the file number dead and promote the ED number",
+          "shortLabel": "Review numbers",
           "channel": "review",
           "window": "now",
           "rationale": "The change is proposed, not applied: it enters the record when a named clinician confirms it."
         },
         {
           "label": "Try the new number after 17:00",
+          "shortLabel": "Call after 17:00",
           "channel": "call",
           "window": "after 17:00 today",
           "rationale": "Every registration has come in the evening, which is the only time anything about him has been observed."
@@ -387,12 +399,14 @@
       "actions": [
         {
           "label": "Raise the duplicate pair with the PCP and cardiology together",
+          "shortLabel": "Coordinate prescribers",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "Two prescribers each made a reasonable decision. Only a conversation between them resolves it."
         },
         {
           "label": "Flag the gabapentin dose against the 27 Oct eGFR",
+          "shortLabel": "Flag gabapentin",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "The dose predates the result, so nobody has yet seen them side by side."
@@ -426,12 +440,14 @@
       "actions": [
         {
           "label": "Call the agency for a start-of-care date",
+          "shortLabel": "Call agency",
           "channel": "coordinate",
           "window": "today",
           "rationale": "Thirteen days after an ED fall, the therapy that was approved for it has not begun."
         },
         {
           "label": "Confirm with the daughter whether anyone has visited",
+          "shortLabel": "Call Linda 18:00",
           "channel": "call",
           "window": "after 18:00 today",
           "rationale": "The household knows whether a therapist came, which the authorization record does not."
@@ -479,18 +495,21 @@
       "actions": [
         {
           "label": "Call Linda after 18:00 and ask how she is managing",
+          "shortLabel": "Call Linda 18:00",
           "channel": "call",
           "window": "after 18:00 today",
           "rationale": "She answers after work. The caregiver question is the one nobody has asked since June."
         },
         {
           "label": "Request respite and personal-care hours",
+          "shortLabel": "Request respite",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "The HCBS benefit covers both and neither has been requested."
         },
         {
           "label": "Book a falls-safety review",
+          "shortLabel": "Book falls review",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "A fall, eleven medications and two blood-pressure drugs belong in one review, not three."
@@ -552,24 +571,28 @@
       "actions": [
         {
           "label": "Call the shelter caseworker",
+          "shortLabel": "Call caseworker 10:00",
           "channel": "call",
           "window": "10:00-12:00 today",
           "rationale": "Her own mobile is disconnected and the caseworker has answered both times. This is the only line that reaches her."
         },
         {
           "label": "Coordinate with the behavioral-health case manager today",
+          "shortLabel": "Coordinate with BH",
           "channel": "coordinate",
           "window": "today",
           "rationale": "The gap, the missed visits and the crisis contact sit in three systems and one person needs all three."
         },
         {
           "label": "Rebook psychiatry and request a lithium level",
+          "shortLabel": "Rebook psychiatry",
           "channel": "coordinate",
           "window": "today",
           "rationale": "The repeat level after the subtherapeutic result was never drawn, and a prescriber visit is needed for the refill anyway."
         },
         {
           "label": "Open a housing referral",
+          "shortLabel": "Housing referral",
           "channel": "coordinate",
           "window": "this week",
           "rationale": "The shelter on file has closed and mail has come back, so the address is not just stale but wrong."

@@ -1,0 +1,553 @@
+{
+  "asOf": "2026-11-09T08:00:00-05:00",
+  "changeWindowLabel": "Since Fri 6 Nov, 08:00",
+  "reconcileDecisions": [
+    {
+      "value": "discharge_list",
+      "label": "Discharge list is correct",
+      "hint": "The hospital changed it on the way out and the member confirms it."
+    },
+    {
+      "value": "pbm",
+      "label": "Pharmacy record is correct",
+      "hint": "What was dispensed is what the member is taking."
+    },
+    {
+      "value": "member_reported",
+      "label": "What the member says is correct",
+      "hint": "The bottle in the house settles it."
+    },
+    {
+      "value": "ask_prescriber",
+      "label": "Ask the prescriber",
+      "hint": "Send both values to the prescriber and wait for an answer."
+    },
+    {
+      "value": "unresolved",
+      "label": "Leave unresolved",
+      "hint": "Record the disagreement and keep both rows on screen."
+    }
+  ],
+  "members": [
+    {
+      "memberId": "SYN-HF-001",
+      "summary": "Discharged Friday afternoon. Three medication lists disagree, the discharge summary never arrived, and the contact window closes tomorrow at 17:00.",
+      "reach": {
+        "bestContactPointId": "CP-HF-001-mobile",
+        "headline": "His own mobile. Answered 3 of 3 morning calls, all between 09:10 and 10:45.",
+        "note": "Hard of hearing: speak slowly and ask him to read each dose back from the bottle.",
+        "promoted": null,
+        "deadContactPointIds": []
+      },
+      "whatChanged": [
+        {
+          "id": "WC-HF-01",
+          "at": "2026-11-06T17:38:00-05:00",
+          "title": "Discharge alert, Riverbend General Hospital (fictional)",
+          "detail": "Discharged Fri 6 Nov 16:45 to home with a home health referral. The ADT message carries no diagnosis, and neither did the admission on 1 Nov.",
+          "source": "adt",
+          "sourceRecordId": "ADT-HF-1106",
+          "receivedLabel": "Received Fri 6 Nov, 17:38 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Source confirmed by the hospital ADT feed, 53 minutes after the event."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-HF-02",
+          "at": "2026-11-06T19:30:00-05:00",
+          "title": "Discharge medication list received",
+          "detail": "Five drugs. Furosemide is marked changed at 80 mg daily, and sacubitril/valsartan 24/26 mg twice daily is new.",
+          "source": "ccd",
+          "sourceRecordId": "CCD-HF-1106",
+          "receivedLabel": "Received Fri 6 Nov, 19:30 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Structured clinical document, so the drug and the dose are not an extraction guess."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-HF-03",
+          "at": "2026-11-06T18:00:00-05:00",
+          "title": "Discharge summary requested, still not received",
+          "detail": "Requested from the hospital on Friday evening. Sixty-two hours later nothing has arrived, so the reason for the admission is still unknown.",
+          "source": "ccd",
+          "sourceRecordId": "DOCREQ-HF-1106",
+          "receivedLabel": "Requested Fri 6 Nov, 18:00 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Unresolved",
+            "description": "A request with no response. Nothing has been received to confirm."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-HF-04",
+          "at": "2026-11-06T17:55:00-05:00",
+          "title": "Home health nursing authorization opened",
+          "detail": "Requested Friday 17:50 and sitting with utilization management. No decision yet; next check today at 15:00.",
+          "source": "um",
+          "sourceRecordId": "UM-HF-1106",
+          "receivedLabel": "Received Fri 6 Nov, 17:55 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Authorization system of record, received five minutes after the request."
+          },
+          "tone": "info"
+        },
+        {
+          "id": "WC-HF-05",
+          "at": "2026-11-08T23:00:00-05:00",
+          "title": "Pharmacy feed refreshed: no fill for the new drug",
+          "detail": "Sixty-three hours after discharge the feed shows no sacubitril/valsartan. The feed is current to Sunday 23:00, so this is an absent fill rather than absent data.",
+          "source": "pbm",
+          "sourceRecordId": "FILL-HF-FUR-1010",
+          "receivedLabel": "Received Sun 8 Nov, 23:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Pharmacy benefit feed, current through Sun 8 Nov 23:00 ET."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-HF-06",
+          "at": "2026-11-08T03:00:00-05:00",
+          "title": "Two transition-of-care gaps opened",
+          "detail": "Medication reconciliation within 30 days and a follow-up visit within 7 days, both opened by Friday's discharge.",
+          "source": "measures",
+          "sourceRecordId": "GAP-HF-TRC",
+          "receivedLabel": "Received Sun 8 Nov, 03:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Quality measure feed, refreshed overnight on Sunday."
+          },
+          "tone": "info"
+        }
+      ],
+      "medications": {
+        "note": "One row per drug, one column per source. Nothing here is merged: the matrix prints what each system says, and the reconciliation below is recorded as a named clinician's decision.",
+        "conflicts": [
+          {
+            "ingredient": "furosemide",
+            "severity": "conflict",
+            "reason": "Discharge list, 6 Nov: 80 mg daily, marked changed. Last pharmacy fill, 10 Oct: 40 mg. Claims-derived, 22 Sep: 40 mg. Three sources, two answers."
+          },
+          {
+            "ingredient": "sacubitril-valsartan",
+            "severity": "missing",
+            "reason": "New on the 6 Nov discharge list and absent from every other source. No fill 63 h after discharge, with the pharmacy feed current to Sun 8 Nov 23:00."
+          }
+        ]
+      },
+      "riskNote": "Readmission risk v4 (fictional), 0.31, utilization basis, scored 31 Oct. One dated input, never the order of this queue.",
+      "riskWarning": "Scored 31 Oct, before the admission of 1 Nov. This score has not seen the hospital stay it is being read against.",
+      "claimsNote": "Claims complete to about Fri 25 Sep. The admission of 1 Nov has not been billed, so it is absent from every claims-derived panel on this page.",
+      "timelineNote": "Echocardiogram in July, cardiology in August, primary care in September, then the admission and discharge that only the ADT feed knows about."
+    },
+    {
+      "memberId": "SYN-DM-002",
+      "summary": "Two member IDs resolved into one person on Sunday night. The spring gap was an artefact of the split; the autumn gap is real and 51 days long.",
+      "reach": {
+        "bestContactPointId": "CP-DM-002-mobile",
+        "headline": "Her own mobile. One answer in six attempts, and the one that worked was at 14:10.",
+        "note": "Two evening jobs from 16:00. Every morning call has failed. Text consent is recorded under the prior ID SYN-DM-887, so confirm it in the first message.",
+        "promoted": null,
+        "deadContactPointIds": []
+      },
+      "whatChanged": [
+        {
+          "id": "WC-DM-01",
+          "at": "2026-11-08T22:15:00-05:00",
+          "title": "Identity resolution merged SYN-DM-887 into this record",
+          "detail": "Name, date of birth and address match across the coverage lapse of 20 Feb to 31 May. Her fills, her prior A1c and her text consent all sat under the old ID.",
+          "source": "eligibility",
+          "sourceRecordId": "ELIG-DM-002",
+          "receivedLabel": "Merged Sun 8 Nov, 22:15 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Inferred",
+            "description": "A match proposed by identity resolution. It is visible, it is reversible, and it has not been confirmed by a clinician."
+          },
+          "tone": "info"
+        },
+        {
+          "id": "WC-DM-02",
+          "at": "2026-11-08T23:00:00-05:00",
+          "title": "Pharmacy feed refreshed: insulin and metformin still unfilled",
+          "detail": "Last dispensed 20 Aug, 30-day supply, no refills remaining. On the resolved person, with the lapse days excluded, she is 51 days past run-out.",
+          "source": "pbm",
+          "sourceRecordId": "FILL-DM-002-GLA-0820",
+          "receivedLabel": "Received Sun 8 Nov, 23:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Pharmacy benefit feed, current through Sun 8 Nov 23:00 ET."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-DM-03",
+          "at": "2026-11-05T09:20:00-05:00",
+          "title": "Fifth failed morning call",
+          "detail": "Called at 09:20 on Thursday. No answer, as with every other morning attempt since September.",
+          "source": "contact",
+          "sourceRecordId": "OUT-DM-M5",
+          "receivedLabel": "Received Thu 5 Nov, 09:20 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Outreach outcome written by the dialler at the time of the call."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-DM-04",
+          "at": "2026-11-08T03:00:00-05:00",
+          "title": "Retinal eye exam gap moved to pending claim",
+          "detail": "An optometry visit was reported but no claim has arrived. The gap cannot be closed and must not be read as missed care.",
+          "source": "measures",
+          "sourceRecordId": "GAP-DM-EYE",
+          "receivedLabel": "Received Sun 8 Nov, 03:00 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Awaiting claim",
+            "description": "The measure feed is current, but the claim that would close the gap has not been received."
+          },
+          "tone": "neutral"
+        }
+      ],
+      "medications": {
+        "note": "Her pharmacy history spans two member IDs. The matrix is built on the resolved person; undo the merge above to see each ID on its own.",
+        "conflicts": [
+          {
+            "ingredient": "insulin-glargine",
+            "severity": "missing",
+            "reason": "Dispensed 20 Aug, 30-day supply, zero refills: covered through 18 Sep, due 19 Sep. Fifty-one days past run-out on the resolved person, with the coverage lapse of 20 Feb to 31 May excluded."
+          },
+          {
+            "ingredient": "metformin",
+            "severity": "missing",
+            "reason": "Dispensed 20 Aug alongside the insulin, 30-day supply, zero refills. Fifty-one days past run-out; a renewal has to come before any refill can."
+          }
+        ]
+      },
+      "riskNote": "Total cost of care v2 (fictional), 0.18, cost basis, scored 31 Oct. Band: low.",
+      "riskWarning": null,
+      "claimsNote": "Claims complete to about Thu 24 Sep. The no-show at her PCP on 14 Oct will never appear in claims at all, because nothing was billed.",
+      "timelineNote": "Fills under the prior ID run to June; fills under this ID stop on 20 Aug. The quiet stretch in spring is a coverage lapse, not a member who stopped taking insulin."
+    },
+    {
+      "memberId": "SYN-ED-003",
+      "summary": "Five ED visits in ninety days, six messages about them, and the only working phone number in the record came from the registration desk.",
+      "reach": {
+        "bestContactPointId": "CP-ED-003-ed",
+        "headline": "Mobile taken at ED registration on 3 Nov. Never called from the plan.",
+        "note": "Every registration has come in after 18:00, which is the only time anything about him has been observed. No text consent on record: ask for it in the first message.",
+        "promoted": {
+          "fromContactPointId": "CP-ED-003-file",
+          "toContactPointId": "CP-ED-003-ed",
+          "reason": "Seven consecutive failed calls to the number on file, the last three reported disconnected, and a letter returned from the address on file. The ED-registration mobile is newer and appears on all five registrations.",
+          "state": "Proposed, not applied. It enters the record when a named clinician confirms it."
+        },
+        "deadContactPointIds": ["CP-ED-003-file"]
+      },
+      "whatChanged": [
+        {
+          "id": "WC-ED-01",
+          "at": "2026-11-06T14:05:00-05:00",
+          "title": "Seventh consecutive failed call to the number on file",
+          "detail": "Reported disconnected, as the two attempts before it were. Seven failures across mornings, afternoons and evenings is enough to call the number dead.",
+          "source": "contact",
+          "sourceRecordId": "OUT-ED-C7",
+          "receivedLabel": "Received Fri 6 Nov, 14:10 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Outreach outcome written by the dialler at the time of the call."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-ED-02",
+          "at": "2026-11-09T06:00:00-05:00",
+          "title": "Contact ranking re-run: the ED number moves to first",
+          "detail": "Numbers are ranked by answer rate. The file number drops to last on seven failures; the registration mobile has no outcomes at all, so this is a starting point rather than a finding.",
+          "source": "contact",
+          "sourceRecordId": "CT-ED-0133",
+          "receivedLabel": "Computed Mon 9 Nov, 06:00 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Inferred",
+            "description": "A ranking over outreach outcomes. Proposed to the clinician, never applied on its own."
+          },
+          "tone": "info"
+        },
+        {
+          "id": "WC-ED-03",
+          "at": "2026-11-08T23:00:00-05:00",
+          "title": "Pharmacy feed refreshed: a fourth rescue inhaler, no controller",
+          "detail": "Four albuterol fills since 20 Aug. The last fluticasone-salmeterol fill was 5 Jul, with no refills remaining.",
+          "source": "pbm",
+          "sourceRecordId": "FILL-ED-ALB-1019",
+          "receivedLabel": "Received Sun 8 Nov, 23:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Pharmacy benefit feed, current through Sun 8 Nov 23:00 ET."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-ED-04",
+          "at": "2026-11-08T03:00:00-05:00",
+          "title": "Seven-day follow-up window closes tomorrow",
+          "detail": "The window opened with the ED registration of 3 Nov and closes Tue 10 Nov. No visit is booked.",
+          "source": "measures",
+          "sourceRecordId": "GAP-ED-FUA",
+          "receivedLabel": "Received Sun 8 Nov, 03:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Quality measure feed, refreshed overnight on Sunday."
+          },
+          "tone": "urgent"
+        }
+      ],
+      "medications": {
+        "note": "Pharmacy is the only source that carries his medications. No discharge list, no member-reported list, and claims cover two of the five ED visits.",
+        "conflicts": [
+          {
+            "ingredient": "fluticasone-salmeterol",
+            "severity": "missing",
+            "reason": "One controller fill on 5 Jul, 30-day supply, zero refills, and nothing since. Four rescue inhalers in the same period. No source disagrees; what is missing is the controller."
+          },
+          {
+            "ingredient": "albuterol",
+            "severity": "single_source",
+            "reason": "Four fills in the pharmacy feed, only one of them matched by a claim. Claims are complete to about 26 Sep, so the October fills simply have not been billed yet."
+          }
+        ]
+      },
+      "riskNote": "Total cost of care v2 (fictional), 0.22, cost basis, scored 31 Oct. Band: low.",
+      "riskWarning": null,
+      "claimsNote": "Claims complete to about Sat 26 Sep. Two of the five ED visits have a matching claim; the other three exist only as ADT messages.",
+      "timelineNote": "Six ED registration messages describe five visits: the two on 18 Oct are the same visit sent twice."
+    },
+    {
+      "memberId": "SYN-BH-004",
+      "summary": "Two diagnoses from two sources, a restricted record that exists but cannot be shown, and the only line that reaches her belongs to a shelter caseworker.",
+      "reach": {
+        "bestContactPointId": "CP-BH-004-caseworker",
+        "headline": "Shelter caseworker, T. Marsh (fictional). Answered 2 of 2 late-morning calls.",
+        "note": "Her own mobile has been disconnected since 29 Oct. The caseworker is on shift 10:00 to 12:00; outside that window there is no line that reaches her.",
+        "promoted": null,
+        "deadContactPointIds": ["CP-BH-004-mobile"]
+      },
+      "whatChanged": [
+        {
+          "id": "WC-BH-01",
+          "at": "2026-11-08T23:00:00-05:00",
+          "title": "Pharmacy feed refreshed: lithium and quetiapine still unfilled",
+          "detail": "Both last dispensed 12 Sep with a 30-day supply and no refills. Twenty-eight days past run-out, after a subtherapeutic lithium level in August.",
+          "source": "pbm",
+          "sourceRecordId": "FILL-BH-LIT-0912",
+          "receivedLabel": "Received Sun 8 Nov, 23:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Pharmacy benefit feed, current through Sun 8 Nov 23:00 ET."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-BH-02",
+          "at": "2026-11-08T03:00:00-05:00",
+          "title": "Lithium monitoring window closed with no level drawn",
+          "detail": "The repeat level was due 1 Nov and is now eight days overdue. The last result, 0.4 mmol/L on 12 Aug, was subtherapeutic.",
+          "source": "measures",
+          "sourceRecordId": "GAP-BH-LITHIUM",
+          "receivedLabel": "Received Sun 8 Nov, 03:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Quality measure feed, refreshed overnight on Sunday."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-BH-03",
+          "at": "2026-11-06T11:20:00-05:00",
+          "title": "Housing referral sent to the community resources team",
+          "detail": "The shelter address on file has closed and mail has come back. Referral sent Friday; next check Tue 10 Nov at 11:00.",
+          "source": "cm_record",
+          "sourceRecordId": "TSK-BH-HOUSING",
+          "receivedLabel": "Sent Fri 6 Nov, 11:20 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Case management record, written when the referral was sent."
+          },
+          "tone": "info"
+        },
+        {
+          "id": "WC-BH-04",
+          "at": "2026-11-07T09:00:00-05:00",
+          "title": "Substance use record remains restricted",
+          "detail": "Requested on 12 Oct. A record exists and is withheld under 42 CFR Part 2 because no signed release is on file. The space is never left blank.",
+          "source": "cm_record",
+          "sourceRecordId": "DOCREQ-BH-1012",
+          "receivedLabel": "Re-checked Sat 7 Nov, 09:00 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Restricted",
+            "description": "The record is known to exist. Its contents may not be displayed without a signed release."
+          },
+          "tone": "neutral"
+        }
+      ],
+      "medications": {
+        "note": "The behavioral health clinic list and the pharmacy feed agree on the drugs. What they cannot tell you is whether anything has been taken since 12 Oct.",
+        "conflicts": [
+          {
+            "ingredient": "lithium",
+            "severity": "missing",
+            "reason": "Dispensed 12 Sep, 30-day supply, zero refills: covered through 11 Oct, due 12 Oct, 28 days past run-out. An earlier fill on 13 Aug was reversed at the pharmacy, so she never took that supply home."
+          },
+          {
+            "ingredient": "quetiapine",
+            "severity": "missing",
+            "reason": "Dispensed 12 Sep alongside the lithium, 30-day supply, zero refills. Twenty-eight days past run-out, with two psychiatry appointments missed in between."
+          }
+        ]
+      },
+      "riskNote": "Total cost of care v2 (fictional), 0.27, cost basis, scored 31 Oct. Band: medium.",
+      "riskWarning": null,
+      "claimsNote": "Claims complete to about Sun 20 Sep. Behavioral health claims run about seven weeks behind on this plan, so October is missing data rather than a quiet month.",
+      "timelineNote": "A crisis-line contact on 30 Oct and two missed psychiatry visits sit after the claims line. None of them will be in claims for weeks."
+    },
+    {
+      "memberId": "SYN-DUAL-005",
+      "summary": "An ED fall thirteen days ago that never entered the transition queue, physical therapy approved but not started, and two calcium channel blockers from two prescribers.",
+      "reach": {
+        "bestContactPointId": "CP-DUAL-005-home",
+        "headline": "Labelled Home on the file. It is daughter Linda's mobile: 4 answers in 9 attempts, every one of them after 18:00.",
+        "note": "Call after 18:00. Linda works business hours, so every daytime attempt has reached voicemail. Eleanor has dementia; Linda is the one who knows whether a therapist came.",
+        "promoted": null,
+        "deadContactPointIds": []
+      },
+      "whatChanged": [
+        {
+          "id": "WC-DUAL-01",
+          "at": "2026-11-09T06:00:00-05:00",
+          "title": "Physical therapy approved 29 Oct, still no start of care",
+          "detail": "Requested 28 Oct, approved the next day, and twelve days later Northvale Home Care (fictional) has not confirmed a start. Approved is a decision; started is a service.",
+          "source": "um",
+          "sourceRecordId": "UM-DUAL-1028",
+          "receivedLabel": "Re-checked Mon 9 Nov, 06:00 ET",
+          "freshness": {
+            "level": "half",
+            "label": "Start unconfirmed",
+            "description": "The approval is a system of record. The silence about the start may be late reporting rather than a service that has not begun."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-DUAL-02",
+          "at": "2026-11-08T03:00:00-05:00",
+          "title": "Seven-day follow-up after the ED fall is overdue",
+          "detail": "The window opened with the fall of 27 Oct and closed on 3 Nov. Six days overdue, and the visit was never booked because the fall never entered the transition queue.",
+          "source": "measures",
+          "sourceRecordId": "GAP-DUAL-FUA",
+          "receivedLabel": "Received Sun 8 Nov, 03:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Quality measure feed, refreshed overnight on Sunday."
+          },
+          "tone": "urgent"
+        },
+        {
+          "id": "WC-DUAL-03",
+          "at": "2026-11-08T23:00:00-05:00",
+          "title": "Pharmacy feed refreshed: both calcium channel blockers still dispensing",
+          "detail": "Amlodipine from Dr. Pell (fictional) and diltiazem ER from Dr. Ashgrove (fictional), overlapping since early October. Gabapentin is unchanged against an eGFR of 24.",
+          "source": "pbm",
+          "sourceRecordId": "FILL-DUAL-AML-1012",
+          "receivedLabel": "Received Sun 8 Nov, 23:00 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Pharmacy benefit feed, current through Sun 8 Nov 23:00 ET."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-DUAL-04",
+          "at": "2026-11-09T06:00:00-05:00",
+          "title": "The ED claim for the 27 Oct fall is still outstanding",
+          "detail": "Thirteen days after the visit, nothing has been billed. Claims are history, not status: the quiet since 28 Sep is missing data.",
+          "source": "claims",
+          "sourceRecordId": "CLM-DUAL-0915",
+          "receivedLabel": "Re-checked Mon 9 Nov, 06:00 ET",
+          "freshness": {
+            "level": "open",
+            "label": "Not received",
+            "description": "No claim has arrived for an event the ADT feed confirmed thirteen days ago."
+          },
+          "tone": "warning"
+        },
+        {
+          "id": "WC-DUAL-05",
+          "at": "2026-11-04T09:45:00-05:00",
+          "title": "Personal care attendant hours requested",
+          "detail": "Sent to the HCBS waiver team on 4 Nov with Harbor Elms Personal Care (fictional) named. No decision yet; next check Tue 10 Nov at 10:00.",
+          "source": "um",
+          "sourceRecordId": "UM-DUAL-1104",
+          "receivedLabel": "Received Wed 4 Nov, 09:45 ET",
+          "freshness": {
+            "level": "filled",
+            "label": "Verified",
+            "description": "Authorization system of record, received five minutes after the request."
+          },
+          "tone": "info"
+        }
+      ],
+      "medications": {
+        "note": "Eleven medications, ten of them from the pharmacy feed and one reported by the household. An over-the-counter product never appears in pharmacy data, which is exactly why it is asked about on the call.",
+        "conflicts": [
+          {
+            "ingredient": "amlodipine",
+            "severity": "conflict",
+            "reason": "Amlodipine 10 mg from Dr. Pell (fictional) and diltiazem ER 180 mg from Dr. Ashgrove (fictional) are both dispensing and have overlapped since early October. Two prescribers, one drug class."
+          },
+          {
+            "ingredient": "diltiazem",
+            "severity": "conflict",
+            "reason": "Diltiazem ER 180 mg from Dr. Ashgrove (fictional) overlaps amlodipine 10 mg from Dr. Pell (fictional). Each prescriber made a reasonable decision; only a conversation between them resolves it."
+          },
+          {
+            "ingredient": "gabapentin",
+            "severity": "conflict",
+            "reason": "600 mg three times daily, unchanged since the fill of 12 Oct, against an eGFR of 24 measured on 27 Oct. The dose predates the result, so nobody has yet seen them side by side."
+          },
+          {
+            "ingredient": "calcium-vitamin-d",
+            "severity": "single_source",
+            "reason": "Reported by the household on 30 Oct and carried by no feed. Pharmacy data cannot confirm or contradict an over-the-counter product."
+          }
+        ]
+      },
+      "riskNote": "Total cost of care v2 (fictional), 0.42, cost basis, scored 31 Oct. Band: medium. Cost-based models carry documented bias; this is one dated input.",
+      "riskWarning": null,
+      "claimsNote": "Claims complete to about Mon 28 Sep. The ED claim for the fall of 27 Oct is still outstanding thirteen days later.",
+      "timelineNote": "The fall on 27 Oct is visible only through ADT and a visit summary. Nothing downstream of it has been billed."
+    }
+  ]
+}
