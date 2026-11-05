@@ -34,7 +34,9 @@ export function TopBar({ onOpenPalette, onOpenShortcuts, onOpenDrawer }: TopBarP
         className="hidden h-9 max-w-md min-w-0 flex-1 items-center gap-2 rounded-[var(--radius-input)] border border-[var(--border)] bg-[var(--surface-muted)] px-3 text-xs text-text-muted hover:text-text md:flex"
       >
         <Search aria-hidden="true" className="size-4 shrink-0" />
-        <span className="flex-1 text-left">Search members and screens</span>
+        <span className="flex-1 truncate text-left whitespace-nowrap">
+          Search members and screens
+        </span>
         <Kbd>⌘K</Kbd>
       </button>
 
