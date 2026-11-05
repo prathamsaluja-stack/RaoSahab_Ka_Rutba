@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Next.js
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+
+# Testing and coverage
+coverage/
+*.lcov
+.vitest/
+
+# Playwright artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+blob-report/
+*.webm
+trace.zip
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Reference material and raw or generated inputs (never committed)
+reference/
+.cache/
+data/raw/
+
+# Local notes files
+CLAUDE.local.md
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Misc
+.vercel
+*.tsbuildinfo
