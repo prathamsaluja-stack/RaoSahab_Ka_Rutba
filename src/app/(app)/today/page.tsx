@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import { ListChecks } from 'lucide-react';
-import { EmptyState } from '@/components/ui';
+import { Inbox } from 'lucide-react';
+import { Badge } from '@/components/ui';
 import { PageHeader } from '@/components/shell';
 import { APP_NAME, CASELOAD } from '@/lib/app-config';
+import { dischargeAlerts } from '@/lib/data/queue';
+import { TodayQueue } from './today-queue';
 
 export const metadata: Metadata = {
   title: `Today · ${APP_NAME}`,
@@ -12,12 +14,17 @@ export const metadata: Metadata = {
 export default function TodayPage() {
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Today" subtitle={`Mon 9 Nov · ${CASELOAD} active · 6 new since Friday`} />
-      <EmptyState
-        icon={<ListChecks className="size-6" />}
-        title="The prioritized queue is not built yet"
-        description="This screen will rank the caseload by time-bound clinical events, show why each member is on the list, the clock that governs them and the next action to take. The ranking arrives with the signals engine; the rows arrive with the caseload fixtures."
+      <PageHeader
+        title="Today"
+        subtitle={`Mon 9 Nov · ${CASELOAD} active · ${dischargeAlerts.count} new since Friday`}
+        actions={
+          <Badge tone="info" className="gap-1.5 px-2.5 py-1 text-xs">
+            <Inbox aria-hidden="true" />
+            {dischargeAlerts.label}
+          </Badge>
+        }
       />
+      <TodayQueue />
     </div>
   );
 }
