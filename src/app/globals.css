@@ -25,6 +25,8 @@
   --info: #175cd3;
   --success: #067647;
   --focus: #2e90fa;
+  /* Text on a filled accent: white reads at 2.6:1 on the dark brand. */
+  --on-accent: #ffffff;
 
   /* Radii and shadows from section 4.2: hairlines, no decorative shadows. */
   --radius-input: 6px;
@@ -48,8 +50,27 @@
     --info: #84adff;
     --success: #47cd89;
     --focus: #53b1fd;
+    --on-accent: #0b1b2b;
     --shadow-overlay: 0 12px 32px -8px rgb(0 0 0 / 0.6);
   }
+}
+
+[data-theme='light'] {
+  --canvas: #f6f7f9;
+  --surface: #ffffff;
+  --surface-muted: #f1f3f5;
+  --border: #e4e7ec;
+  --text: #0b1b2b;
+  --text-muted: #5b6676;
+  --brand: #0f6b66;
+  --brand-soft: #e6f2f1;
+  --urgent: #b42318;
+  --warning: #b54708;
+  --info: #175cd3;
+  --success: #067647;
+  --focus: #2e90fa;
+  --on-accent: #ffffff;
+  --shadow-overlay: 0 12px 32px -8px rgb(11 27 43 / 0.18);
 }
 
 [data-theme='dark'] {
@@ -66,6 +87,7 @@
   --info: #84adff;
   --success: #47cd89;
   --focus: #53b1fd;
+  --on-accent: #0b1b2b;
   --shadow-overlay: 0 12px 32px -8px rgb(0 0 0 / 0.6);
 }
 
@@ -83,6 +105,7 @@
   --color-info: var(--info);
   --color-success: var(--success);
   --color-focus: var(--focus);
+  --color-on-accent: var(--on-accent);
 
   --font-sans: var(--font-inter);
   --font-mono: var(--font-plex-mono);

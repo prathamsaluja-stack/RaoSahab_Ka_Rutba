@@ -19,7 +19,7 @@ export function Checkbox({ label, hint, className, id, ...props }: CheckboxProps
     <div className={cn('flex items-start gap-2.5', className)}>
       <CheckboxPrimitive.Root
         id={inputId}
-        className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-[var(--border)] bg-[var(--surface)] disabled:opacity-50 data-[state=checked]:border-[var(--brand)] data-[state=checked]:bg-[var(--brand)] data-[state=checked]:text-white"
+        className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-[var(--border)] bg-[var(--surface)] disabled:opacity-50 data-[state=checked]:border-[var(--brand)] data-[state=checked]:bg-[var(--brand)] data-[state=checked]:text-[var(--on-accent)]"
         {...props}
       >
         <CheckboxPrimitive.Indicator>

@@ -23,7 +23,7 @@ export function ConfidenceLabel({ confidence, basis, className }: ConfidenceLabe
   return (
     <Badge tone={copy.tone} className={cn('cursor-default', className)}>
       {copy.label}
-      {basis ? <span className="font-normal opacity-80">· {basis}</span> : null}
+      {basis ? <span className="font-normal">· {basis}</span> : null}
     </Badge>
   );
 }

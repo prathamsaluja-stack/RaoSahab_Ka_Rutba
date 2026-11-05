@@ -69,7 +69,7 @@ export function StatusStepper({ current, dates, unconfirmedNote, className }: St
                   <span className="sr-only">not confirmed</span>
                 )}
                 {dates?.[step] ? (
-                  <span data-tabular className="font-normal opacity-80">
+                  <span data-tabular className="font-normal">
                     {dates[step]}
                   </span>
                 ) : null}

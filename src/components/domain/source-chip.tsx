@@ -62,7 +62,7 @@ export function SourceChip({
       >
         <Database aria-hidden="true" />
         {SOURCE_LABELS[source]}
-        {recordId ? <span className="font-mono text-2xs opacity-80">{recordId}</span> : null}
+        {recordId ? <span className="font-mono text-2xs">{recordId}</span> : null}
       </Chip>
     </Tooltip>
   );

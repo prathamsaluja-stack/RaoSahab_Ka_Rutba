@@ -10,11 +10,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'border-transparent bg-[var(--brand)] text-white hover:brightness-110',
+        primary:
+          'border-transparent bg-[var(--brand)] text-[var(--on-accent)] hover:brightness-110',
         secondary:
           'border-[var(--border)] bg-[var(--surface)] text-text hover:bg-[var(--surface-muted)]',
         ghost: 'border-transparent bg-transparent text-text hover:bg-[var(--surface-muted)]',
-        danger: 'border-transparent bg-[var(--urgent)] text-white hover:brightness-110',
+        danger:
+          'border-transparent bg-[var(--urgent)] text-[var(--on-accent)] hover:brightness-110',
         link: 'h-auto border-transparent p-0 text-[var(--brand)] underline underline-offset-2 hover:brightness-110',
       },
       size: {
@@ -43,7 +45,8 @@ const iconButtonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'border-transparent bg-[var(--brand)] text-white hover:brightness-110',
+        primary:
+          'border-transparent bg-[var(--brand)] text-[var(--on-accent)] hover:brightness-110',
         secondary:
           'border-[var(--border)] bg-[var(--surface)] text-text hover:bg-[var(--surface-muted)]',
         ghost: 'border-transparent bg-transparent text-text-muted hover:bg-[var(--surface-muted)]',
