@@ -46,6 +46,168 @@
     ]
   },
   "orderingNote": "Ordered by tier - safety escalation, transition with an expiring window, time-sensitive access barrier, overdue follow-up, routine - then by nearest clock, then by confidence. The plan's risk score breaks ties and nothing else.",
+  "statCards": [
+    {
+      "id": "due_today",
+      "label": "Due today",
+      "value": 4,
+      "hint": "A hard clock lands today or tomorrow, or a safety signal fired.",
+      "tab": "due_today",
+      "memberIds": []
+    },
+    {
+      "id": "windows_closing",
+      "label": "Contact windows closing by tomorrow",
+      "value": 4,
+      "hint": "Post-discharge and post-ED windows that shut by Tue 10 Nov 23:59.",
+      "tab": null,
+      "memberIds": ["SYN-HF-001", "SYN-ED-003", "SYN-BG-018", "SYN-BG-005"]
+    },
+    {
+      "id": "med_conflicts",
+      "label": "Open medication conflicts",
+      "value": 3,
+      "hint": "Across 2 members. Sources disagree, or one class comes from two prescribers.",
+      "tab": null,
+      "memberIds": ["SYN-HF-001", "SYN-DUAL-005"]
+    },
+    {
+      "id": "unverified_number",
+      "label": "Members without a verified number",
+      "value": 22,
+      "hint": "Dead, wrong or never confirmed. Each one needs an alternative contact, never removal from the queue.",
+      "tab": null,
+      "memberIds": [
+        "SYN-BG-002",
+        "SYN-BG-003",
+        "SYN-BG-005",
+        "SYN-BG-007",
+        "SYN-BG-012",
+        "SYN-BG-015",
+        "SYN-BG-017",
+        "SYN-BG-018",
+        "SYN-BG-022",
+        "SYN-BG-023",
+        "SYN-BG-024",
+        "SYN-BG-026",
+        "SYN-BG-027",
+        "SYN-BG-028",
+        "SYN-BG-029",
+        "SYN-BG-032",
+        "SYN-BG-033",
+        "SYN-BG-038",
+        "SYN-BG-039",
+        "SYN-BG-040",
+        "SYN-ED-003",
+        "SYN-BH-004"
+      ]
+    }
+  ],
+  "freshnessLegend": [
+    {
+      "level": "filled",
+      "label": "Verified",
+      "description": "Source confirmed and received inside the feed's SLA."
+    },
+    {
+      "level": "half",
+      "label": "Single source or unconfirmed",
+      "description": "One source carries it, it was inferred, or the sources disagree."
+    },
+    {
+      "level": "open",
+      "label": "Stale or not received",
+      "description": "Older than the 30-day staleness threshold, requested and not received, or withheld."
+    }
+  ],
+  "scoreBasis": "event tier › clock › confidence › risk score as tie-break",
+  "capacity": {
+    "label": "Estimate",
+    "line": "11 members need a touch today; about 4.5 h at current prep time, about 2.1 h with pre-filled notes",
+    "basis": "Based on the median prep and documentation time recorded against this caseload. It is a planning estimate, not a target, and it is not used to order the queue."
+  },
+  "whyThisOrder": {
+    "title": "Why this order",
+    "intro": "Rows are tiered by the kind of time-bound clinical event behind them. Inside a tier the nearest clock wins, then the confidence of the evidence.",
+    "tiers": [
+      {
+        "tier": "safety",
+        "label": "Safety escalation",
+        "description": "An immediate safety concern raised by a clinician. None open this morning."
+      },
+      {
+        "tier": "transition",
+        "label": "Transition with an expiring window",
+        "description": "A discharge or transfer with a contact, visit or reconciliation window still running."
+      },
+      {
+        "tier": "access_barrier",
+        "label": "Time-sensitive access barrier",
+        "description": "A medication, appointment or contact route the member cannot reach without help today."
+      },
+      {
+        "tier": "overdue_follow_up",
+        "label": "Overdue follow-up",
+        "description": "A window that has already closed, or an authorised service that has not started."
+      },
+      {
+        "tier": "routine",
+        "label": "Routine cadence",
+        "description": "The scheduled review for members with nothing time-bound open."
+      }
+    ],
+    "tieBreak": "The plan's cost-based risk score breaks ties and nothing else. It is one dated input, never a column, and never the reason a member is here.",
+    "guardrails": "Low data completeness raises a verification action, never a low-risk label. Low reachability raises an alternative-contact action, never removal from the queue."
+  },
+  "dismissReasons": [
+    {
+      "value": "not_clinically_relevant",
+      "label": "Not clinically relevant today",
+      "hint": "The signal is correct but nothing is actionable this morning."
+    },
+    {
+      "value": "already_handled",
+      "label": "Already handled elsewhere",
+      "hint": "Another team or a prior contact closed the loop."
+    },
+    {
+      "value": "data_wrong",
+      "label": "The underlying data is wrong",
+      "hint": "Routes a correction to the data-quality log with the source attached."
+    },
+    {
+      "value": "member_declined",
+      "label": "Member declined outreach",
+      "hint": "Recorded against consent; the member stays on the caseload."
+    },
+    {
+      "value": "duplicate",
+      "label": "Duplicate of another row",
+      "hint": "The same event raised two rows."
+    }
+  ],
+  "snoozeOptions": [
+    {
+      "value": "tomorrow",
+      "label": "Tomorrow morning",
+      "hint": "Tue 10 Nov 08:00"
+    },
+    {
+      "value": "after_window",
+      "label": "After the contact window",
+      "hint": "Wed 11 Nov 08:00"
+    },
+    {
+      "value": "friday",
+      "label": "Friday",
+      "hint": "Fri 13 Nov 08:00"
+    },
+    {
+      "value": "next_week",
+      "label": "Next Monday",
+      "hint": "Mon 16 Nov 08:00"
+    }
+  ],
   "rows": [
     {
       "rank": 1,
@@ -104,6 +266,7 @@
       },
       "nextAction": {
         "label": "Call mobile (508) 555-0142",
+        "shortLabel": "Call now",
         "channel": "call",
         "window": "09:00-11:00 today",
         "rationale": "Answered 3 of 3 morning attempts. Calls consented, texts not. Hard of hearing, so allow extra time."
@@ -178,6 +341,7 @@
       },
       "nextAction": {
         "label": "Text, then call the ED-registration mobile",
+        "shortLabel": "Text 17:00",
         "channel": "text",
         "window": "after 17:00 today",
         "rationale": "No text consent is on record, so ask for it verbally first. Daytime attempts to the file number have all failed."
@@ -258,6 +422,7 @@
       },
       "nextAction": {
         "label": "Call the shelter caseworker",
+        "shortLabel": "Call caseworker",
         "channel": "call",
         "window": "10:00-12:00 today",
         "rationale": "Answered 2 of 2. Her own mobile is disconnected, so this is the only line that reaches her."
@@ -357,6 +522,7 @@
       },
       "nextAction": {
         "label": "Call daughter Linda (781) 555-0188",
+        "shortLabel": "Call daughter 18:00",
         "channel": "call",
         "window": "after 18:00 today",
         "rationale": "The number labelled Home is the daughter's work-hours mobile. She is the caregiver and answers after 18:00."
@@ -423,6 +589,7 @@
       "clock": null,
       "nextAction": {
         "label": "Text (978) 555-0118 before her evening shift",
+        "shortLabel": "Text 14:00",
         "channel": "text",
         "window": "14:00 today",
         "rationale": "She works two evening jobs and morning calls have all failed. Text consent is recorded on the old ID; re-confirm it."
@@ -465,6 +632,7 @@
       "clock": null,
       "nextAction": {
         "label": "Call (978) 555-0187",
+        "shortLabel": "Call now",
         "channel": "call",
         "window": "09:00-11:00 this week",
         "rationale": "Number verified in September. Confirm the binder supply and book nephrology in the same call."
@@ -508,6 +676,7 @@
       "clock": null,
       "nextAction": {
         "label": "Request an alternative number through the PCP practice",
+        "shortLabel": "Request number",
         "channel": "coordinate",
         "window": "this week",
         "rationale": "Low reachability is a reason to find another route, never a reason to drop her from the queue."
@@ -555,6 +724,7 @@
       },
       "nextAction": {
         "label": "Book the 7-day visit with cardiology",
+        "shortLabel": "Book visit",
         "channel": "coordinate",
         "window": "today",
         "rationale": "Contact was made on Saturday; the visit is the open half of the window."
@@ -602,6 +772,7 @@
       },
       "nextAction": {
         "label": "Reconcile the discharge list against the PBM feed",
+        "shortLabel": "Reconcile meds",
         "channel": "review",
         "window": "this week",
         "rationale": "The discharge list arrived Saturday; no fills have landed against it yet."
@@ -649,6 +820,7 @@
       },
       "nextAction": {
         "label": "Try the listed daughter's number",
+        "shortLabel": "Call daughter",
         "channel": "call",
         "window": "this afternoon",
         "rationale": "The number on file reached an unrelated person on Saturday."
@@ -696,6 +868,7 @@
       },
       "nextAction": {
         "label": "Call the facility nursing station",
+        "shortLabel": "Call facility",
         "channel": "call",
         "window": "10:00-12:00 today",
         "rationale": "No member contact has ever succeeded; the facility is the working route."
@@ -743,6 +916,7 @@
       },
       "nextAction": {
         "label": "Confirm personal-care hours with the agency",
+        "shortLabel": "Confirm hours",
         "channel": "coordinate",
         "window": "this week",
         "rationale": "Hours were approved in September; nobody has confirmed they are being delivered."
@@ -783,6 +957,7 @@
       },
       "nextAction": {
         "label": "Chase the agency for a start-of-care date",
+        "shortLabel": "Chase agency",
         "channel": "coordinate",
         "window": "Wed 11 Nov",
         "rationale": "Approved is not started. The next check is Wednesday."
@@ -828,6 +1003,7 @@
       },
       "nextAction": {
         "label": "Confirm the referral was received",
+        "shortLabel": "Confirm receipt",
         "channel": "coordinate",
         "window": "Thu 12 Nov",
         "rationale": "Sent 19 days ago with no acknowledgement from the clinic."
@@ -873,6 +1049,7 @@
       },
       "nextAction": {
         "label": "Check the transport authorisation",
+        "shortLabel": "Check transport",
         "channel": "portal",
         "window": "Tue 10 Nov",
         "rationale": "She has missed two dialysis-education sessions for want of a ride."
@@ -918,6 +1095,7 @@
       },
       "nextAction": {
         "label": "Check the prior-authorisation decision",
+        "shortLabel": "Check decision",
         "channel": "portal",
         "window": "Tue 10 Nov",
         "rationale": "He has been on rescue inhalers alone since the request went in."
@@ -963,6 +1141,7 @@
       },
       "nextAction": {
         "label": "Ask the vendor for the intake date",
+        "shortLabel": "Ask for date",
         "channel": "coordinate",
         "window": "Fri 13 Nov",
         "rationale": "Scheduled is not delivered; no date has come back in 13 days."
@@ -1008,6 +1187,7 @@
       },
       "nextAction": {
         "label": "Push for a scheduled date",
+        "shortLabel": "Push for date",
         "channel": "coordinate",
         "window": "Wed 11 Nov",
         "rationale": "Accepted 25 days ago. Acceptance without a date is not progress."
@@ -1046,6 +1226,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1087,6 +1268,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1120,6 +1302,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1153,6 +1336,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1186,6 +1370,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1219,6 +1404,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1252,6 +1438,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1293,6 +1480,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1342,6 +1530,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1383,6 +1572,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1424,6 +1614,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1457,6 +1648,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1498,6 +1690,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1539,6 +1732,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1588,6 +1782,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1629,6 +1824,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1662,6 +1858,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1695,6 +1892,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1736,6 +1934,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1785,6 +1984,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1818,6 +2018,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1851,6 +2052,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1884,6 +2086,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1917,6 +2120,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1958,6 +2162,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -1999,6 +2204,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -2040,6 +2246,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -2073,6 +2280,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -2106,6 +2314,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."
@@ -2139,6 +2348,7 @@
       "clock": null,
       "nextAction": {
         "label": "Review at the next scheduled cadence",
+        "shortLabel": "Review",
         "channel": "review",
         "window": "this month",
         "rationale": "Nothing is time-bound today; the cadence review keeps the case from going quiet."

@@ -68,6 +68,8 @@ export type QueueClock = z.infer<typeof queueClockSchema>;
 
 export const suggestedActionSchema = z.object({
   label: z.string().min(1),
+  /** The button label: channel plus time, e.g. "Call daughter 18:00". */
+  shortLabel: z.string().min(1),
   channel: z.enum(['call', 'text', 'letter', 'portal', 'coordinate', 'review']),
   /** When to do it: "09:00-11:00 today", "after 18:00 today". */
   window: z.string().min(1),
@@ -118,6 +120,62 @@ export const queueTabCountSchema = z.object({
 });
 export type QueueTabCount = z.infer<typeof queueTabCountSchema>;
 
+/** A stat card above the queue. Each one doubles as a filter (section 10.7). */
+export const queueStatCardSchema = z.object({
+  id: z.string().min(1),
+  label: z.string().min(1),
+  value: z.number().int().min(0),
+  /** One line saying what the number counts and where it came from. */
+  hint: z.string().min(1),
+  /** Filter by whole tab, when the card maps onto one. */
+  tab: queueTabSchema.nullable(),
+  /** Otherwise the explicit set of members the card selects. */
+  memberIds: z.array(memberId),
+});
+export type QueueStatCard = z.infer<typeof queueStatCardSchema>;
+
+/** The filled / half / open key printed under the queue. */
+export const freshnessLegendEntrySchema = z.object({
+  level: freshnessLevelSchema,
+  label: z.string().min(1),
+  description: z.string().min(1),
+});
+export type FreshnessLegendEntry = z.infer<typeof freshnessLegendEntrySchema>;
+
+/** The capacity estimate. Labelled an estimate, never used to order rows. */
+export const queueCapacitySchema = z.object({
+  label: z.string().min(1),
+  line: z.string().min(1),
+  basis: z.string().min(1),
+});
+export type QueueCapacity = z.infer<typeof queueCapacitySchema>;
+
+/** The contents of the "Why this order" popover. */
+export const queueOrderingExplanationSchema = z.object({
+  title: z.string().min(1),
+  intro: z.string().min(1),
+  tiers: z
+    .array(
+      z.object({
+        tier: queueTierSchema,
+        label: z.string().min(1),
+        description: z.string().min(1),
+      }),
+    )
+    .min(1),
+  tieBreak: z.string().min(1),
+  guardrails: z.string().min(1),
+});
+export type QueueOrderingExplanation = z.infer<typeof queueOrderingExplanationSchema>;
+
+/** Choices offered by the overflow menu. A dismissal needs a reason. */
+export const queueChoiceSchema = z.object({
+  value: z.string().min(1),
+  label: z.string().min(1),
+  hint: z.string().min(1),
+});
+export type QueueChoice = z.infer<typeof queueChoiceSchema>;
+
 export const queueSchema = z.object({
   asOf: isoDateTime,
   tabs: z.array(queueTabCountSchema).min(1),
@@ -129,6 +187,14 @@ export const queueSchema = z.object({
   }),
   /** The ordering rule, printed under the queue so it is never a mystery. */
   orderingNote: z.string().min(1),
+  statCards: z.array(queueStatCardSchema).min(1),
+  freshnessLegend: z.array(freshnessLegendEntrySchema).min(1),
+  /** "event tier > clock > confidence > risk score as tie-break". */
+  scoreBasis: z.string().min(1),
+  capacity: queueCapacitySchema,
+  whyThisOrder: queueOrderingExplanationSchema,
+  dismissReasons: z.array(queueChoiceSchema).min(1),
+  snoozeOptions: z.array(queueChoiceSchema).min(1),
   rows: z.array(queueRowSchema).min(1),
 });
 export type Queue = z.infer<typeof queueSchema>;

@@ -26,3 +26,18 @@ export function queueRowFor(memberId: string): QueueRow | undefined {
 
 /** The six discharge alerts that arrived over the weekend. */
 export const dischargeAlerts = queue.dischargeAlerts;
+
+/** The four cards above the queue; each one also filters it. */
+export const queueStatCards = queue.statCards;
+
+/** The filled / half / open key, the score basis and the capacity estimate. */
+export const queueFreshnessLegend = queue.freshnessLegend;
+export const queueScoreBasis = queue.scoreBasis;
+export const queueCapacity = queue.capacity;
+
+/** The tiering explained in the "Why this order" popover. */
+export const queueOrderingExplanation = queue.whyThisOrder;
+
+/** Overflow-menu choices. A dismissal is not accepted without a reason. */
+export const queueDismissReasons = queue.dismissReasons;
+export const queueSnoozeOptions = queue.snoozeOptions;
