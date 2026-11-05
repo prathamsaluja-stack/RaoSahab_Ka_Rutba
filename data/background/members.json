@@ -1,0 +1,1112 @@
+[
+  {
+    "id": "SYN-BG-001",
+    "name": "Delphine Harkaway",
+    "isFictional": true,
+    "age": 56,
+    "sex": "F",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes",
+      "Hyperlipidaemia"
+    ],
+    "primaryPhone": "(508) 555-0187",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "739 Specimen Avenue",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2021-09-01",
+    "lastContactAt": "2026-08-26",
+    "riskBand": "low",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-002",
+    "name": "Nikodem Kettleborough",
+    "isFictional": true,
+    "age": 72,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD"
+    ],
+    "primaryPhone": "(978) 555-0102",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "862 Sample Street",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2017-04-01",
+    "lastContactAt": "2026-09-30",
+    "riskBand": "medium",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-003",
+    "name": "Horatio Pennywhistle",
+    "isFictional": true,
+    "age": 28,
+    "sex": "M",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(978) 555-0189",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "78 Placeholder Road",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2019-08-01",
+    "lastContactAt": "2026-10-10",
+    "riskBand": "low",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-004",
+    "name": "Jebediah Ravenscroft",
+    "isFictional": true,
+    "age": 61,
+    "sex": "M",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD"
+    ],
+    "primaryPhone": "(978) 555-0187",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "518 Sample Street",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "enrolledSince": "2025-05-01",
+    "lastContactAt": "2026-09-10",
+    "riskBand": "high",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-005",
+    "name": "Obadiah Pennywhistle",
+    "isFictional": true,
+    "age": 83,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia",
+      "Recurrent falls"
+    ],
+    "primaryPhone": "(978) 555-0192",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "181 Specimen Avenue",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2019-08-01",
+    "lastContactAt": null,
+    "riskBand": "high",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-006",
+    "name": "Nikodem Carrowmore",
+    "isFictional": true,
+    "age": 79,
+    "sex": "M",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure"
+    ],
+    "primaryPhone": "(781) 555-0139",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "556 Specimen Avenue",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2018-06-01",
+    "lastContactAt": "2026-09-27",
+    "riskBand": "high",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-007",
+    "name": "Imogen Greenhalgh",
+    "isFictional": true,
+    "age": 59,
+    "sex": "F",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes"
+    ],
+    "primaryPhone": "(617) 555-0110",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "374 Mockingbird Terrace",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2017-07-01",
+    "lastContactAt": "2026-10-24",
+    "riskBand": "high",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-008",
+    "name": "Delphine Barrowcliffe",
+    "isFictional": true,
+    "age": 56,
+    "sex": "F",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD",
+      "Persistent asthma"
+    ],
+    "primaryPhone": "(413) 555-0131",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "507 Specimen Avenue",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "enrolledSince": "2022-08-01",
+    "lastContactAt": "2026-10-28",
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-009",
+    "name": "Carlota Ironside",
+    "isFictional": true,
+    "age": 36,
+    "sex": "F",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(508) 555-0140",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "297 Fictional Way",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2020-07-01",
+    "lastContactAt": "2026-11-02",
+    "riskBand": "low",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-010",
+    "name": "Ulysses Jarndyce",
+    "isFictional": true,
+    "age": 58,
+    "sex": "M",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD",
+      "Hypertension"
+    ],
+    "primaryPhone": "(508) 555-0148",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "739 Placeholder Road",
+      "city": "Brockton",
+      "state": "MA",
+      "postalCode": "02301"
+    },
+    "enrolledSince": "2018-07-01",
+    "lastContactAt": "2026-09-20",
+    "riskBand": "low",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-011",
+    "name": "Rosalind Quarrier",
+    "isFictional": true,
+    "age": 90,
+    "sex": "F",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia",
+      "Recurrent falls",
+      "CKD stage 3"
+    ],
+    "primaryPhone": "(508) 555-0106",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "753 Placeholder Road",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2019-11-01",
+    "lastContactAt": "2026-09-03",
+    "riskBand": "medium",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-012",
+    "name": "Nikodem Loveridge",
+    "isFictional": true,
+    "age": 80,
+    "sex": "M",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure"
+    ],
+    "primaryPhone": "(978) 555-0182",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "262 Fictional Way",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2022-01-01",
+    "lastContactAt": "2026-09-01",
+    "riskBand": "medium",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-013",
+    "name": "Thandiwe Edgerton",
+    "isFictional": true,
+    "age": 61,
+    "sex": "F",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes",
+      "Hyperlipidaemia",
+      "Diabetic neuropathy"
+    ],
+    "primaryPhone": "(617) 555-0185",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "102 Sample Street",
+      "city": "Holyoke",
+      "state": "MA",
+      "postalCode": "01040"
+    },
+    "enrolledSince": "2022-11-01",
+    "lastContactAt": "2026-09-26",
+    "riskBand": "medium",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-014",
+    "name": "Lazarus Carrowmore",
+    "isFictional": true,
+    "age": 57,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD",
+      "Persistent asthma",
+      "Tobacco use disorder"
+    ],
+    "primaryPhone": "(413) 555-0147",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "298 Example Lane",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2018-03-01",
+    "lastContactAt": "2026-10-14",
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-015",
+    "name": "Solomon Carrowmore",
+    "isFictional": true,
+    "age": 52,
+    "sex": "M",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(978) 555-0183",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "648 Fictional Way",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2017-06-01",
+    "lastContactAt": "2026-09-21",
+    "riskBand": "high",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-016",
+    "name": "Hyacinth Sowerby",
+    "isFictional": true,
+    "age": 61,
+    "sex": "F",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD"
+    ],
+    "primaryPhone": "(617) 555-0144",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "806 Mockingbird Terrace",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2020-05-01",
+    "lastContactAt": "2026-08-19",
+    "riskBand": "medium",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-017",
+    "name": "Cassius Larkspur",
+    "isFictional": true,
+    "age": 84,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia"
+    ],
+    "primaryPhone": "(978) 555-0175",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "280 Mockingbird Terrace",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2020-06-01",
+    "lastContactAt": "2026-10-20",
+    "riskBand": "high",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-018",
+    "name": "Ulysses Ashdown",
+    "isFictional": true,
+    "age": 85,
+    "sex": "M",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure"
+    ],
+    "primaryPhone": "(617) 555-0181",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "685 Placeholder Road",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "enrolledSince": "2018-01-01",
+    "lastContactAt": "2026-09-09",
+    "riskBand": "medium",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-019",
+    "name": "Ulysses Dunmore",
+    "isFictional": true,
+    "age": 45,
+    "sex": "M",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes"
+    ],
+    "primaryPhone": "(781) 555-0171",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "387 Mockingbird Terrace",
+      "city": "Brockton",
+      "state": "MA",
+      "postalCode": "02301"
+    },
+    "enrolledSince": "2017-11-01",
+    "lastContactAt": "2026-11-01",
+    "riskBand": "low",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-020",
+    "name": "Quillon Ironside",
+    "isFictional": true,
+    "age": 44,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD"
+    ],
+    "primaryPhone": "(617) 555-0165",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "440 Specimen Avenue",
+      "city": "Brockton",
+      "state": "MA",
+      "postalCode": "02301"
+    },
+    "enrolledSince": "2023-05-01",
+    "lastContactAt": "2026-10-08",
+    "riskBand": "high",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-021",
+    "name": "Ephraim Mossgrove",
+    "isFictional": true,
+    "age": 42,
+    "sex": "M",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder",
+      "Generalised anxiety",
+      "Bipolar II"
+    ],
+    "primaryPhone": "(413) 555-0134",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "804 Specimen Avenue",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2019-12-01",
+    "lastContactAt": null,
+    "riskBand": "medium",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-022",
+    "name": "Ephraim Ashdown",
+    "isFictional": true,
+    "age": 61,
+    "sex": "M",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD",
+      "Hypertension"
+    ],
+    "primaryPhone": "(617) 555-0154",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "665 Example Lane",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2024-08-01",
+    "lastContactAt": null,
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-023",
+    "name": "Solomon Thornbury",
+    "isFictional": true,
+    "age": 85,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia",
+      "Recurrent falls",
+      "CKD stage 3"
+    ],
+    "primaryPhone": "(978) 555-0160",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "576 Sample Street",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2025-03-01",
+    "lastContactAt": "2026-08-24",
+    "riskBand": "high",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-024",
+    "name": "Saoirse Vexley",
+    "isFictional": true,
+    "age": 62,
+    "sex": "F",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure",
+      "Atrial fibrillation",
+      "Hypertension"
+    ],
+    "primaryPhone": "(413) 555-0187",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "669 Example Lane",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2024-10-01",
+    "lastContactAt": "2026-08-24",
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-025",
+    "name": "Marisol Harkaway",
+    "isFictional": true,
+    "age": 47,
+    "sex": "F",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes",
+      "Hyperlipidaemia"
+    ],
+    "primaryPhone": "(781) 555-0187",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "333 Example Lane",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "enrolledSince": "2023-01-01",
+    "lastContactAt": "2026-10-05",
+    "riskBand": "medium",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-026",
+    "name": "Thaddeus Zendell",
+    "isFictional": true,
+    "age": 71,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD",
+      "Persistent asthma"
+    ],
+    "primaryPhone": "(781) 555-0126",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "407 Example Lane",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2022-04-01",
+    "lastContactAt": "2026-09-25",
+    "riskBand": "medium",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-027",
+    "name": "Delphine Vexley",
+    "isFictional": true,
+    "age": 25,
+    "sex": "F",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(413) 555-0126",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "151 Fictional Way",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2021-02-01",
+    "lastContactAt": "2026-08-19",
+    "riskBand": "low",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-028",
+    "name": "Kehinde Fairbrother",
+    "isFictional": true,
+    "age": 81,
+    "sex": "F",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4"
+    ],
+    "primaryPhone": "(978) 555-0170",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "933 Example Lane",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2022-07-01",
+    "lastContactAt": null,
+    "riskBand": "low",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-029",
+    "name": "Cassius Dellacroix",
+    "isFictional": true,
+    "age": 84,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia",
+      "Recurrent falls",
+      "CKD stage 3"
+    ],
+    "primaryPhone": "(978) 555-0114",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "386 Fictional Way",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2022-12-01",
+    "lastContactAt": "2026-10-05",
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-030",
+    "name": "Gideon Fairbrother",
+    "isFictional": true,
+    "age": 85,
+    "sex": "M",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure",
+      "Atrial fibrillation"
+    ],
+    "primaryPhone": "(978) 555-0149",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "693 Mockingbird Terrace",
+      "city": "Lowell",
+      "state": "MA",
+      "postalCode": "01852"
+    },
+    "enrolledSince": "2021-05-01",
+    "lastContactAt": "2026-10-06",
+    "riskBand": "medium",
+    "openTasks": 1
+  },
+  {
+    "id": "SYN-BG-031",
+    "name": "Ulysses Quarrier",
+    "isFictional": true,
+    "age": 46,
+    "sex": "M",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes",
+      "Hyperlipidaemia",
+      "Diabetic neuropathy"
+    ],
+    "primaryPhone": "(617) 555-0105",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "206 Mockingbird Terrace",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2022-01-01",
+    "lastContactAt": "2026-10-13",
+    "riskBand": "low",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-032",
+    "name": "Thaddeus Ravenscroft",
+    "isFictional": true,
+    "age": 64,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD",
+      "Persistent asthma"
+    ],
+    "primaryPhone": "(508) 555-0158",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "498 Fictional Way",
+      "city": "Worcester",
+      "state": "MA",
+      "postalCode": "01602"
+    },
+    "enrolledSince": "2019-01-01",
+    "lastContactAt": "2026-10-17",
+    "riskBand": "medium",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-033",
+    "name": "Delphine Calloway-Pike",
+    "isFictional": true,
+    "age": 34,
+    "sex": "F",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(781) 555-0167",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "275 Mockingbird Terrace",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2020-09-01",
+    "lastContactAt": null,
+    "riskBand": "medium",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-034",
+    "name": "Hyacinth Greenhalgh",
+    "isFictional": true,
+    "age": 70,
+    "sex": "F",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD"
+    ],
+    "primaryPhone": "(413) 555-0113",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "903 Specimen Avenue",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2019-05-01",
+    "lastContactAt": "2026-09-20",
+    "riskBand": "high",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-035",
+    "name": "Montgomery Harkaway",
+    "isFictional": true,
+    "age": 75,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia"
+    ],
+    "primaryPhone": "(413) 555-0127",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "264 Sample Street",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2024-02-01",
+    "lastContactAt": "2026-11-04",
+    "riskBand": "low",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-036",
+    "name": "Solomon Inglewood",
+    "isFictional": true,
+    "age": 64,
+    "sex": "M",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure",
+      "Atrial fibrillation"
+    ],
+    "primaryPhone": "(781) 555-0198",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "389 Mockingbird Terrace",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2023-02-01",
+    "lastContactAt": "2026-08-29",
+    "riskBand": "medium",
+    "openTasks": 2
+  },
+  {
+    "id": "SYN-BG-037",
+    "name": "Gideon Oglethorpe",
+    "isFictional": true,
+    "age": 59,
+    "sex": "M",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes",
+      "Hyperlipidaemia"
+    ],
+    "primaryPhone": "(508) 555-0103",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "726 Placeholder Road",
+      "city": "Brockton",
+      "state": "MA",
+      "postalCode": "02301"
+    },
+    "enrolledSince": "2024-05-01",
+    "lastContactAt": "2026-10-04",
+    "riskBand": "low",
+    "openTasks": 4
+  },
+  {
+    "id": "SYN-BG-038",
+    "name": "Bartholomew Zendell",
+    "isFictional": true,
+    "age": 39,
+    "sex": "M",
+    "program": "Respiratory",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "COPD",
+      "Persistent asthma"
+    ],
+    "primaryPhone": "(617) 555-0122",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "760 Sample Street",
+      "city": "Fitchburg",
+      "state": "MA",
+      "postalCode": "01420"
+    },
+    "enrolledSince": "2020-03-01",
+    "lastContactAt": "2026-11-05",
+    "riskBand": "medium",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-039",
+    "name": "Lioba Thornbury",
+    "isFictional": true,
+    "age": 52,
+    "sex": "F",
+    "program": "Behavioral health",
+    "lineOfBusiness": "medicaid",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Major depressive disorder"
+    ],
+    "primaryPhone": "(508) 555-0125",
+    "phoneValidity": "wrong_number",
+    "address": {
+      "line1": "610 Fictional Way",
+      "city": "Holyoke",
+      "state": "MA",
+      "postalCode": "01040"
+    },
+    "enrolledSince": "2017-03-01",
+    "lastContactAt": "2026-09-30",
+    "riskBand": "medium",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-040",
+    "name": "Marisol Sowerby",
+    "isFictional": true,
+    "age": 78,
+    "sex": "F",
+    "program": "Kidney care",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "CKD stage 4",
+      "Anaemia of CKD"
+    ],
+    "primaryPhone": "(617) 555-0125",
+    "phoneValidity": "unverified",
+    "address": {
+      "line1": "625 Example Lane",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2019-06-01",
+    "lastContactAt": "2026-10-23",
+    "riskBand": "medium",
+    "openTasks": 3
+  },
+  {
+    "id": "SYN-BG-041",
+    "name": "Kwabena Zendell",
+    "isFictional": true,
+    "age": 72,
+    "sex": "M",
+    "program": "Complex care",
+    "lineOfBusiness": "dsnp",
+    "planName": "Bayline Dual Complete D-SNP (fictional)",
+    "conditions": [
+      "Dementia"
+    ],
+    "primaryPhone": "(508) 555-0166",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "259 Specimen Avenue",
+      "city": "Pittsfield",
+      "state": "MA",
+      "postalCode": "01201"
+    },
+    "enrolledSince": "2025-08-01",
+    "lastContactAt": "2026-08-13",
+    "riskBand": "medium",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-042",
+    "name": "Fenella Jessup",
+    "isFictional": true,
+    "age": 82,
+    "sex": "F",
+    "program": "Heart failure",
+    "lineOfBusiness": "medicare_advantage",
+    "planName": "Bayline Medicare Advantage HMO (fictional)",
+    "conditions": [
+      "Heart failure",
+      "Atrial fibrillation"
+    ],
+    "primaryPhone": "(508) 555-0176",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "920 Sample Street",
+      "city": "New Bedford",
+      "state": "MA",
+      "postalCode": "02740"
+    },
+    "enrolledSince": "2017-12-01",
+    "lastContactAt": "2026-09-27",
+    "riskBand": "high",
+    "openTasks": 0
+  },
+  {
+    "id": "SYN-BG-043",
+    "name": "Winnifred Dellacroix",
+    "isFictional": true,
+    "age": 45,
+    "sex": "F",
+    "program": "Diabetes",
+    "lineOfBusiness": "medicaid_expansion",
+    "planName": "Commonwealth Choice Medicaid (fictional)",
+    "conditions": [
+      "Type 2 diabetes"
+    ],
+    "primaryPhone": "(508) 555-0102",
+    "phoneValidity": "verified",
+    "address": {
+      "line1": "445 Sample Street",
+      "city": "Springfield",
+      "state": "MA",
+      "postalCode": "01103"
+    },
+    "enrolledSince": "2019-04-01",
+    "lastContactAt": "2026-10-28",
+    "riskBand": "low",
+    "openTasks": 2
+  }
+]

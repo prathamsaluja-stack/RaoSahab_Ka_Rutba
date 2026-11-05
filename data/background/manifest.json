@@ -1,0 +1,14 @@
+{
+  "generator": "deterministic",
+  "seed": 20261109,
+  "asOf": "2026-11-09T08:00:00-05:00",
+  "count": 43,
+  "caseload": 48,
+  "script": "scripts/data/generate.ts",
+  "notes": [
+    "Every name, street line and telephone number is invented.",
+    "Telephone numbers use the reserved 555-01xx exchange only.",
+    "Background members are list scenery: they carry no clinical detail.",
+    "Re-running the script reproduces this file exactly."
+  ]
+}
