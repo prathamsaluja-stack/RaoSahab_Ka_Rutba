@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * Task 1 ships a deliberately minimal palette so the placeholder page is
+ * readable and accessible. The full Caseline token set (section 4 of the
+ * brief) lands in task 2 and replaces these values.
+ */
+:root {
+  --canvas: #f6f7f9;
+  --surface: #ffffff;
+  --border: #e4e7ec;
+  --text: #0b1b2b;
+  --text-muted: #5b6676;
+  --brand: #0f6b66;
+  --focus: #2e90fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0e1116;
+    --surface: #151a21;
+    --border: #2a313b;
+    --text: #e6eaf0;
+    --text-muted: #98a2b3;
+    --brand: #2db3a9;
+    --focus: #53b1fd;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-brand: var(--brand);
+  --color-focus: var(--focus);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

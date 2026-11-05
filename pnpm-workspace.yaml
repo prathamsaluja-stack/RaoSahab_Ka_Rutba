@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  sharp: false
+  unrs-resolver: false
+minimumReleaseAgeExclude:
+  - jsdom@31.0.0
+  - lucide-react@1.69.0
