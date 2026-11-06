@@ -18,7 +18,9 @@ import { toneBorder, toneDot } from './story-parts';
  */
 export function WhatChanged({ entries }: { entries: readonly ChangeEntry[] }) {
   return (
-    <Card className="flex h-full flex-col">
+    // Sized to its own content: the action column is often twice as long, and
+    // stretching to match it left the card half empty.
+    <Card className="flex flex-col">
       <CardHeader
         title="What changed (72 h)"
         subtitle={`${changeWindowLabel} · ${entries.length} records`}
