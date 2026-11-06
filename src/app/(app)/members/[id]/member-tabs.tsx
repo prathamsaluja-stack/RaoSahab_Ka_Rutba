@@ -1,79 +1,113 @@
 'use client';
 
-import { EmptyState, Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui';
+import * as React from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui';
+import type { MemberStoryView } from '@/lib/data/member-story';
+import { ClinicalSnapshot } from './clinical-snapshot';
+import { MedicationsMatrix } from './medications-matrix';
+import { NextBestActions } from './next-best-actions';
+import {
+  AuthorizationsTab,
+  CareGapsTab,
+  ContactsTab,
+  DocumentsTab,
+  NotesTab,
+  SourcesTab,
+} from './record-tabs';
+import { TimelineView } from './timeline-view';
+import { WhatChanged } from './what-changed';
 
-/** The nine Member Story tabs from section 5, in order. */
-export const MEMBER_TABS = [
-  {
-    value: 'overview',
-    label: 'Overview',
-    blurb:
-      'What changed in the last 72 hours and the next best actions, side by side, with the reason and source behind each one.',
-  },
-  {
-    value: 'medications',
-    label: 'Medications',
-    blurb:
-      'One row per drug and one column per source: discharge list, pharmacy fills, claims-derived and member-reported. Disagreements are shown, never merged by software.',
-  },
-  {
-    value: 'timeline',
-    label: 'Timeline',
-    blurb:
-      'Twelve months of typed events with a shaded band showing how far claims are actually complete, so a quiet month reads as missing data rather than a healthy member.',
-  },
-  {
-    value: 'contacts',
-    label: 'Contacts',
-    blurb:
-      'Every number with its owner, which ones answer, the best two-hour window, the language spoken and consent per channel.',
-  },
-  {
-    value: 'documents',
-    label: 'Documents',
-    blurb:
-      'Received, requested but not received, and restricted documents, each with a re-request action. A restricted record is shown as restricted, never as a blank.',
-  },
-  {
-    value: 'authorizations',
-    label: 'Authorizations',
-    blurb:
-      'Requested, approved, started and completed are four different states. Approved with no confirmed start of care is called out as such.',
-  },
-  {
-    value: 'care-gaps',
-    label: 'Care gaps',
-    blurb:
-      'Each measure with its open and close dates, including gaps that may already be closed by a claim that has not arrived yet.',
-  },
-  {
-    value: 'notes',
-    label: 'Notes & tasks',
-    blurb: 'Signed notes, drafts in progress, and the tasks a call created.',
-  },
-  {
-    value: 'sources',
-    label: 'Sources',
-    blurb:
-      'The raw records behind everything above: source system, record identifier, clinical event time, received time, status and edit history.',
-  },
+/** The nine Member Story sections from section 5, in order. */
+export const MEMBER_TAB_LABELS = [
+  'Overview',
+  'Medications',
+  'Timeline',
+  'Contacts',
+  'Documents',
+  'Authorizations',
+  'Care gaps',
+  'Notes & tasks',
+  'Sources',
 ] as const;
 
-export function MemberTabs() {
+export function MemberTabs({ view }: { view: MemberStoryView }) {
+  const counts: Record<string, number> = {
+    medications: view.medicationRows.length,
+    timeline: view.timeline.events.length,
+    contacts: view.contacts.length,
+    documents: view.documents.length,
+    authorizations: view.auths.length,
+    'care-gaps': view.careGaps.length,
+    notes: view.notes.length + view.tasks.length,
+    sources: view.sources.length,
+  };
+
+  const tabs = [
+    { value: 'overview', label: 'Overview' },
+    { value: 'medications', label: 'Medications' },
+    { value: 'timeline', label: 'Timeline' },
+    { value: 'contacts', label: 'Contacts' },
+    { value: 'documents', label: 'Documents' },
+    { value: 'authorizations', label: 'Authorizations' },
+    { value: 'care-gaps', label: 'Care gaps' },
+    { value: 'notes', label: 'Notes & tasks' },
+    { value: 'sources', label: 'Sources' },
+  ] as const;
+
   return (
     <Tabs defaultValue="overview" className="flex flex-col gap-4">
-      <TabsList aria-label="Member Story sections">
-        {MEMBER_TABS.map((tab) => (
-          <TabsTrigger key={tab.value} value={tab.value}>
+      <TabsList aria-label="Member Story sections" className="overflow-x-auto">
+        {tabs.map((tab) => (
+          <TabsTrigger key={tab.value} value={tab.value} className="whitespace-nowrap">
             {tab.label}
+            {counts[tab.value] !== undefined ? (
+              <span data-tabular className="ml-1.5 text-2xs text-text-muted">
+                {counts[tab.value]}
+              </span>
+            ) : null}
           </TabsTrigger>
         ))}
       </TabsList>
-      {MEMBER_TABS.map((tab) => (
-        <TabsContent key={tab.value} value={tab.value}>
-          <EmptyState title={`${tab.label} is not built yet`} description={tab.blurb} />
-        </TabsContent>
-      ))}
+
+      <TabsContent value="overview" className="flex flex-col gap-6">
+        <div className="grid items-start gap-6 xl:grid-cols-2">
+          <WhatChanged entries={view.story.whatChanged} />
+          <NextBestActions signals={view.signals} />
+        </div>
+        <ClinicalSnapshot view={view} />
+      </TabsContent>
+
+      <TabsContent value="medications">
+        <MedicationsMatrix view={view} />
+      </TabsContent>
+
+      <TabsContent value="timeline">
+        <TimelineView view={view} />
+      </TabsContent>
+
+      <TabsContent value="contacts">
+        <ContactsTab view={view} />
+      </TabsContent>
+
+      <TabsContent value="documents">
+        <DocumentsTab view={view} />
+      </TabsContent>
+
+      <TabsContent value="authorizations">
+        <AuthorizationsTab view={view} />
+      </TabsContent>
+
+      <TabsContent value="care-gaps">
+        <CareGapsTab view={view} />
+      </TabsContent>
+
+      <TabsContent value="notes">
+        <NotesTab view={view} />
+      </TabsContent>
+
+      <TabsContent value="sources">
+        <SourcesTab view={view} />
+      </TabsContent>
     </Tabs>
   );
 }
