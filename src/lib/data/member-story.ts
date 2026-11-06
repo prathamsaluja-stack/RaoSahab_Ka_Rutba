@@ -185,6 +185,8 @@ export interface MemberStoryView {
   appointments: readonly Appointment[];
   auditEvents: readonly AuditEvent[];
   sources: readonly SourceRecordRow[];
+  /** How many records would disappear if identity resolution were undone. */
+  priorIdRecordCount: number;
 }
 
 const WINDOW_START = '2025-12-01T00:00:00-05:00';
@@ -704,6 +706,19 @@ function buildView(member: Member, story: MemberStory): MemberStoryView {
     appointments,
     auditEvents: d.auditEvents.filter((row) => row.memberId !== null && ids.includes(row.memberId)),
     sources,
+    priorIdRecordCount: (
+      [
+        d.coverage,
+        d.contactPoints,
+        d.medicationStatements,
+        d.pharmacyFills,
+        d.claims,
+        d.labResults,
+        d.assessments,
+        d.appointments,
+        d.notes,
+      ] as readonly (readonly { memberId: string }[])[]
+    ).reduce((total, rows) => total + byMemberIds(rows, member.priorMemberIds).length, 0),
   };
 }
 
