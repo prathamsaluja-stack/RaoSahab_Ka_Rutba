@@ -1,0 +1,2256 @@
+{
+  "asOf": "2026-11-09T08:00:00-05:00",
+  "signedBy": "Maria R., RN",
+  "signNote": "One signature writes all of this at once. Nothing below is in the record yet, and nothing is written by software without this signature.",
+  "outcomeCodes": [
+    {
+      "code": "no_answer",
+      "label": "No answer",
+      "updates": "Adds a failed attempt to this number and lowers its answer rate. S10 re-ranks the numbers for the next attempt. The transition clock keeps running."
+    },
+    {
+      "code": "voicemail",
+      "label": "Left voicemail",
+      "updates": "Logs an attempt and a voicemail, which is allowed on this number. The member stays on today's queue with the next attempt pencilled into the same window."
+    },
+    {
+      "code": "wrong_number",
+      "label": "Wrong number",
+      "updates": "Marks this number wrong, never deletes it, and pushes the next-best number up the reach line. A verification task is created instead of dropping the member."
+    },
+    {
+      "code": "disconnected",
+      "label": "Disconnected",
+      "updates": "Marks the number dead after the attempt threshold. It stays visible, struck through, and an alternative-contact action is raised - low reachability never removes a member from the queue."
+    },
+    {
+      "code": "reached_other_person",
+      "label": "Reached someone else",
+      "updates": "Records who answered and their relationship, with no clinical content discussed. Consent to speak with that person is asked before anything else is written."
+    }
+  ],
+  "members": [
+    {
+      "memberId": "SYN-HF-001",
+      "programLabel": "Heart failure - post-discharge transition",
+      "summary": "Two business days after a Friday discharge, with a new drug unfilled and two diuretic doses on the record.",
+      "dialing": {
+        "contactPointId": "CP-HF-001-mobile",
+        "number": "(508) 555-0142",
+        "ownerLabel": "Mobile - the member's own number",
+        "note": "Answered 3 of 3 morning calls. Calls consented, texts not. Hard of hearing: speak slowly and confirm back."
+      },
+      "timer": {
+        "elapsed": "07:42",
+        "connectedLabel": "Connected Mon 9 Nov, 09:06 ET"
+      },
+      "recordingConsent": {
+        "state": "no",
+        "label": "Recording: asked, declined",
+        "detail": "Consent to record was asked at 09:06 and declined. The call is not being recorded; the note below is written by hand from the guide answers."
+      },
+      "clock": {
+        "label": "2-business-day contact window after discharge",
+        "reading": "1 business day elapsed",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "state": "due_soon"
+      },
+      "guide": {
+        "note": "Nine items, shaped by the heart-failure program and by what this record is missing. Two of them are here only because the record has a hole: the HRA never asked about a scale, and three sources disagree about the diuretic dose.",
+        "items": [
+          {
+            "id": "G1",
+            "origin": "program",
+            "prompt": "Confirm you are speaking with Harold, and check he can hear you comfortably.",
+            "because": "Hard of hearing is on the HRA from 26 Apr, so the call opens by checking the channel works.",
+            "source": "hra",
+            "sourceLabel": "HRA, 26 Apr",
+            "chips": [
+              {
+                "id": "G1a",
+                "label": "Identity confirmed",
+                "tone": "success",
+                "feedsNote": "Identity confirmed by date of birth and address."
+              },
+              {
+                "id": "G1b",
+                "label": "Spouse answered, handed over",
+                "tone": "info",
+                "feedsNote": "Spouse answered and handed the phone to the member."
+              },
+              {
+                "id": "G1c",
+                "label": "Could not hear - called back on speaker",
+                "tone": "warning",
+                "feedsNote": "Member could not hear clearly; call repeated on speaker."
+              }
+            ],
+            "answeredChipId": "G1a",
+            "escalation": null
+          },
+          {
+            "id": "G2",
+            "origin": "red_flag",
+            "prompt": "Any chest pain, breathlessness at rest, or a weight jump of more than 3 lb in a day?",
+            "because": "Red-flag screen for the heart-failure program. It is asked early so the rest of the call can be stopped if it fires.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "G2a",
+                "label": "None of these",
+                "tone": "success",
+                "feedsNote": "No chest pain, no breathlessness at rest, no rapid weight jump."
+              },
+              {
+                "id": "G2b",
+                "label": "Breathless at rest",
+                "tone": "urgent",
+                "feedsNote": "Member reports breathlessness at rest."
+              },
+              {
+                "id": "G2c",
+                "label": "Chest pain now",
+                "tone": "urgent",
+                "feedsNote": "Member reports chest pain during the call."
+              },
+              {
+                "id": "G2d",
+                "label": "Weight up more than 3 lb in a day",
+                "tone": "urgent",
+                "feedsNote": "Member reports a weight rise of more than 3 lb in one day."
+              }
+            ],
+            "answeredChipId": "G2a",
+            "escalation": "If any red flag is answered yes: stay on the line, run the heart-failure escalation script, page the on-call RN lead, and offer 911 for chest pain or breathlessness at rest. The workbench never escalates on its own and never infers a crisis from a diagnosis."
+          },
+          {
+            "id": "G3",
+            "origin": "program",
+            "prompt": "How is your breathing since Friday - on the stairs, on the flat, lying down?",
+            "because": "Standard post-discharge symptom check for heart failure.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "G3a",
+                "label": "Worse on stairs",
+                "tone": "warning",
+                "feedsNote": "Member reports breathlessness climbing the stairs since Saturday, with none at rest."
+              },
+              {
+                "id": "G3b",
+                "label": "Unchanged",
+                "tone": "neutral",
+                "feedsNote": "Member reports breathing unchanged since discharge."
+              },
+              {
+                "id": "G3c",
+                "label": "Better than in hospital",
+                "tone": "success",
+                "feedsNote": "Member reports breathing better than in hospital."
+              }
+            ],
+            "answeredChipId": "G3a",
+            "escalation": null
+          },
+          {
+            "id": "G4",
+            "origin": "record_gap",
+            "prompt": "Do you have a scale at home, and have you weighed yourself since you came home?",
+            "because": "Inserted: the 26 Apr HRA has this item in a not-asked state, and daily weights are the whole of post-discharge heart-failure self-care. Answering it here fills the gap rather than leaving it blank for another six months.",
+            "source": "hra",
+            "sourceLabel": "HRA item ASM-HF-SCALE, never asked",
+            "chips": [
+              {
+                "id": "G4a",
+                "label": "No scale at home",
+                "tone": "urgent",
+                "feedsNote": "Member has no scale at home, so daily weights are not being taken."
+              },
+              {
+                "id": "G4b",
+                "label": "Has a scale, weighs daily",
+                "tone": "success",
+                "feedsNote": "Member has a scale at home and weighs daily."
+              },
+              {
+                "id": "G4c",
+                "label": "Has a scale, weighs sometimes",
+                "tone": "warning",
+                "feedsNote": "Member has a scale at home and weighs occasionally."
+              }
+            ],
+            "answeredChipId": "G4a",
+            "escalation": null
+          },
+          {
+            "id": "G5",
+            "origin": "program",
+            "prompt": "Has your weight changed since Friday? Where were you last weighed?",
+            "because": "Weight is the earliest signal of fluid, and the answer above means it cannot come from a home scale.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "G5a",
+                "label": "Up about 2 lb since Friday",
+                "tone": "warning",
+                "feedsNote": "Member reports a 2 lb weight rise since Friday, weighed at the pharmacy on Saturday."
+              },
+              {
+                "id": "G5b",
+                "label": "No change",
+                "tone": "neutral",
+                "feedsNote": "Member reports no weight change since discharge."
+              },
+              {
+                "id": "G5c",
+                "label": "Does not know",
+                "tone": "neutral",
+                "feedsNote": "Member does not know whether his weight has changed."
+              }
+            ],
+            "answeredChipId": "G5a",
+            "escalation": null
+          },
+          {
+            "id": "G6",
+            "origin": "record_gap",
+            "prompt": "Pick up the water pill bottle and read me the strength on the label.",
+            "because": "Inserted: the discharge list says furosemide 80 mg daily and marks it changed; the last fill and the claims history both say 40 mg. Nothing is merged, so the member's own bottle is the fourth source.",
+            "source": "ccd",
+            "sourceLabel": "Discharge list 6 Nov vs PBM 10 Oct vs claims 22 Sep",
+            "chips": [
+              {
+                "id": "G6a",
+                "label": "Bottle reads 40 mg",
+                "tone": "urgent",
+                "feedsNote": "Member read the label on the bottle in his hand: furosemide 40 mg. He has not started the 80 mg dose on the discharge list."
+              },
+              {
+                "id": "G6b",
+                "label": "Bottle reads 80 mg",
+                "tone": "success",
+                "feedsNote": "Member read the label on the bottle in his hand: furosemide 80 mg."
+              },
+              {
+                "id": "G6c",
+                "label": "Two bottles in the house",
+                "tone": "urgent",
+                "feedsNote": "Member has two furosemide bottles in the house at different strengths."
+              },
+              {
+                "id": "G6d",
+                "label": "Cannot find the bottle",
+                "tone": "warning",
+                "feedsNote": "Member could not find the bottle during the call."
+              }
+            ],
+            "answeredChipId": "G6a",
+            "escalation": null
+          },
+          {
+            "id": "G7",
+            "origin": "program",
+            "prompt": "Did you collect the new heart medicine, sacubitril/valsartan? If not, what stopped you?",
+            "because": "S1: the drug is new on Friday's discharge list and the pharmacy feed, current to Sunday 23:00, shows no fill 63 hours later.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "G7a",
+                "label": "Not collected - cost",
+                "tone": "urgent",
+                "feedsNote": "Sacubitril/valsartan was not collected. The pharmacy quoted a $47 copay and the member left it at the counter."
+              },
+              {
+                "id": "G7b",
+                "label": "Not collected - no transport",
+                "tone": "urgent",
+                "feedsNote": "Sacubitril/valsartan was not collected because the member had no way to get to the pharmacy."
+              },
+              {
+                "id": "G7c",
+                "label": "Not collected - did not know about it",
+                "tone": "urgent",
+                "feedsNote": "Member was not aware a new medicine had been prescribed at discharge."
+              },
+              {
+                "id": "G7d",
+                "label": "Collected and taking it",
+                "tone": "success",
+                "feedsNote": "Member has collected sacubitril/valsartan and is taking it as prescribed."
+              }
+            ],
+            "answeredChipId": "G7a",
+            "escalation": null
+          },
+          {
+            "id": "G8",
+            "origin": "program",
+            "prompt": "Who helps you at home day to day, and would you like them on these calls?",
+            "because": "The HRA says he lives with his spouse, who drives him to appointments. A named caregiver on the line shortens every later call.",
+            "source": "hra",
+            "sourceLabel": "HRA, 26 Apr",
+            "chips": [
+              {
+                "id": "G8a",
+                "label": "Spouse helps daily",
+                "tone": "info",
+                "feedsNote": "Member's spouse helps with medicines and transport every day."
+              },
+              {
+                "id": "G8b",
+                "label": "Manages alone",
+                "tone": "warning",
+                "feedsNote": "Member manages his medicines and appointments alone."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          },
+          {
+            "id": "G9",
+            "origin": "closing",
+            "prompt": "Agree the next contact and read back the three things that will happen after this call.",
+            "because": "The call ends with a read-back, because a plan the member cannot repeat is not a plan.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "G9a",
+                "label": "Agreed Thu 12 Nov 09:30",
+                "tone": "success",
+                "feedsNote": "Next contact agreed for Thursday 12 Nov at 09:30, in the member's answering window."
+              },
+              {
+                "id": "G9b",
+                "label": "Call back with the spouse present",
+                "tone": "info",
+                "feedsNote": "Member asked to be called back with his spouse present."
+              }
+            ],
+            "answeredChipId": "G9a",
+            "escalation": null
+          }
+        ]
+      },
+      "caregiver": {
+        "label": "Add caregiver on the line",
+        "hint": "Adding a caregiver records who heard the plan. Consent for a third party on the call is asked and written down before the handover.",
+        "candidates": [
+          {
+            "id": "CG-HF-DORIS",
+            "name": "Doris Bellweather (fictional)",
+            "relation": "Spouse, lives with the member",
+            "number": "(508) 555-0177",
+            "consentLabel": "Named on the HRA, 26 Apr. Verbal consent needed on this call."
+          },
+          {
+            "id": "CG-HF-OTHER",
+            "name": "Someone else on the line",
+            "relation": "Not on the contact record",
+            "number": "Enter the number",
+            "consentLabel": "Identity and relationship recorded before anything clinical is discussed."
+          }
+        ]
+      },
+      "assessment": {
+        "instrument": "Complex-care assessment, 40 fields",
+        "total": 40,
+        "prefilled": 21,
+        "confirmed": 12,
+        "remaining": 7,
+        "note": "Facts verified once are reused. Every pre-filled value shows the feed and the date it came from, and each can be kept or changed on this call - a value from an April HRA is not the same thing as a value the member said a minute ago.",
+        "fields": [
+          {
+            "id": "F01",
+            "section": "Identification and consent",
+            "label": "Member identity verified",
+            "value": "Verified: date of birth and address read back",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F02",
+            "section": "Identification and consent",
+            "label": "Preferred language",
+            "value": "English",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-HF-0426",
+            "dateLabel": "HRA, 26 Apr"
+          },
+          {
+            "id": "F03",
+            "section": "Identification and consent",
+            "label": "Recording consent",
+            "value": "Asked on this call; member declined recording",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F04",
+            "section": "Identification and consent",
+            "label": "Interpreter needed",
+            "value": "No",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-HF-0426",
+            "dateLabel": "HRA, 26 Apr"
+          },
+          {
+            "id": "F05",
+            "section": "Reachability",
+            "label": "Best number",
+            "value": "(508) 555-0142, mobile, the member's own",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-HF-0142",
+            "dateLabel": "Contact history, 20 Oct"
+          },
+          {
+            "id": "F06",
+            "section": "Reachability",
+            "label": "Best time window",
+            "value": "09:00-11:00, weekdays",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-HF-0142",
+            "dateLabel": "Contact history, 20 Oct"
+          },
+          {
+            "id": "F07",
+            "section": "Reachability",
+            "label": "Text consent",
+            "value": "No",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-HF-0142",
+            "dateLabel": "Consent recorded 26 Apr"
+          },
+          {
+            "id": "F08",
+            "section": "Reachability",
+            "label": "Alternate contact",
+            "value": "Doris Bellweather (fictional), spouse, (508) 555-0177",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-HF-0177",
+            "dateLabel": "Contact history, 6 Oct"
+          },
+          {
+            "id": "F09",
+            "section": "Clinical status",
+            "label": "Primary condition",
+            "value": "Heart failure with reduced ejection fraction",
+            "state": "prefilled",
+            "source": "claims",
+            "sourceRecordId": "CLM-HF-PCP-0922",
+            "dateLabel": "Claims, 22 Sep"
+          },
+          {
+            "id": "F10",
+            "section": "Clinical status",
+            "label": "Comorbidities",
+            "value": "Atrial fibrillation; chronic kidney disease, coded stage 3b",
+            "state": "prefilled",
+            "source": "claims",
+            "sourceRecordId": "CLM-HF-PCP-0922",
+            "dateLabel": "Claims, 22 Sep"
+          },
+          {
+            "id": "F11",
+            "section": "Clinical status",
+            "label": "Breathlessness",
+            "value": "On the stairs since Saturday; none at rest",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F12",
+            "section": "Clinical status",
+            "label": "Weight change since discharge",
+            "value": "Up 2 lb since Friday, weighed at the pharmacy",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F13",
+            "section": "Clinical status",
+            "label": "Swelling",
+            "value": "Ankles puffy in the evening, settles overnight",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F14",
+            "section": "Clinical status",
+            "label": "Chest pain",
+            "value": "None",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F15",
+            "section": "Medications",
+            "label": "Diuretic strength in the home",
+            "value": "Furosemide 40 mg - label read aloud from the bottle in hand",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F16",
+            "section": "Medications",
+            "label": "Diuretic on the discharge list",
+            "value": "Furosemide 80 mg daily, marked changed",
+            "state": "prefilled",
+            "source": "ccd",
+            "sourceRecordId": "CCD-HF-1106",
+            "dateLabel": "Discharge list, 6 Nov"
+          },
+          {
+            "id": "F17",
+            "section": "Medications",
+            "label": "New discharge drug collected",
+            "value": "No - sacubitril/valsartan 24/26 mg twice daily never picked up",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F18",
+            "section": "Medications",
+            "label": "Barrier to collection",
+            "value": "$47 copay quoted at the counter",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F19",
+            "section": "Medications",
+            "label": "Anticoagulant",
+            "value": "Apixaban 5 mg twice daily, last filled 25 Oct",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-HF-APX-1025",
+            "dateLabel": "PBM, 25 Oct"
+          },
+          {
+            "id": "F20",
+            "section": "Medications",
+            "label": "Beta blocker",
+            "value": "Metoprolol succinate 50 mg daily, last filled 25 Oct",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-HF-MET-1025",
+            "dateLabel": "PBM, 25 Oct"
+          },
+          {
+            "id": "F21",
+            "section": "Function and safety",
+            "label": "Scale at home",
+            "value": "No scale at home - asked for the first time on this call",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F22",
+            "section": "Function and safety",
+            "label": "Daily weights",
+            "value": "Not being taken; no device to take them with",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F23",
+            "section": "Function and safety",
+            "label": "Falls in the last 90 days",
+            "value": "None recorded",
+            "state": "prefilled",
+            "source": "cm_record",
+            "sourceRecordId": "CM-HF-0426",
+            "dateLabel": "CM record, 26 Apr"
+          },
+          {
+            "id": "F24",
+            "section": "Function and safety",
+            "label": "Hearing on the phone",
+            "value": "Hard of hearing; speak slowly, confirm back",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-HF-0426",
+            "dateLabel": "HRA, 26 Apr"
+          },
+          {
+            "id": "F25",
+            "section": "Function and safety",
+            "label": "Home oxygen",
+            "value": "Not in use",
+            "state": "prefilled",
+            "source": "ccd",
+            "sourceRecordId": "CCD-HF-1106",
+            "dateLabel": "Discharge list, 6 Nov"
+          },
+          {
+            "id": "F26",
+            "section": "Function and safety",
+            "label": "Fall-risk screen",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F27",
+            "section": "Social and caregiver",
+            "label": "Lives with",
+            "value": "Spouse",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-HF-0426",
+            "dateLabel": "HRA, 26 Apr"
+          },
+          {
+            "id": "F28",
+            "section": "Social and caregiver",
+            "label": "Transport to appointments",
+            "value": "Spouse drives; no transport barrier recorded",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-HF-0426",
+            "dateLabel": "HRA, 26 Apr"
+          },
+          {
+            "id": "F29",
+            "section": "Social and caregiver",
+            "label": "Caregiver present on this call",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F30",
+            "section": "Social and caregiver",
+            "label": "Food security",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F31",
+            "section": "Social and caregiver",
+            "label": "Financial strain",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F32",
+            "section": "Care plan and follow-up",
+            "label": "Primary care physician",
+            "value": "Dr. Rook (fictional), Bellhaven Family Medicine (fictional)",
+            "state": "prefilled",
+            "source": "directory",
+            "sourceRecordId": "DIR-HF-ROOK",
+            "dateLabel": "Provider directory, 1 Jul"
+          },
+          {
+            "id": "F33",
+            "section": "Care plan and follow-up",
+            "label": "Cardiology follow-up booked",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F34",
+            "section": "Care plan and follow-up",
+            "label": "Next contact agreed",
+            "value": "Thu 12 Nov, 09:30",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F35",
+            "section": "Care plan and follow-up",
+            "label": "Advance directive on file",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F36",
+            "section": "Care plan and follow-up",
+            "label": "Goals reviewed with the member",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F37",
+            "section": "Transition",
+            "label": "Discharge date and time",
+            "value": "Fri 6 Nov, 16:45",
+            "state": "prefilled",
+            "source": "adt",
+            "sourceRecordId": "ADT-HF-1106",
+            "dateLabel": "ADT, received 6 Nov 17:38"
+          },
+          {
+            "id": "F38",
+            "section": "Transition",
+            "label": "Discharge facility",
+            "value": "Riverbend General Hospital (fictional)",
+            "state": "prefilled",
+            "source": "adt",
+            "sourceRecordId": "ADT-HF-1106",
+            "dateLabel": "ADT, received 6 Nov 17:38"
+          },
+          {
+            "id": "F39",
+            "section": "Transition",
+            "label": "Discharge summary",
+            "value": "Requested Fri 6 Nov 18:00; not received",
+            "state": "prefilled",
+            "source": "ccd",
+            "sourceRecordId": "DOC-HF-SUMMARY",
+            "dateLabel": "Clinical documents, 6 Nov"
+          },
+          {
+            "id": "F40",
+            "section": "Transition",
+            "label": "Home-health authorization",
+            "value": "Pending since Fri 6 Nov",
+            "state": "prefilled",
+            "source": "um",
+            "sourceRecordId": "AUTH-HF-HH-1106",
+            "dateLabel": "UM, 6 Nov"
+          }
+        ]
+      },
+      "note": {
+        "header": "Draft - not in the record until signed",
+        "byline": "Maria R., RN - post-discharge transition call, Mon 9 Nov 09:06 ET",
+        "sentences": [
+          {
+            "id": "N1",
+            "tag": "record",
+            "text": "Post-discharge transition call, two business days after an inpatient discharge from Riverbend General Hospital (fictional) on Fri 6 Nov at 16:45. The ADT message carried no diagnosis.",
+            "source": "adt",
+            "sourceLabel": "ADT-HF-1106, received Fri 6 Nov 17:38",
+            "basis": null
+          },
+          {
+            "id": "N2",
+            "tag": "record",
+            "text": "The discharge medication list received Fri 6 Nov 19:30 lists furosemide 80 mg daily, marked changed, and sacubitril/valsartan 24/26 mg twice daily, marked new. The discharge summary was requested on 6 Nov at 18:00 and has not been received.",
+            "source": "ccd",
+            "sourceLabel": "CCD-HF-1106 and DOC-HF-SUMMARY",
+            "basis": null
+          },
+          {
+            "id": "N3",
+            "tag": "call",
+            "text": "Member reports breathlessness climbing the stairs since Saturday, with none at rest, no chest pain and ankle swelling that settles overnight.",
+            "source": null,
+            "sourceLabel": "Guide items 2 and 3",
+            "basis": null
+          },
+          {
+            "id": "N4",
+            "tag": "call",
+            "text": "Weight is up about 2 lb since Friday, weighed at the pharmacy on Saturday. There is no scale at home, so daily weights are not being taken.",
+            "source": null,
+            "sourceLabel": "Guide items 4 and 5",
+            "basis": null
+          },
+          {
+            "id": "N5",
+            "tag": "call",
+            "text": "Member read the label on the bottle in his hand: furosemide 40 mg. He has not started the 80 mg dose on the discharge list.",
+            "source": null,
+            "sourceLabel": "Guide item 6",
+            "basis": null
+          },
+          {
+            "id": "N6",
+            "tag": "call",
+            "text": "Sacubitril/valsartan was never collected. The pharmacy quoted a $47 copay and the member left it at the counter.",
+            "source": null,
+            "sourceLabel": "Guide item 7",
+            "basis": null
+          },
+          {
+            "id": "N7",
+            "tag": "inferred",
+            "text": "The dose discrepancy appears to be because the discharge instructions were not reviewed with the member at the bedside.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "Pattern across recent discharges where the member-reported dose matched the pre-admission fill. The member did not say this."
+          },
+          {
+            "id": "N8",
+            "tag": "inferred",
+            "text": "Cost appears to be the main barrier across the member's whole medication list.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "One quoted copay generalised to the other four drugs. Nothing on this call supports it."
+          },
+          {
+            "id": "N9",
+            "tag": "record",
+            "text": "Home-health authorization has been pending since Fri 6 Nov. Plan readmission risk is 0.31, scored 31 Oct, which is before this admission.",
+            "source": "um",
+            "sourceLabel": "AUTH-HF-HH-1106 and RISK-HF-1031",
+            "basis": null
+          },
+          {
+            "id": "N10",
+            "tag": "call",
+            "text": "Next contact agreed for Thu 12 Nov at 09:30. Member repeated back the three actions: the pharmacy will be called about the copay, a scale is being ordered, and Dr. Rook (fictional) will be asked which furosemide dose to take.",
+            "source": null,
+            "sourceLabel": "Guide item 9",
+            "basis": null
+          }
+        ]
+      },
+      "writes": [
+        {
+          "id": "W1",
+          "title": "Call note",
+          "destination": "Member record - Notes, Mon 9 Nov",
+          "summary": "The ten sentences above, with their tags kept, signed by Maria R., RN.",
+          "lines": [
+            "Post-discharge transition call note, 09:06-09:21 ET, outcome: reached member.",
+            "Every sentence keeps its tag, so a later reader can tell what was heard from what was read.",
+            "Signed by Maria R., RN on Mon 9 Nov 09:21 ET."
+          ],
+          "editable": false
+        },
+        {
+          "id": "W2",
+          "title": "Care-plan goals and tasks",
+          "destination": "Care plan - 1 goal, 3 tasks",
+          "summary": "One goal and three owned tasks, each with an owner and a due date.",
+          "lines": [
+            "Goal: daily weights recorded at home by Fri 13 Nov.",
+            "Task: order a home scale through the DME benefit - CM support, due Tue 10 Nov.",
+            "Task: pharmacy copay review for sacubitril/valsartan, $47 quoted - pharmacy team, due Tue 10 Nov.",
+            "Task: book a PCP visit with Dr. Rook (fictional) by Fri 13 Nov - Maria R., RN."
+          ],
+          "editable": false
+        },
+        {
+          "id": "W3",
+          "title": "Medication-reconciliation attestation",
+          "destination": "Medications - attestation, not a merge",
+          "summary": "What the clinician attests to, per conflicting row. Nothing is merged by software.",
+          "lines": [
+            "Furosemide: discharge list 80 mg daily (6 Nov), last fill 40 mg (10 Oct), claims 40 mg (22 Sep), member-reported 40 mg (today). Unresolved - referred to the prescriber.",
+            "Sacubitril/valsartan: on the discharge list, no fill in the PBM feed 63 h after discharge, member confirms it was never collected.",
+            "Attested by Maria R., RN, Mon 9 Nov 09:21 ET."
+          ],
+          "editable": false
+        },
+        {
+          "id": "W4",
+          "title": "Message to the PCP",
+          "destination": "Dr. Rook (fictional), Bellhaven Family Medicine (fictional)",
+          "summary": "Drafted, editable, sent with the signature.",
+          "lines": [
+            "Mr Bellweather was discharged Fri 6 Nov. His discharge list says furosemide 80 mg daily; the bottle in his hand today reads 40 mg and that is what he has been taking.",
+            "Please confirm which dose stands. Weight is up 2 lb since Friday and he has no scale at home; one is being ordered.",
+            "Sacubitril/valsartan was never collected - $47 copay. The pharmacy team is reviewing assistance options."
+          ],
+          "editable": true
+        },
+        {
+          "id": "W5",
+          "title": "Message to cardiology",
+          "destination": "Dr. Arrowood (fictional), Riverbend Cardiology (fictional)",
+          "summary": "Drafted, editable, sent with the signature.",
+          "lines": [
+            "Post-discharge call today: breathless on stairs since Saturday, none at rest, ankle swelling in the evenings, weight up 2 lb since Friday.",
+            "The new sacubitril/valsartan has not been started. Please advise whether a post-discharge review should be brought forward.",
+            "eGFR 48 on 5 Nov against a coded CKD stage 3b; both readings are in the record and neither has been reconciled."
+          ],
+          "editable": true
+        },
+        {
+          "id": "W6",
+          "title": "Next contact date",
+          "destination": "Today queue - Thu 12 Nov 09:30",
+          "summary": "The member's answering window, agreed out loud on the call.",
+          "lines": [
+            "Thu 12 Nov, 09:30 ET, call (508) 555-0142.",
+            "Today's transition item closes as completed and the queue re-ranks without him."
+          ],
+          "editable": false
+        }
+      ],
+      "nextContact": {
+        "label": "Thu 12 Nov, 09:30",
+        "at": "2026-11-12T09:30:00-05:00",
+        "detail": "Agreed on the call, inside the 09:00-11:00 window where he has answered 3 of 3 attempts."
+      }
+    },
+    {
+      "memberId": "SYN-DM-002",
+      "programLabel": "Diabetes on insulin - access and refills",
+      "summary": "A 51-day refill gap on the resolved person, and a member who cannot take a morning call.",
+      "dialing": {
+        "contactPointId": "CP-SYN-DM-002",
+        "number": "(617) 555-0188",
+        "ownerLabel": "Mobile - the member's own number",
+        "note": "Morning calls have failed four times; she works two evening jobs. Text at 14:00, once text consent is re-taken on this ID."
+      },
+      "timer": {
+        "elapsed": "04:18",
+        "connectedLabel": "Connected Mon 9 Nov, 14:02 ET"
+      },
+      "recordingConsent": {
+        "state": "yes",
+        "label": "Recording: consented",
+        "detail": "Consent to record was asked at 14:02 and given. The recording is attached to the call note."
+      },
+      "clock": {
+        "label": "Access barrier - insulin run-out",
+        "reading": "51 days past run-out",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "state": "due_soon"
+      },
+      "guide": {
+        "note": "Four items, shaped by the diabetes program. The heart-failure weight questions are not here; hypoglycemia and insulin technique are.",
+        "items": [
+          {
+            "id": "P1",
+            "origin": "program",
+            "prompt": "Have you had any low blood sugars - shakes, sweats, confusion - in the last month?",
+            "because": "The diabetes red-flag screen. On a heart-failure call this slot asks about weight instead.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "P1a",
+                "label": "None",
+                "tone": "success",
+                "feedsNote": "No hypoglycemic episodes reported in the last month."
+              },
+              {
+                "id": "P1b",
+                "label": "A few mild",
+                "tone": "warning",
+                "feedsNote": "Member reports a few mild hypoglycemic episodes in the last month."
+              },
+              {
+                "id": "P1c",
+                "label": "Needed help to recover",
+                "tone": "urgent",
+                "feedsNote": "Member reports a hypoglycemic episode that needed another person's help."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": "A severe low needing another person's help goes to the on-call RN lead today, with a same-day prescriber message."
+          },
+          {
+            "id": "P2",
+            "origin": "record_gap",
+            "prompt": "When did you last pick up your insulin, and how much is left?",
+            "because": "The pharmacy feed shows the last fill 51 days past its expected run-out, computed on the resolved person with the coverage lapse excluded.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "P2a",
+                "label": "Out for weeks",
+                "tone": "urgent",
+                "feedsNote": "Member has been out of insulin for several weeks."
+              },
+              {
+                "id": "P2b",
+                "label": "Rationing what is left",
+                "tone": "urgent",
+                "feedsNote": "Member is rationing the insulin she has left."
+              },
+              {
+                "id": "P2c",
+                "label": "Has supply, feed is wrong",
+                "tone": "warning",
+                "feedsNote": "Member has insulin in the house; the pharmacy feed is behind."
+              }
+            ],
+            "answeredChipId": "P2a",
+            "escalation": null
+          },
+          {
+            "id": "P3",
+            "origin": "record_gap",
+            "prompt": "May we text you? The consent we hold is under your old member ID.",
+            "because": "Text consent sits on the ID that closed during the coverage lapse. Consent does not travel across a merge on its own.",
+            "source": "contact",
+            "sourceLabel": "Consent recorded under the old ID, 12 Mar",
+            "chips": [
+              {
+                "id": "P3a",
+                "label": "Yes, texts are best",
+                "tone": "success",
+                "feedsNote": "Member gave verbal consent to texts on this call, recorded against the resolved person."
+              },
+              {
+                "id": "P3b",
+                "label": "Calls only",
+                "tone": "neutral",
+                "feedsNote": "Member prefers calls; no text consent given."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          },
+          {
+            "id": "P4",
+            "origin": "closing",
+            "prompt": "Can we book a same-week visit that renews everything at once, with a 90-day supply?",
+            "because": "A no-show on 14 Oct never reached claims, and zero refills remain on both maintenance drugs.",
+            "source": "appointments",
+            "sourceLabel": "Appointments, 14 Oct",
+            "chips": [
+              {
+                "id": "P4a",
+                "label": "Yes, afternoon slot",
+                "tone": "success",
+                "feedsNote": "Member accepted a same-week afternoon appointment with renewals and a 90-day supply."
+              },
+              {
+                "id": "P4b",
+                "label": "Call me back about it",
+                "tone": "neutral",
+                "feedsNote": "Member asked to be called back about the appointment."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          }
+        ]
+      },
+      "caregiver": {
+        "label": "Add caregiver on the line",
+        "hint": "Nobody is named as a caregiver on either ID. Anyone added here is recorded with their relationship and consent.",
+        "candidates": [
+          {
+            "id": "CG-DM-OTHER",
+            "name": "Someone else on the line",
+            "relation": "Not on the contact record",
+            "number": "Enter the number",
+            "consentLabel": "Identity and relationship recorded before anything clinical is discussed."
+          }
+        ]
+      },
+      "assessment": {
+        "instrument": "Complex-care assessment, 40 fields",
+        "total": 40,
+        "prefilled": 37,
+        "confirmed": 1,
+        "remaining": 2,
+        "note": "Values pre-filled from the resolved person, which is why the spring gap is not shown as a gap: those were days without coverage, not days without an attempt.",
+        "fields": [
+          {
+            "id": "F01",
+            "section": "Identification and consent",
+            "label": "Member identity verified",
+            "value": "Verified against the resolved person, both member IDs",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F02",
+            "section": "Identification and consent",
+            "label": "Text consent",
+            "value": "Recorded under the old ID only; re-consent needed",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-DM-OLD",
+            "dateLabel": "Contact history, 12 Mar"
+          },
+          {
+            "id": "F03",
+            "section": "Reachability",
+            "label": "Best channel and time",
+            "value": "Text at 14:00, before the evening shift",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-DM-0188",
+            "dateLabel": "Contact history, 28 Oct"
+          },
+          {
+            "id": "F04",
+            "section": "Clinical status",
+            "label": "A1c",
+            "value": "9.8% - July, about four months old",
+            "state": "prefilled",
+            "source": "labs",
+            "sourceRecordId": "LAB-DM-A1C-0714",
+            "dateLabel": "Labs, 14 Jul"
+          },
+          {
+            "id": "F05",
+            "section": "Medications",
+            "label": "Insulin supply",
+            "value": "51 days past expected run-out, no refills left",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-DM-INS-0901",
+            "dateLabel": "PBM, current to 8 Nov 23:00"
+          },
+          {
+            "id": "F06",
+            "section": "Medications",
+            "label": "Hypoglycemia in the last month",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F07",
+            "section": "Care plan and follow-up",
+            "label": "PCP visit",
+            "value": "No-show 14 Oct; same-week slot to be offered",
+            "state": "prefilled",
+            "source": "appointments",
+            "sourceRecordId": "APT-DM-1014",
+            "dateLabel": "Appointments, 14 Oct"
+          },
+          {
+            "id": "F08",
+            "section": "Care plan and follow-up",
+            "label": "Next contact agreed",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          }
+        ]
+      },
+      "note": {
+        "header": "Draft - not in the record until signed",
+        "byline": "Maria R., RN - access and refill call, Mon 9 Nov 14:02 ET",
+        "sentences": [
+          {
+            "id": "PN1",
+            "tag": "record",
+            "text": "Refill gap of 51 days on insulin and metformin, computed on the resolved person with the coverage-lapse days excluded. Zero refills remain on both.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "basis": null
+          },
+          {
+            "id": "PN2",
+            "tag": "record",
+            "text": "A1c 9.8% from 14 Jul, about four months old. The prior A1c sits under the closed member ID and is shown through the merge.",
+            "source": "labs",
+            "sourceLabel": "LAB-DM-A1C-0714",
+            "basis": null
+          },
+          {
+            "id": "PN3",
+            "tag": "call",
+            "text": "Member has been out of insulin for several weeks and has not been able to reach the pharmacy during opening hours.",
+            "source": null,
+            "sourceLabel": "Guide item 2",
+            "basis": null
+          },
+          {
+            "id": "PN4",
+            "tag": "inferred",
+            "text": "Member appears to have stopped metformin as well.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "Inferred from the shared fill date. She was not asked about metformin on this call."
+          }
+        ]
+      },
+      "writes": [
+        {
+          "id": "PW1",
+          "title": "Call note",
+          "destination": "Member record - Notes, Mon 9 Nov",
+          "summary": "The drafted sentences, tags kept, signed by Maria R., RN.",
+          "lines": [
+            "Access and refill call, 14:02-14:19 ET, outcome: reached member.",
+            "Signed by Maria R., RN on Mon 9 Nov 14:19 ET."
+          ],
+          "editable": false
+        },
+        {
+          "id": "PW2",
+          "title": "Care-plan goals and tasks",
+          "destination": "Care plan - 1 goal, 2 tasks",
+          "summary": "Renewals and a 90-day supply, with owners.",
+          "lines": [
+            "Goal: insulin in the house by Wed 11 Nov.",
+            "Task: same-week PCP visit with renewals - Maria R., RN, due Tue 10 Nov.",
+            "Task: 90-day supply and pharmacy transfer - pharmacy team, due Wed 11 Nov."
+          ],
+          "editable": false
+        },
+        {
+          "id": "PW3",
+          "title": "Message to the PCP",
+          "destination": "Dr. Halloway (fictional), Rivermouth Health Center (fictional)",
+          "summary": "Drafted, editable, sent with the signature.",
+          "lines": [
+            "Ms Castellanos has been out of insulin for several weeks; the gap reads 51 days on the resolved person.",
+            "Both maintenance drugs have zero refills. A same-week visit with renewals is being offered."
+          ],
+          "editable": true
+        },
+        {
+          "id": "PW4",
+          "title": "Next contact date",
+          "destination": "Today queue - Wed 11 Nov 14:00",
+          "summary": "Afternoon, before her evening shift.",
+          "lines": ["Wed 11 Nov, 14:00 ET, text if consent is given on this call, otherwise call."],
+          "editable": false
+        }
+      ],
+      "nextContact": {
+        "label": "Wed 11 Nov, 14:00",
+        "at": "2026-11-11T14:00:00-05:00",
+        "detail": "Afternoon, before the evening shift. Morning attempts have failed four times."
+      }
+    },
+    {
+      "memberId": "SYN-ED-003",
+      "programLabel": "Respiratory - frequent ED and no reachable number",
+      "summary": "Five ED visits in ninety days, and the only number that might work came from an ED registration desk.",
+      "dialing": {
+        "contactPointId": "CP-SYN-ED-003",
+        "number": "(617) 555-0171",
+        "ownerLabel": "Mobile from the ED registration - single source, unconfirmed",
+        "note": "The number on file is dead after 7 failed calls. This one appears only in ADT registration messages and has never been confirmed by the member."
+      },
+      "timer": {
+        "elapsed": "02:05",
+        "connectedLabel": "Connected Mon 9 Nov, 17:12 ET"
+      },
+      "recordingConsent": {
+        "state": "asked",
+        "label": "Recording: asked, no answer yet",
+        "detail": "Consent to record was asked at 17:12 and the member has not answered yet. Until he does, the call is not recorded."
+      },
+      "clock": {
+        "label": "7-day follow-up after ED",
+        "reading": "Window closes tomorrow",
+        "deadline": "2026-11-10T17:00:00-05:00",
+        "state": "due_soon"
+      },
+      "guide": {
+        "note": "Four items for the respiratory program, opening with number and consent, because neither is established.",
+        "items": [
+          {
+            "id": "M1",
+            "origin": "record_gap",
+            "prompt": "Is this the best number for you, and may we text you on it?",
+            "because": "This number exists only in ED registration messages. The number on file has failed 7 calls and a letter came back from an old address.",
+            "source": "adt",
+            "sourceLabel": "ED registration, 31 Oct",
+            "chips": [
+              {
+                "id": "M1a",
+                "label": "Yes to both",
+                "tone": "success",
+                "feedsNote": "Member confirmed this is his number and gave verbal consent to texts."
+              },
+              {
+                "id": "M1b",
+                "label": "Yes to the number, no texts",
+                "tone": "warning",
+                "feedsNote": "Member confirmed the number; no text consent given."
+              },
+              {
+                "id": "M1c",
+                "label": "Wrong number",
+                "tone": "urgent",
+                "feedsNote": "This number does not belong to the member."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          },
+          {
+            "id": "M2",
+            "origin": "red_flag",
+            "prompt": "Are you short of breath right now, or using the blue inhaler more than twice a week?",
+            "because": "Respiratory red-flag screen. Four rescue fills and no controller since July.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "M2a",
+                "label": "Using it most days",
+                "tone": "urgent",
+                "feedsNote": "Member reports using the rescue inhaler most days."
+              },
+              {
+                "id": "M2b",
+                "label": "A couple of times a week",
+                "tone": "warning",
+                "feedsNote": "Member reports rescue inhaler use a couple of times a week."
+              },
+              {
+                "id": "M2c",
+                "label": "Rarely",
+                "tone": "success",
+                "feedsNote": "Member reports rare rescue inhaler use."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": "Breathlessness at rest or rescue use several times a day goes to the on-call RN lead now, with same-day urgent-care routing offered."
+          },
+          {
+            "id": "M3",
+            "origin": "program",
+            "prompt": "Do you have a controller inhaler, and are you using it daily?",
+            "because": "No controller fill since July while four rescue fills went through.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "M3a",
+                "label": "Never had one explained",
+                "tone": "urgent",
+                "feedsNote": "Member has never had a controller inhaler explained to him."
+              },
+              {
+                "id": "M3b",
+                "label": "Ran out",
+                "tone": "warning",
+                "feedsNote": "Member ran out of the controller inhaler and did not refill it."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          },
+          {
+            "id": "M4",
+            "origin": "closing",
+            "prompt": "Can we book you a same-week visit and get the controller refilled?",
+            "because": "The 7-day follow-up window after the 31 Oct ED visit closes Tue 10 Nov.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "M4a",
+                "label": "Yes, evening slot",
+                "tone": "success",
+                "feedsNote": "Member accepted a same-week evening appointment."
+              },
+              {
+                "id": "M4b",
+                "label": "Cannot take time off",
+                "tone": "warning",
+                "feedsNote": "Member cannot take time off work for a daytime appointment."
+              }
+            ],
+            "answeredChipId": null,
+            "escalation": null
+          }
+        ]
+      },
+      "caregiver": {
+        "label": "Add caregiver on the line",
+        "hint": "No caregiver is named anywhere in this record. Anyone added is recorded with their relationship and consent.",
+        "candidates": [
+          {
+            "id": "CG-ED-OTHER",
+            "name": "Someone else on the line",
+            "relation": "Not on the contact record",
+            "number": "Enter the number",
+            "consentLabel": "Identity and relationship recorded before anything clinical is discussed."
+          }
+        ]
+      },
+      "assessment": {
+        "instrument": "Complex-care assessment, 40 fields",
+        "total": 40,
+        "prefilled": 37,
+        "confirmed": 1,
+        "remaining": 2,
+        "note": "Little is pre-filled here, because little has ever been collected. There is no HRA on this member at all.",
+        "fields": [
+          {
+            "id": "F01",
+            "section": "Identification and consent",
+            "label": "Member identity verified",
+            "value": "Verified on the ED-registration number",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F02",
+            "section": "Identification and consent",
+            "label": "Text consent",
+            "value": "None on file; verbal consent to be obtained on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F03",
+            "section": "Reachability",
+            "label": "Number on file",
+            "value": "(617) 555-0133 - dead after 7 failed calls",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-ED-0133",
+            "dateLabel": "Contact history, 2 Nov"
+          },
+          {
+            "id": "F04",
+            "section": "Reachability",
+            "label": "Number from ED registration",
+            "value": "(617) 555-0171 - single source, unconfirmed",
+            "state": "prefilled",
+            "source": "adt",
+            "sourceRecordId": "ADT-ED-1031",
+            "dateLabel": "ED registration, 31 Oct"
+          },
+          {
+            "id": "F05",
+            "section": "Clinical status",
+            "label": "ED visits in 90 days",
+            "value": "5 after de-duplication, from 6 ADT messages",
+            "state": "prefilled",
+            "source": "adt",
+            "sourceRecordId": "ADT-ED-DEDUP",
+            "dateLabel": "ADT, 31 Oct"
+          },
+          {
+            "id": "F06",
+            "section": "Medications",
+            "label": "Controller inhaler",
+            "value": "No fill since July; four rescue fills in the same period",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-ED-RESCUE",
+            "dateLabel": "PBM, current to 8 Nov 23:00"
+          },
+          {
+            "id": "F07",
+            "section": "Social and caregiver",
+            "label": "Housing and work context",
+            "value": "Only in a free-text clinical note; never structured",
+            "state": "prefilled",
+            "source": "cm_record",
+            "sourceRecordId": "NOTE-ED-0915",
+            "dateLabel": "CM note, 15 Sep"
+          },
+          {
+            "id": "F08",
+            "section": "Care plan and follow-up",
+            "label": "Same-week visit booked",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          }
+        ]
+      },
+      "note": {
+        "header": "Draft - not in the record until signed",
+        "byline": "Maria R., RN - post-ED follow-up call, Mon 9 Nov 17:12 ET",
+        "sentences": [
+          {
+            "id": "MN1",
+            "tag": "record",
+            "text": "Five emergency department visits in ninety days after de-duplication, from six ADT messages; claims show two of the five.",
+            "source": "adt",
+            "sourceLabel": "ADT-ED-DEDUP",
+            "basis": null
+          },
+          {
+            "id": "MN2",
+            "tag": "record",
+            "text": "Four rescue-inhaler fills since July and no controller fill in the same period.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "basis": null
+          },
+          {
+            "id": "MN3",
+            "tag": "record",
+            "text": "The number on file has failed seven calls and a letter was returned from an old address. The number dialled today appears only in ED registration messages.",
+            "source": "contact",
+            "sourceLabel": "CT-ED-0133 and ADT-ED-1031",
+            "basis": null
+          },
+          {
+            "id": "MN4",
+            "tag": "inferred",
+            "text": "The member appears to be using the emergency department as his usual source of care.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "Inferred from visit counts. He has not been asked where he would rather be seen."
+          }
+        ]
+      },
+      "writes": [
+        {
+          "id": "MW1",
+          "title": "Call note",
+          "destination": "Member record - Notes, Mon 9 Nov",
+          "summary": "The drafted sentences, tags kept, signed by Maria R., RN.",
+          "lines": ["Post-ED follow-up call, 17:12 ET.", "Signed by Maria R., RN."],
+          "editable": false
+        },
+        {
+          "id": "MW2",
+          "title": "Contact record update",
+          "destination": "Contacts - promote the ED number",
+          "summary": "Promotes the ED-registration number and marks the file number dead, once the member confirms it.",
+          "lines": [
+            "Promote (617) 555-0171 to primary, source: ED registration, confirmed by the member on this call.",
+            "Mark (617) 555-0133 dead after 7 failed attempts; it stays visible, struck through."
+          ],
+          "editable": false
+        },
+        {
+          "id": "MW3",
+          "title": "Care-plan goals and tasks",
+          "destination": "Care plan - 1 goal, 2 tasks",
+          "summary": "Controller therapy and a same-week visit.",
+          "lines": [
+            "Goal: controller inhaler in use daily by Fri 13 Nov.",
+            "Task: same-week evening appointment - Maria R., RN, due Tue 10 Nov.",
+            "Task: controller refill request to the attributed PCP - pharmacy team, due Tue 10 Nov."
+          ],
+          "editable": false
+        },
+        {
+          "id": "MW4",
+          "title": "Next contact date",
+          "destination": "Today queue - Thu 12 Nov 17:30",
+          "summary": "After work, the only window that has ever answered.",
+          "lines": ["Thu 12 Nov, 17:30 ET, text first if consent is given on this call."],
+          "editable": false
+        }
+      ],
+      "nextContact": {
+        "label": "Thu 12 Nov, 17:30",
+        "at": "2026-11-12T17:30:00-05:00",
+        "detail": "After 17:00. Daytime attempts on the file number have never been answered."
+      }
+    },
+    {
+      "memberId": "SYN-BH-004",
+      "programLabel": "Behavioral health - medication gap and housing instability",
+      "summary": "Reachable only through a shelter caseworker, with a 28-day psychotropic gap behind it.",
+      "dialing": {
+        "contactPointId": "CP-SYN-BH-004",
+        "number": "(413) 555-0155",
+        "ownerLabel": "Shelter caseworker - the only route that answers",
+        "note": "The caseworker has answered 2 of 2 attempts between 10:00 and 12:00. Nothing clinical is discussed until the member is on the line."
+      },
+      "timer": {
+        "elapsed": "11:30",
+        "connectedLabel": "Connected Mon 9 Nov, 10:14 ET"
+      },
+      "recordingConsent": {
+        "state": "yes",
+        "label": "Recording: consented",
+        "detail": "Consent to record was asked at 10:20, once the member was on the line, and given."
+      },
+      "clock": {
+        "label": "Safety escalation - psychotropic gap",
+        "reading": "28 days past run-out",
+        "deadline": "2026-11-09T17:00:00-05:00",
+        "state": "due_soon"
+      },
+      "guide": {
+        "note": "Four items for the behavioral-health program. No crisis is inferred from a diagnosis; the escalation path is clinician-led.",
+        "items": [
+          {
+            "id": "J1",
+            "origin": "red_flag",
+            "prompt": "Are you having any thoughts of harming yourself or anyone else today?",
+            "because": "Behavioral-health red-flag screen, asked directly and early, by a clinician.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "J1a",
+                "label": "No",
+                "tone": "success",
+                "feedsNote": "Member denies thoughts of self-harm or harm to others today."
+              },
+              {
+                "id": "J1b",
+                "label": "Yes - stay on the line",
+                "tone": "urgent",
+                "feedsNote": "Member reports thoughts of self-harm. Escalation path started on the call."
+              }
+            ],
+            "answeredChipId": "J1a",
+            "escalation": "A yes keeps the clinician on the line, starts the crisis protocol with the BH case manager and the on-call psychiatrist, and records every step. The workbench never raises or closes this on its own."
+          },
+          {
+            "id": "J2",
+            "origin": "record_gap",
+            "prompt": "When did you last take the lithium and the quetiapine?",
+            "because": "Both are 28 days past expected run-out, after a subtherapeutic lithium level. The lithium level itself is 8 days overdue.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "J2a",
+                "label": "Stopped weeks ago",
+                "tone": "urgent",
+                "feedsNote": "Member stopped both medications several weeks ago."
+              },
+              {
+                "id": "J2b",
+                "label": "Taking them irregularly",
+                "tone": "warning",
+                "feedsNote": "Member is taking both medications irregularly."
+              },
+              {
+                "id": "J2c",
+                "label": "Lost in the move",
+                "tone": "urgent",
+                "feedsNote": "Medications were lost when the member moved shelters."
+              }
+            ],
+            "answeredChipId": "J2c",
+            "escalation": null
+          },
+          {
+            "id": "J3",
+            "origin": "program",
+            "prompt": "Where are you staying now, and where can post reach you?",
+            "because": "Housing was recorded stable eight months ago; the shelter address has closed and mail has been returned.",
+            "source": "hra",
+            "sourceLabel": "HRA, 12 Mar",
+            "chips": [
+              {
+                "id": "J3a",
+                "label": "New shelter, care of the caseworker",
+                "tone": "info",
+                "feedsNote": "Member is staying at a new shelter; post should go care of the caseworker."
+              },
+              {
+                "id": "J3b",
+                "label": "Staying with a friend",
+                "tone": "warning",
+                "feedsNote": "Member is staying with a friend and has no fixed address."
+              }
+            ],
+            "answeredChipId": "J3a",
+            "escalation": null
+          },
+          {
+            "id": "J4",
+            "origin": "closing",
+            "prompt": "Can we rebook psychiatry and get the lithium level drawn this week?",
+            "because": "Two psychiatry visits were missed and the level is overdue by 8 days.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "J4a",
+                "label": "Yes, with the caseworker",
+                "tone": "success",
+                "feedsNote": "Member agreed to a psychiatry appointment and a lab draw, with the caseworker arranging transport."
+              },
+              {
+                "id": "J4b",
+                "label": "Only if transport is arranged",
+                "tone": "warning",
+                "feedsNote": "Member will attend only if transport is arranged in advance."
+              }
+            ],
+            "answeredChipId": "J4a",
+            "escalation": null
+          }
+        ]
+      },
+      "caregiver": {
+        "label": "Add caregiver on the line",
+        "hint": "The shelter caseworker is already on this call and is recorded as present, with the member's verbal agreement.",
+        "candidates": [
+          {
+            "id": "CG-BH-CASEWORKER",
+            "name": "T. Marlow (fictional)",
+            "relation": "Shelter caseworker, on the line since 10:14",
+            "number": "(413) 555-0155",
+            "consentLabel": "Member agreed verbally at 10:20 to the caseworker staying on the call."
+          }
+        ]
+      },
+      "assessment": {
+        "instrument": "Complex-care assessment, 40 fields",
+        "total": 40,
+        "prefilled": 38,
+        "confirmed": 1,
+        "remaining": 1,
+        "note": "Values pre-filled from the behavioral-health clinic and the pharmacy feed. The restricted substance-use record is shown as restricted, never as blank.",
+        "fields": [
+          {
+            "id": "F01",
+            "section": "Identification and consent",
+            "label": "Spoke with",
+            "value": "Shelter caseworker, member joined at 10:20",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F02",
+            "section": "Reachability",
+            "label": "Route that answers",
+            "value": "Shelter caseworker, 10:00-12:00, answered 2 of 2",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-BH-0155",
+            "dateLabel": "Contact history, 30 Oct"
+          },
+          {
+            "id": "F03",
+            "section": "Clinical status",
+            "label": "Diagnoses on file",
+            "value": "Bipolar I (BH clinic) and major depression (PCP claims); both shown, neither chosen",
+            "state": "prefilled",
+            "source": "claims",
+            "sourceRecordId": "CLM-BH-DX",
+            "dateLabel": "Claims and BH clinic, 2026"
+          },
+          {
+            "id": "F04",
+            "section": "Clinical status",
+            "label": "Restricted record",
+            "value": "A substance-use record exists and is restricted under 42 CFR Part 2",
+            "state": "prefilled",
+            "source": "cm_record",
+            "sourceRecordId": "REC-BH-RESTRICTED",
+            "dateLabel": "Restricted, 2026"
+          },
+          {
+            "id": "F05",
+            "section": "Medications",
+            "label": "Lithium and quetiapine",
+            "value": "28 days past expected run-out",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-BH-LIT",
+            "dateLabel": "PBM, current to 8 Nov 23:00"
+          },
+          {
+            "id": "F06",
+            "section": "Medications",
+            "label": "Lithium level",
+            "value": "Overdue by 8 days",
+            "state": "prefilled",
+            "source": "labs",
+            "sourceRecordId": "LAB-BH-LIT",
+            "dateLabel": "Labs, 12 Oct"
+          },
+          {
+            "id": "F07",
+            "section": "Social and caregiver",
+            "label": "Housing",
+            "value": "Shelter address returned mail; stability recorded 8 months ago",
+            "state": "prefilled",
+            "source": "hra",
+            "sourceRecordId": "HRA-BH-0312",
+            "dateLabel": "HRA, 12 Mar"
+          },
+          {
+            "id": "F08",
+            "section": "Care plan and follow-up",
+            "label": "Psychiatry rebooked",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          }
+        ]
+      },
+      "note": {
+        "header": "Draft - not in the record until signed",
+        "byline": "Maria R., RN - behavioral-health outreach call, Mon 9 Nov 10:14 ET",
+        "sentences": [
+          {
+            "id": "JN1",
+            "tag": "record",
+            "text": "Lithium and quetiapine are 28 days past expected run-out, after a subtherapeutic lithium level. The repeat level is overdue by 8 days.",
+            "source": "pbm",
+            "sourceLabel": "PBM and LAB-BH-LIT",
+            "basis": null
+          },
+          {
+            "id": "JN2",
+            "tag": "record",
+            "text": "Two psychiatry appointments were missed and a crisis-line contact was logged on 30 Oct. A substance-use record exists and is restricted under 42 CFR Part 2.",
+            "source": "cm_record",
+            "sourceLabel": "CM record and crisis line, 30 Oct",
+            "basis": null
+          },
+          {
+            "id": "JN3",
+            "tag": "call",
+            "text": "Member denies thoughts of self-harm today. Both medications were lost during a move between shelters and have not been replaced.",
+            "source": null,
+            "sourceLabel": "Guide items 1 and 2",
+            "basis": null
+          },
+          {
+            "id": "JN4",
+            "tag": "inferred",
+            "text": "The medication gap appears to be driven by the housing move rather than by a decision to stop.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "Inferred from the timing of the shelter closure. The member was not asked whether she meant to stop."
+          }
+        ]
+      },
+      "writes": [
+        {
+          "id": "JW1",
+          "title": "Call note",
+          "destination": "Member record - Notes, Mon 9 Nov",
+          "summary": "The drafted sentences, tags kept, signed by Maria R., RN.",
+          "lines": [
+            "Behavioral-health outreach call with the shelter caseworker present, 10:14-10:41 ET.",
+            "Signed by Maria R., RN on Mon 9 Nov 10:41 ET."
+          ],
+          "editable": false
+        },
+        {
+          "id": "JW2",
+          "title": "Care-plan goals and tasks",
+          "destination": "Care plan - 1 goal, 3 tasks",
+          "summary": "Medication restart, a level, and a housing referral.",
+          "lines": [
+            "Goal: lithium and quetiapine restarted with a level drawn by Fri 13 Nov.",
+            "Task: coordinate with the BH case manager today - Maria R., RN.",
+            "Task: rebook psychiatry with transport - shelter caseworker, due Wed 11 Nov.",
+            "Task: housing referral - plan housing navigator, due Thu 12 Nov."
+          ],
+          "editable": false
+        },
+        {
+          "id": "JW3",
+          "title": "Message to the BH clinic",
+          "destination": "Dr. Venn (fictional), Harborlight Behavioral Health (fictional)",
+          "summary": "Drafted, editable, sent with the signature.",
+          "lines": [
+            "Ms Wintermoor has been without lithium and quetiapine for about 28 days after losing them in a shelter move.",
+            "The repeat lithium level is 8 days overdue. Please advise on restarting and on the level.",
+            "Diagnoses on file disagree: bipolar I from your clinic, major depression from PCP claims. Both are shown in the record; neither has been chosen by the plan."
+          ],
+          "editable": true
+        },
+        {
+          "id": "JW4",
+          "title": "Next contact date",
+          "destination": "Today queue - Wed 11 Nov 10:30",
+          "summary": "The caseworker window that answers.",
+          "lines": ["Wed 11 Nov, 10:30 ET, through the shelter caseworker."],
+          "editable": false
+        }
+      ],
+      "nextContact": {
+        "label": "Wed 11 Nov, 10:30",
+        "at": "2026-11-11T10:30:00-05:00",
+        "detail": "Through the shelter caseworker, in the 10:00-12:00 window that has answered 2 of 2."
+      }
+    },
+    {
+      "memberId": "SYN-DUAL-005",
+      "programLabel": "Dual eligible - falls, dementia and an unstarted service",
+      "summary": "A fall that never reached the transition queue, a service approved but not started, and a number that belongs to her daughter.",
+      "dialing": {
+        "contactPointId": "CP-SYN-DUAL-005",
+        "number": "(781) 555-0109",
+        "ownerLabel": "Labelled Home - actually daughter Linda's (fictional) mobile",
+        "note": "The number labelled Home is the daughter's work-hours mobile. She answers after 18:00, not during the day."
+      },
+      "timer": {
+        "elapsed": "09:55",
+        "connectedLabel": "Connected Mon 9 Nov, 18:10 ET"
+      },
+      "recordingConsent": {
+        "state": "yes",
+        "label": "Recording: consented by the health-care proxy",
+        "detail": "Consent to record was given at 18:10 by the daughter, who is the named health-care proxy on file."
+      },
+      "clock": {
+        "label": "7-day follow-up after the ED fall",
+        "reading": "Overdue by 6 days",
+        "deadline": "2026-11-03T17:00:00-05:00",
+        "state": "overdue"
+      },
+      "guide": {
+        "note": "Four items for the dual-eligible falls pathway, with the caregiver as the person actually answering.",
+        "items": [
+          {
+            "id": "E1",
+            "origin": "red_flag",
+            "prompt": "Has there been another fall, or any injury since the 27 October one?",
+            "because": "Falls red-flag screen. The ED visit on 27 Oct was treat and release and never entered the transition queue.",
+            "source": "adt",
+            "sourceLabel": "ADT, 27 Oct",
+            "chips": [
+              {
+                "id": "E1a",
+                "label": "No further falls",
+                "tone": "success",
+                "feedsNote": "No further falls reported since 27 October."
+              },
+              {
+                "id": "E1b",
+                "label": "One more, no injury",
+                "tone": "warning",
+                "feedsNote": "One further fall reported, with no injury."
+              },
+              {
+                "id": "E1c",
+                "label": "A fall with injury",
+                "tone": "urgent",
+                "feedsNote": "A further fall with injury reported."
+              }
+            ],
+            "answeredChipId": "E1b",
+            "escalation": "A fall with injury, or any fall with a head strike on an anticoagulant, goes to the on-call RN lead immediately with urgent-care routing offered."
+          },
+          {
+            "id": "E2",
+            "origin": "record_gap",
+            "prompt": "Has the home physiotherapist actually been to the house yet?",
+            "because": "Home PT was requested 28 Oct and approved 29 Oct. Approved is not started: no start-of-care has been confirmed in 12 days.",
+            "source": "um",
+            "sourceLabel": "UM, approved 29 Oct",
+            "chips": [
+              {
+                "id": "E2a",
+                "label": "Nobody has come",
+                "tone": "urgent",
+                "feedsNote": "The daughter confirms no physiotherapist has visited the house."
+              },
+              {
+                "id": "E2b",
+                "label": "Came once",
+                "tone": "success",
+                "feedsNote": "A physiotherapist has visited the house once."
+              },
+              {
+                "id": "E2c",
+                "label": "An appointment is booked",
+                "tone": "warning",
+                "feedsNote": "A first physiotherapy visit is booked but has not happened."
+              }
+            ],
+            "answeredChipId": "E2a",
+            "escalation": null
+          },
+          {
+            "id": "E3",
+            "origin": "record_gap",
+            "prompt": "Can you read me the blood-pressure tablets in the house, including anything bought over the counter?",
+            "because": "Two calcium-channel blockers from two prescribers, and one over-the-counter item that no pharmacy feed can see.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "chips": [
+              {
+                "id": "E3a",
+                "label": "Two different ones",
+                "tone": "urgent",
+                "feedsNote": "The daughter read two different calcium-channel blockers from the pill box."
+              },
+              {
+                "id": "E3b",
+                "label": "Only one",
+                "tone": "success",
+                "feedsNote": "Only one blood-pressure tablet is in the house."
+              }
+            ],
+            "answeredChipId": "E3a",
+            "escalation": null
+          },
+          {
+            "id": "E4",
+            "origin": "closing",
+            "prompt": "Would respite hours and personal-care hours help, and may we start that request?",
+            "because": "The caregiver is the primary contact, there has been a fall, and eleven medications are in the house.",
+            "source": null,
+            "sourceLabel": null,
+            "chips": [
+              {
+                "id": "E4a",
+                "label": "Yes, please start it",
+                "tone": "success",
+                "feedsNote": "The daughter asked for respite and personal-care hours to be requested."
+              },
+              {
+                "id": "E4b",
+                "label": "Not yet",
+                "tone": "neutral",
+                "feedsNote": "The daughter declined respite hours for now."
+              }
+            ],
+            "answeredChipId": "E4a",
+            "escalation": null
+          }
+        ]
+      },
+      "caregiver": {
+        "label": "Add caregiver on the line",
+        "hint": "The daughter is the person answering this number. She is recorded as the caregiver and health-care proxy on the call.",
+        "candidates": [
+          {
+            "id": "CG-DUAL-LINDA",
+            "name": "Linda Fairweather (fictional)",
+            "relation": "Daughter, health-care proxy on file",
+            "number": "(781) 555-0109",
+            "consentLabel": "Proxy documented 14 Feb. Consent to discuss recorded on every call."
+          }
+        ]
+      },
+      "assessment": {
+        "instrument": "Complex-care assessment, 40 fields",
+        "total": 40,
+        "prefilled": 38,
+        "confirmed": 1,
+        "remaining": 1,
+        "note": "Pre-filled from the ADT message, the pharmacy feed and the UM record. The ED claim for the 27 Oct fall is still missing 13 days later, so claims are history here, not status.",
+        "fields": [
+          {
+            "id": "F01",
+            "section": "Identification and consent",
+            "label": "Spoke with",
+            "value": "Daughter Linda (fictional), after 18:00",
+            "state": "confirmed",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          },
+          {
+            "id": "F02",
+            "section": "Reachability",
+            "label": "Primary number",
+            "value": "Labelled Home, actually the daughter's work-hours mobile",
+            "state": "prefilled",
+            "source": "contact",
+            "sourceRecordId": "CT-DUAL-0109",
+            "dateLabel": "Contact history, 27 Oct"
+          },
+          {
+            "id": "F03",
+            "section": "Clinical status",
+            "label": "ED fall",
+            "value": "27 Oct, treat and release; the ED claim is still missing 13 days later",
+            "state": "prefilled",
+            "source": "adt",
+            "sourceRecordId": "ADT-DUAL-1027",
+            "dateLabel": "ADT, 27 Oct"
+          },
+          {
+            "id": "F04",
+            "section": "Clinical status",
+            "label": "Kidney function",
+            "value": "eGFR 24; the coded stage still reads 3",
+            "state": "prefilled",
+            "source": "labs",
+            "sourceRecordId": "LAB-DUAL-EGFR",
+            "dateLabel": "Labs, 20 Oct"
+          },
+          {
+            "id": "F05",
+            "section": "Medications",
+            "label": "Duplicate therapy",
+            "value": "Two calcium-channel blockers from two prescribers",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-DUAL-CCB",
+            "dateLabel": "PBM, current to 8 Nov 23:00"
+          },
+          {
+            "id": "F06",
+            "section": "Medications",
+            "label": "Medication count",
+            "value": "11, including one over-the-counter item no feed can see",
+            "state": "prefilled",
+            "source": "pbm",
+            "sourceRecordId": "FILL-DUAL-COUNT",
+            "dateLabel": "PBM, current to 8 Nov 23:00"
+          },
+          {
+            "id": "F07",
+            "section": "Function and safety",
+            "label": "Home PT",
+            "value": "Requested 28 Oct, approved 29 Oct, start of care not confirmed",
+            "state": "prefilled",
+            "source": "um",
+            "sourceRecordId": "AUTH-DUAL-PT",
+            "dateLabel": "UM, 29 Oct"
+          },
+          {
+            "id": "F08",
+            "section": "Social and caregiver",
+            "label": "Caregiver strain screen",
+            "value": "Not yet asked on this call",
+            "state": "remaining",
+            "source": null,
+            "sourceRecordId": null,
+            "dateLabel": null
+          }
+        ]
+      },
+      "note": {
+        "header": "Draft - not in the record until signed",
+        "byline": "Maria R., RN - falls and caregiver call, Mon 9 Nov 18:10 ET",
+        "sentences": [
+          {
+            "id": "EN1",
+            "tag": "record",
+            "text": "Emergency department visit on 27 Oct after a fall, treat and release. The ED claim has still not arrived 13 days later.",
+            "source": "adt",
+            "sourceLabel": "ADT-DUAL-1027",
+            "basis": null
+          },
+          {
+            "id": "EN2",
+            "tag": "record",
+            "text": "Home physiotherapy was requested on 28 Oct and approved on 29 Oct. No start of care has been confirmed in the twelve days since the request.",
+            "source": "um",
+            "sourceLabel": "AUTH-DUAL-PT",
+            "basis": null
+          },
+          {
+            "id": "EN3",
+            "tag": "record",
+            "text": "Two calcium-channel blockers are on file from two different prescribers, and gabapentin is not dose-adjusted for an eGFR of 24. Eleven medications in total.",
+            "source": "pbm",
+            "sourceLabel": "PBM, current to Sun 8 Nov 23:00",
+            "basis": null
+          },
+          {
+            "id": "EN4",
+            "tag": "call",
+            "text": "Daughter reports one further fall with no injury, and confirms no physiotherapist has been to the house.",
+            "source": null,
+            "sourceLabel": "Guide items 1 and 2",
+            "basis": null
+          },
+          {
+            "id": "EN5",
+            "tag": "inferred",
+            "text": "The caregiver appears to be close to burnout.",
+            "source": null,
+            "sourceLabel": null,
+            "basis": "Inferred from the caregiver-strain signal and an HRA that is months old. She was not asked how she is coping."
+          }
+        ]
+      },
+      "writes": [
+        {
+          "id": "EW1",
+          "title": "Call note",
+          "destination": "Member record - Notes, Mon 9 Nov",
+          "summary": "The drafted sentences, tags kept, signed by Maria R., RN.",
+          "lines": [
+            "Falls and caregiver call with the daughter, 18:10-18:34 ET.",
+            "Signed by Maria R., RN on Mon 9 Nov 18:34 ET."
+          ],
+          "editable": false
+        },
+        {
+          "id": "EW2",
+          "title": "Care-plan goals and tasks",
+          "destination": "Care plan - 2 goals, 3 tasks",
+          "summary": "Start of care, the duplicate pair, and caregiver support.",
+          "lines": [
+            "Goal: physiotherapy started in the home by Fri 13 Nov.",
+            "Goal: falls-safety review completed by Fri 20 Nov.",
+            "Task: confirm start of care with the agency - Maria R., RN, due Tue 10 Nov.",
+            "Task: raise the duplicate calcium-channel blockers with the PCP and cardiology - Maria R., RN, due Tue 10 Nov.",
+            "Task: request respite and personal-care hours - HCBS coordinator, due Wed 11 Nov."
+          ],
+          "editable": false
+        },
+        {
+          "id": "EW3",
+          "title": "Message to the PCP and cardiology",
+          "destination": "Dr. Pell (fictional) and Dr. Arrowood (fictional)",
+          "summary": "Drafted, editable, sent with the signature.",
+          "lines": [
+            "Mrs Fairweather has two calcium-channel blockers on file from two prescribers; the daughter read both from the pill box today.",
+            "Gabapentin does not appear to be adjusted for an eGFR of 24, and the coded kidney stage still reads 3.",
+            "There was a further fall since the 27 Oct emergency visit, with no injury."
+          ],
+          "editable": true
+        },
+        {
+          "id": "EW4",
+          "title": "Next contact date",
+          "destination": "Today queue - Wed 11 Nov 18:15",
+          "summary": "After 18:00, when the daughter answers.",
+          "lines": ["Wed 11 Nov, 18:15 ET, call (781) 555-0109 and expect the daughter."],
+          "editable": false
+        }
+      ],
+      "nextContact": {
+        "label": "Wed 11 Nov, 18:15",
+        "at": "2026-11-11T18:15:00-05:00",
+        "detail": "After 18:00. The number labelled Home is the daughter's work-hours mobile."
+      }
+    }
+  ]
+}

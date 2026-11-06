@@ -7,3 +7,4 @@ export * from '@/domain/caseload';
 export * from '@/domain/queue';
 export * from '@/domain/signals';
 export * from '@/domain/member-story';
+export * from '@/domain/call-workspace';
